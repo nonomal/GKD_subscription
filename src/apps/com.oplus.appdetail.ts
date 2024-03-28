@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '自动安装应用',
+      name: '功能类-自动安装',
       rules: [
         {
           key: 0,
@@ -27,15 +27,11 @@ export default defineAppConfig({
           key: 1,
           name: '点击【完成】',
           activityIds: 'com.oplus.appdetail.model.finish.InstallFinishActivity',
-          matches: '[id="com.oplus.appdetail:id/launch_button"][text="完成"]',
-          snapshotUrls: 'https://i.gkd.li/i/13038664',
-        },
-        {
-          key: 2,
-          name: '点击【完成】',
-          activityIds: 'com.oplus.appdetail.model.finish.InstallFinishActivity',
-          matches: '[id="com.oplus.appdetail:id/done_button"][text="完成"]',
-          snapshotUrls: 'https://i.gkd.li/i/13054849',
+          matches: '[text="完成"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13038664',
+            'https://i.gkd.li/i/13054849',
+          ],
         },
       ],
     },
