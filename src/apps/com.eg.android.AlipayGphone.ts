@@ -234,5 +234,21 @@ export default defineAppConfig({
         '@CheckBox[checked=true][checked=true] < * - [text~="开通(.*)免密支付"]',
       snapshotUrls: 'https://i.gkd.li/i/14627775',
     },
+    {
+      key: 17,
+      name: '全屏广告-小程序-红包弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          action: 'clickCenter',
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$XRiverLite1',
+          matches: 'View[childCount=2] > View > Image < * + [text="X"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/19ba92ce-0c57-4559-ab53-89b912fe8506',
+          snapshotUrls: 'https://i.gkd.li/i/14783332',
+        },
+      ],
+    },
   ],
 });
