@@ -34,14 +34,17 @@ export default defineAppConfig({
     {
       key: 1,
       name: '局部广告-视频播放页-赞助商广告',
-      activityIds:
+      activityIds: [
         'com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity',
+        'com.google.android.apps.youtube.app.watchwhile.MainActivity',
+      ],
       rules:
-        'ImageView[desc="更多选项"||desc^="More"] + @ImageView[desc="关闭广告面板"||desc^="Close"]',
+        '[desc="更多选项"||desc^="More"] + [desc="关闭广告面板"||desc^="Close"]',
       snapshotUrls: [
         'https://i.gkd.li/i/12877346',
         'https://i.gkd.li/i/13797491',
         'https://i.gkd.li/i/13705106',
+        'https://i.gkd.li/i/14786081',
       ],
     },
     {
@@ -64,7 +67,7 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '通知提示-开启推送通知提示弹窗',
+      name: '权限提示-通知权限',
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
