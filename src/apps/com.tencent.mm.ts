@@ -538,6 +538,19 @@ export default defineAppConfig({
       ],
     },
     {
+      key: 34,
+      name: '全屏广告-小程序-青桔单车-弹窗广告',
+      rules: [
+        {
+          key: 0,
+          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
+          matches:
+            'WebView > View[childCount=15] > View > View[childCount=2] > View > Image < * + Image',
+          snapshotUrls: 'https://i.gkd.li/i/14392363',
+        },
+      ],
+    },
+    {
       key: 17,
       name: '青少年模式',
       quickFind: true,
