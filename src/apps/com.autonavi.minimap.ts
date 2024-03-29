@@ -95,5 +95,21 @@ export default defineAppConfig({
         '[vid="mapBottomInteractiveView"] - FrameLayout >n ViewGroup[childCount=3] > ViewGroup > ImageView[clickable=true]',
       snapshotUrls: 'https://i.gkd.li/i/13806882',
     },
+    {
+      key: 14,
+      name: '全屏广告-[欢迎]弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.autonavi.map.activity.NewMapActivity',
+          matches:
+            'ViewGroup[childCount=6] >4 ViewGroup[childCount=5] > @ImageView + View[text!=null] <<n [vid="fragment_container"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/660ef360-eee8-4fb8-9764-7a1822ccb6e9',
+          snapshotUrls: 'https://i.gkd.li/i/14800704',
+        },
+      ],
+    },
   ],
 });
