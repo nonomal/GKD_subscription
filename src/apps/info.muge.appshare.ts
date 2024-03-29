@@ -122,5 +122,52 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 4,
+      name: '全屏广告-广告弹窗',
+      desc: '广告展示率低于 20% 时出现的广告',
+      rules: [
+        {
+          matches:
+            'RelativeLayout[childCount=2] > RelativeLayout > View[clickable=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/6b1d7b37-edd7-499f-a8b0-ecba24ef2c44',
+          snapshotUrls: 'https://i.gkd.li/i/14181146',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '通知提示-公告弹窗',
+      desc: '点击[收到]',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      quickFind: true,
+      rules: [
+        {
+          activityIds: 'info.muge.appshare.view.main.MainActivity',
+          matches: '[vid="tvSure"][clickable=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/8b782da0-1501-4839-a19b-92209b4d2723',
+          snapshotUrls: 'https://i.gkd.li/i/14345476',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '功能类-自动点击[使用浏览器打开]',
+      desc: '下载文件页面',
+      rules: [
+        {
+          quickFind: true,
+          activityIds:
+            'info.muge.appshare.view.browser.DownloadBrowserActivity',
+          matches: '[text="浏览器打开"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/aae3c59c-8eac-452c-984e-84ee9b97e986',
+          snapshotUrls: 'https://i.gkd.li/i/14792822',
+        },
+      ],
+    },
   ],
 });
