@@ -80,4 +80,4 @@ jobs:
         if: ${{ steps.commit.outcome == 'success' }}
         run: |
           curl -X PUT 'https://purge.jsdelivr.net/gh/Adpro-Team/GKD_subscription@main/dist/Adpro_gkd.json5'
-          curl -X PUT 'https://purge.jsdelivr.net/gh/Adpro-Team/GKD_subscription@main/dist/Adpro_gkd.version.json'
+          curl -X PUT 'https://purge.jsdelivr.net/gh/Adpro-Team/GKD_subscription@main/dist/Adpro_gkd.version.json5'
