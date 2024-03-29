@@ -115,10 +115,10 @@ export const writeConfig = async (config: RawSubscription) => {
   const buffer = Buffer.from(orderdStringify5(newConfig, sortKeys), 'utf-8');
   await fs.writeFile(gkdFp, buffer);
 
-  // 更新 gkd.version.json 文件
+  // 更新 gkd.version.json5 文件
   await fs.writeFile(
     versionFp,
-    JSON.stringify(
+    JSON5.stringify(
       { id: newConfig.id, version: newConfig.version },
       undefined,
       2,
