@@ -40,5 +40,13 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 3,
+      name: '功能类-加速成功自动返回',
+      quickFind: true,
+      activityIds: 'com.wifitutu.ui.tools.SpeedUpActivity',
+      rules: '[vid="success_desc"] + [vid="back_layout"]',
+      snapshotUrls: 'https://i.gkd.li/i/14811492',
+    },
   ],
 });
