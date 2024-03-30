@@ -42,7 +42,7 @@ export default defineAppConfig({
         {
           key: 4,
           matches:
-            'HorizontalAndVerticalScrollView > FrameLayout[childCount=13] >(7,8) @FrameLayout[index=2][clickable=true] > ImageView',
+            'HorizontalAndVerticalScrollView > FrameLayout[childCount>=13] >(7,8,9) @FrameLayout[index=2][clickable=true] > ImageView',
           exampleUrls: [
             'https://m.gkd.li/101449500/a8477c6e-433d-4903-9206-78391dad1d4c',
             'https://m.gkd.li/101449500/cae0141c-5fe3-4c73-a52c-eb38863dec99',
@@ -50,6 +50,7 @@ export default defineAppConfig({
           snapshotUrls: [
             'https://i.gkd.li/i/14548657',
             'https://i.gkd.li/i/14622531',
+            'https://i.gkd.li/i/14810480',
           ],
         },
       ],
