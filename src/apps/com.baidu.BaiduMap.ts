@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '地图上方黄页横幅',
+      name: '局部广告-地图上方黄页横幅',
       quickFind: true,
       activityIds: [
         'com.baidu.baidumaps.MapsActivity',
@@ -23,7 +23,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '打车界面-右侧悬浮球',
+      name: '局部广告-打车界面右侧悬浮球',
       quickFind: true,
       activityIds: 'com.baidu.baidumaps.MapsActivity',
       rules: 'RelativeLayout[id="com.baidu.BaiduMap:id/rl_close_content"]',
@@ -31,7 +31,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '美食大礼包弹窗',
+      name: '全屏广告-美食大礼包弹窗',
       quickFind: true,
       activityIds: 'com.baidu.baidumaps.MapsActivity',
       rules: '[text="美食大礼包"] +(6) TextView[id=null][clickable=true]',
@@ -39,7 +39,7 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '酒店提前订弹窗',
+      name: '全屏广告-酒店提前订弹窗',
       quickFind: true,
       activityIds: 'com.baidu.baidumaps.MapsActivity',
       rules: '[id="lottie_box"] + TextView[id=null][clickable=true]',
@@ -47,24 +47,30 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '请求定位弹窗',
+      name: '定位提示-请求定位弹窗',
       quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      actionMaximumKey: 0,
       activityIds: [
         'com.baidu.mapframework.widget.BMBaseDialog',
         'com.baidu.baidumaps.MapsActivity',
       ],
       rules: [
         {
+          key: 0,
           matches:
             '[text^="开启位置服务"] + RelativeLayout > [id="com.baidu.BaiduMap:id/tv_notip_btn"]',
           snapshotUrls: 'https://i.gkd.li/i/12660884',
         },
         {
+          key: 1,
           matches:
             '[text="需开启系统定位服务开关"] +2 [id="com.baidu.BaiduMap:id/ll_dialog_btn"] > [id="com.baidu.BaiduMap:id/tv_dialog_cancel"]',
           snapshotUrls: 'https://i.gkd.li/i/12660883',
         },
         {
+          key: 2,
           matches:
             'ImageView[id="com.baidu.BaiduMap:id/location_dialog_close_iv"]',
           snapshotUrls: 'https://i.gkd.li/i/12909299',
@@ -73,7 +79,7 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '打车界面-弹窗广告',
+      name: '全屏广告-打车界面弹窗广告',
       quickFind: true,
       activityIds: [
         'com.baidu.baidumaps.MapsActivity',
@@ -90,22 +96,27 @@ export default defineAppConfig({
       key: 7,
       name: '更新提示',
       quickFind: true,
-      activityIds: 'com.baidu.baidumaps.MapsActivity',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: 'ImageView[id="com.baidu.BaiduMap:id/cancel_update"]',
       snapshotUrls: 'https://i.gkd.li/i/12909385',
     },
     {
       key: 8,
       name: '权限提示-通知权限',
+      desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: 'com.baidu.baidumaps.MapsActivity',
       rules:
         '[text="打开通知权限"] <n LinearLayout + ImageView[id="com.baidu.BaiduMap:id/push_close"]',
       snapshotUrls: 'https://i.gkd.li/i/13258995',
     },
     {
       key: 9,
-      name: '通勤卡-添加至桌面',
+      name: '功能类-通勤卡添加至桌面',
       desc: '点击取消',
       quickFind: true,
       actionMaximum: 1,
