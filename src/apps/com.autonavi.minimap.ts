@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.autonavi.minimap',
   name: '高德地图',
-  deprecatedKeys: [0],
+  deprecatedKeys: [0, 11],
   groups: [
     {
       key: 1,
@@ -54,6 +54,14 @@ export default defineAppConfig({
       ],
     },
     {
+      key: 3,
+      name: '全屏广告-签到弹窗',
+      quickFind: true,
+      activityIds: 'com.autonavi.map.activity.NewMapActivity',
+      rules: '[desc="弹窗"] + [vid="main_map_msg_dialog_close"]',
+      snapshotUrls: 'https://i.gkd.li/i/14809993',
+    },
+    {
       key: 4,
       name: '功能类-截屏分享',
       desc: '关闭截屏时app弹出的分享弹窗',
@@ -69,22 +77,6 @@ export default defineAppConfig({
       rules:
         'RelativeLayout[desc="弹窗"] > [id="com.autonavi.minimap:id/msgbox_popup_clear"]',
       snapshotUrls: 'https://i.gkd.li/i/12642830',
-    },
-    {
-      key: 11,
-      name: '功能类-首页-签到卡片',
-      desc: '点击【x】',
-      actionMaximum: 1,
-      resetMatch: 'app',
-      activityIds: 'com.autonavi.map.activity.NewMapActivity',
-      rules:
-        'ImageView[visibleToUser=true][width<90][height<90] < @ViewGroup -(2) ViewGroup > ViewGroup > View[text*="签到"||text*="成长值"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/12642842',
-        'https://i.gkd.li/i/12642845',
-        'https://i.gkd.li/i/12818770', // 限定 ImageView[visibleToUser=true]，防止控件不可见时触发规则
-        'https://i.gkd.li/i/13764540', // 限定 ImageView[width<90][height<90]，避免在此误触
-      ],
     },
     {
       key: 12,
