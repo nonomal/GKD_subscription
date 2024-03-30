@@ -6,16 +6,17 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '权限不足弹窗',
+      name: '权限提示-权限不足弹窗',
       desc: '点击取消',
-      activityIds: ['me.piebridge.brevent.ui.BreventActivity'],
+      activityIds: 'me.piebridge.brevent.ui.BreventActivity',
       actionMaximum: 1,
       quickFind: true,
       rules: [
         {
+          key: 0,
           matches: [
-            '[id="android:id/message"][text^=`黑阈服务权限不足`]',
-            '[text=`取消`][id^=`android:id/button`]',
+            '[id="android:id/message"][text^="黑阈服务权限不足"]',
+            '[text="取消"][id^="android:id/button"]',
           ],
           snapshotUrls: 'https://i.gkd.li/i/13218439',
         },

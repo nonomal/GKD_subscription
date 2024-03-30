@@ -10,9 +10,10 @@ export default defineAppConfig({
       desc: '点击广告卡片左上角x',
       rules: [
         {
+          key: 0,
           activityIds: 'com.didi.sdk.app.MainActivity',
           matches:
-            'ImageView[id=`com.sdu.didi.psnger:id/second_entrance_img`] + @ImageView[id=`com.sdu.didi.psnger:id/left_close_img`]',
+            'ImageView[id="com.sdu.didi.psnger:id/second_entrance_img"] + @ImageView[id="com.sdu.didi.psnger:id/left_close_img"]',
           snapshotUrls: 'https://i.gkd.li/i/13760846',
         },
       ],

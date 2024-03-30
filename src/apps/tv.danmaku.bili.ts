@@ -25,7 +25,7 @@ export default defineAppConfig({
         'tv.danmaku.bili.MainActivityV2', // 主页
       ],
       rules:
-        'LinearLayout[id=`tv.danmaku.bili:id/ad_tint_frame`] > ImageView[id="tv.danmaku.bili:id/close"][desc=`关闭`]',
+        'LinearLayout[id="tv.danmaku.bili:id/ad_tint_frame"] > ImageView[id="tv.danmaku.bili:id/close"][desc="关闭"]',
       snapshotUrls: [
         'https://i.gkd.li/i/12785461',
         'https://i.gkd.li/i/12775156',
@@ -41,7 +41,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 1,
-          matches: '[id=`tv.danmaku.bili:id/ad_goods_mark_big`]',
+          matches: '[id="tv.danmaku.bili:id/ad_goods_mark_big"]',
           snapshotUrls: 'https://i.gkd.li/i/12700222',
         },
         {
