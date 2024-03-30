@@ -54,14 +54,6 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 3,
-      name: '全屏广告-签到弹窗',
-      quickFind: true,
-      activityIds: 'com.autonavi.map.activity.NewMapActivity',
-      rules: '[desc="弹窗"] + [vid="main_map_msg_dialog_close"]',
-      snapshotUrls: 'https://i.gkd.li/i/14809993',
-    },
-    {
       key: 4,
       name: '功能类-截屏分享',
       desc: '关闭截屏时app弹出的分享弹窗',
@@ -96,10 +88,12 @@ export default defineAppConfig({
     },
     {
       key: 14,
-      name: '全屏广告-[欢迎]弹窗',
+      name: '全屏广告-广告弹窗',
       desc: '点击关闭',
       rules: [
         {
+          key: 0,
+          name: '【欢迎】弹窗',
           quickFind: true,
           activityIds: 'com.autonavi.map.activity.NewMapActivity',
           matches:
@@ -107,6 +101,14 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/660ef360-eee8-4fb8-9764-7a1822ccb6e9',
           snapshotUrls: 'https://i.gkd.li/i/14800704',
+        },
+        {
+          key: 1,
+          name: '签到弹窗',
+          quickFind: true,
+          activityIds: 'com.autonavi.map.activity.NewMapActivity',
+          matches: '[desc="弹窗"] + [vid="main_map_msg_dialog_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/14809993',
         },
       ],
     },
