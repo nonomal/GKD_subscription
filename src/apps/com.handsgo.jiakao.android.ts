@@ -3,8 +3,25 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.handsgo.jiakao.android',
   name: '驾考宝典',
-  deprecatedKeys: [0],
   groups: [
+    {
+      key: 0,
+      name: '开屏广告',
+      resetMatch: 'app',
+      matchTime: 10000,
+      actionMaximum: 1,
+      rules: [
+        {
+          key: 0,
+          quickFind: true,
+          matches:
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView <<n [id="android:id/content"]',
+          exampleUrls:
+            'https://m.gkd.li/101449500/cac1598d-0e1c-44d7-8a5c-5fb084d8e437',
+          snapshotUrls: 'https://i.gkd.li/i/14812686',
+        },
+      ],
+    },
     {
       key: 1,
       name: '局部广告-悬浮广告',
