@@ -431,7 +431,7 @@ export default defineAppConfig({
     {
       key: 14,
       name: '分段广告-小程序-内部广告',
-      activityIds: ['com.tencent.mm.plugin.appbrand.ui.AppBrandUI'],
+      activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
       rules: [
         {
           key: 0,
@@ -547,6 +547,21 @@ export default defineAppConfig({
           matches:
             'WebView > View[childCount=15] > View > View[childCount=2] > View > Image < * + Image',
           snapshotUrls: 'https://i.gkd.li/i/14392363',
+        },
+      ],
+    },
+    {
+      key: 35,
+      name: '全屏广告-小程序-微快递',
+      desc: '点击关闭',
+      rules: [
+        {
+          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+          matches:
+            'View > View[childCount=2] > View > Image < * + TextView[visibleToUser=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/24350c08-ae93-46c9-8d68-cde2402bea8c',
+          snapshotUrls: 'https://i.gkd.li/i/14813758',
         },
       ],
     },
