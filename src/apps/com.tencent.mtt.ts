@@ -11,17 +11,23 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      actionMaximumKey: 0,
       rules: [
         {
           key: 0,
           matches: '@LinearLayout[clickable=true] > TextView[text="跳过"]',
           snapshotUrls: 'https://i.gkd.li/i/12472630',
         },
+        {
+          key: 1,
+          matches: '@View[clickable=true] +2 * >3 [text="向上滑动查看"]',
+          snapshotUrls: 'https://i.gkd.li/i/14819586',
+        },
       ],
     },
     {
       key: 10,
-      name: '小说阅读页面-卡片广告',
+      name: '分段广告-小说阅读页面-卡片广告',
       activityIds: 'com.tencent.mtt.MainActivity',
       rules: [
         {
@@ -60,7 +66,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '小说阅读页面-视频广告',
+      name: '分段广告-小说阅读页面-视频广告',
       activityIds: 'com.qq.e.tg.RewardvideoPortraitADActivity',
       rules: [
         {
