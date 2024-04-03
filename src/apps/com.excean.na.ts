@@ -39,7 +39,8 @@ export default defineAppConfig({
       desc: '点击X',
       rules: [
         {
-          name: '腾讯广告SDK',
+          key: 0,
+          name: '腾讯SDK',
           activityIds: 'com.excelliance.kxqp.ui.MainActivity',
           matches:
             'FrameLayout[childCount>1] > FrameLayout[childCount=1] > ImageView[width<90][height<90]',
@@ -47,6 +48,14 @@ export default defineAppConfig({
             'https://i.gkd.li/i/13930990',
             'https://i.gkd.li/i/13932190',
           ],
+        },
+        {
+          key: 1,
+          name: '穿山甲SDK',
+          activityIds:
+            'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+          matches: '[id="android:id/content"] >n @View[index=0] +2 TextView',
+          snapshotUrls: 'https://i.gkd.li/i/14855686',
         },
       ],
     },
