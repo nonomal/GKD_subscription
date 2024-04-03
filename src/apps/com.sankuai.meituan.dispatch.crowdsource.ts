@@ -6,15 +6,20 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '弹窗广告',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
-          activityIds: 'com.meituan.banma.main.activity.MainActivity',
           quickFind: true,
-          matches:
-            '[id="com.sankuai.meituan.dispatch.crowdsource:id/image_ad_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13694935',
+          activityIds: [
+            'com.meituan.banma.main.activity.MainActivity',
+            'com.meituan.banma.main.activity.ImageAdActivity',
+          ],
+          matches: '[vid="image_ad_close"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13694935',
+            'https://i.gkd.li/i/14818737',
+          ],
         },
       ],
     },
