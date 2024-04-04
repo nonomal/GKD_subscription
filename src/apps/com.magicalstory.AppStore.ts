@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.magicalstory.AppStore',
   name: '奇妙应用',
-  deprecatedKeys: [6],
+  deprecatedKeys: [3, 6],
   groups: [
     {
       key: 1,
@@ -73,17 +73,6 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/i/13437553',
         },
       ],
-    },
-    {
-      key: 3,
-      name: '更新提示',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules:
-        '[id="com.magicalstory.AppStore:id/tv_update"] <2 * + * > [id="com.magicalstory.AppStore:id/iv_close"]',
-      snapshotUrls: 'https://i.gkd.li/i/13459373',
     },
     {
       key: 5,
