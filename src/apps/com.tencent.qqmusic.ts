@@ -78,5 +78,13 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 6,
+      name: '评价提示',
+      quickFind: true,
+      activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
+      rules: '[text*="好评"] <4 ViewGroup + [vid="close_btn"]',
+      snapshotUrls: 'https://i.gkd.li/i/14881903',
+    },
   ],
 });
