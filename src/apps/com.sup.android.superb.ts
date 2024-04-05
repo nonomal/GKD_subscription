@@ -22,18 +22,36 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '局部广告-信息流广告',
+      name: '综合广告-信息流广告',
       desc: '伪装正常内容广告',
       activityIds: 'com.sup.android.base.MainActivity',
-      quickFind: true,
-      rules: '@[text="关闭广告"] + RelativeLayout > [text="立即下载"]',
-      exampleUrls:
-        'https://m.gkd.li/101449500/dc714565-6636-415c-80a2-8df0e0a8935e',
-      snapshotUrls: 'https://i.gkd.li/i/14471889',
+      rules: [
+        // 局部广告
+        {
+          key: 0,
+          quickFind: true,
+          matches: '@[text="关闭广告"] + RelativeLayout > [text="立即下载"]',
+          snapshotUrls: 'https://i.gkd.li/i/14471889',
+        },
+        // 分段广告
+        {
+          key: 1,
+          matches:
+            'RecyclerView > FrameLayout[id!=null] >6 ImageView[clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/14886478',
+        },
+        {
+          key: 2,
+          preKeys: 1,
+          quickFind: true,
+          matches: '@RelativeLayout > [text="不感兴趣"]',
+          snapshotUrls: 'https://i.gkd.li/i/14886477',
+        },
+      ],
     },
     {
       key: 5,
-      name: '请求开启通知权限弹窗',
+      name: '权限提示-通知权限',
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -42,7 +60,7 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '右上角红包悬浮窗',
+      name: '局部广告-右上角红包悬浮窗',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
