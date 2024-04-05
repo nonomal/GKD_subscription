@@ -1,6 +1,6 @@
 # 高德地图
 
-存在 8 规则组 - [com.autonavi.minimap](/src/apps/com.autonavi.minimap.ts)
+存在 7 规则组 - [com.autonavi.minimap](/src/apps/com.autonavi.minimap.ts)
 
 ## 更新提示
 
@@ -34,15 +34,6 @@
 
 - [快照-0](https://i.gkd.li/i/12642830)
 
-## 功能类-首页-签到卡片
-
-默认禁用 - 点击【x】
-
-- [快照-0](https://i.gkd.li/i/12642842)
-- [快照-1](https://i.gkd.li/i/12642845)
-- [快照-2](https://i.gkd.li/i/12818770)
-- [快照-3](https://i.gkd.li/i/13764540)
-
 ## 全屏广告-加油页面-优惠券弹窗
 
 默认禁用
@@ -55,10 +46,11 @@
 
 - [快照-0](https://i.gkd.li/i/13806882)
 
-## 全屏广告-[欢迎]弹窗
+## 全屏广告-广告弹窗
 
 默认禁用 - 点击关闭
 
 - [示例-0](https://m.gkd.li/57941037/660ef360-eee8-4fb8-9764-7a1822ccb6e9)
 
 - [快照-0](https://i.gkd.li/i/14800704)
+- [快照-1](https://i.gkd.li/i/14809993)
