@@ -43,7 +43,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '悬浮广告',
+      name: '局部广告-悬浮广告',
       rules: [
         {
           key: 0,
@@ -57,12 +57,23 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '请求开启自动备份弹窗',
-      activityIds: 'com.chinamobile.mcloud.client.ui.MenuActivity',
+      name: '功能类-请求开启自动备份弹窗',
       quickFind: true,
+      activityIds: 'com.chinamobile.mcloud.client.ui.MenuActivity',
       rules:
         '[text="开启自动备份"] +n [id="com.chinamobile.mcloud:id/tv_skip"]',
       snapshotUrls: 'https://i.gkd.li/i/13627830',
+    },
+    {
+      key: 5,
+      name: '权限提示-通知权限',
+      desc: '点击关闭',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: '[vid="btn_push_notice_close_dialog"]',
+      snapshotUrls: 'https://i.gkd.li/i/14882447',
     },
   ],
 });
