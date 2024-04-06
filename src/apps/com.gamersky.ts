@@ -25,11 +25,11 @@ export default defineAppConfig({
           activityIds:
             'com.gamersky.common.activity.LibDetailContentDetailActivity',
           matches:
-            'WebView >2 View[childCount=2] > View[index=1] > View[childCount=1][clickable=true][visibleToUser=true]',
+            'WebView >2 View[childCount=2] > View[index=1] > View[childCount=0][clickable=true][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/13451258',
             'https://i.gkd.li/i/14622935',
-            'https://i.gkd.li/i/14892583', // 限定childCount=1
+            'https://i.gkd.li/i/14892583', // 限定childCount=0
           ],
         },
         {
