@@ -26,9 +26,9 @@ Adpro-Team维护的GKD订阅 仅启用 `开屏广告` 一类规则, 其它所有
 https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_gkd.json5
 ```
 
-当前版本: v59
+当前版本: v60
 
-当前订阅文件已适配 652 个 APP, 含 1499 应用规则组， 3 全局规则组。
+当前订阅文件已适配 654 个 APP, 含 1502 应用规则组， 3 全局规则组。
 
 查看 [适配规则列表](./AppList.md)
 
@@ -60,7 +60,7 @@ https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_g
 
 ### 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=Adpro-Team/GKD_subscription&_v=59)
+![img](https://contrib.rocks/image?repo=Adpro-Team/GKD_subscription&_v=60)
 
 ---
 
