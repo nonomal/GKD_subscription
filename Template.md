@@ -23,7 +23,7 @@ Adpro-Team维护的GKD订阅 仅启用 `开屏广告` 一类规则, 其它所有
 在 GKD 内添加以下链接即可使用此规则
 
 ```txt
-https://raw.gitmirror.com/Adpro-Team/GKD_subscription/main/dist/Adpro_gkd.json5
+https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_gkd.json5
 ```
 
 当前版本: v--VERSION--
