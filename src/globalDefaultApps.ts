@@ -62,6 +62,7 @@ export const commonAppBlackList: string[] = [
   'com.example.c001apk', // c001apk
   'dev.anilbeesetti.nextplayer', // Next Player
   'org.kde.kdeconnect_tp', // KDE Connect
+  'xyz.adproqwq.GKDTool', // GKDTool
 
   // 系统自带非系统应用
   // 小米
