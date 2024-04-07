@@ -1,6 +1,6 @@
 # 微信
 
-存在 30 规则组 - [com.tencent.mm](/src/apps/com.tencent.mm.ts)
+存在 31 规则组 - [com.tencent.mm](/src/apps/com.tencent.mm.ts)
 
 ## 分段广告-朋友圈广告
 
@@ -193,6 +193,14 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/i/14392363)
+
+## 全屏广告-小程序-微快递
+
+默认禁用 - 点击关闭
+
+- [示例-0](https://m.gkd.li/57941037/24350c08-ae93-46c9-8d68-cde2402bea8c)
+
+- [快照-0](https://i.gkd.li/i/14813758)
 
 ## 青少年模式
 
