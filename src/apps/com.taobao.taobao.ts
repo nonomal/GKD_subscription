@@ -3,22 +3,15 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.taobao.taobao',
   name: '淘宝',
+  deprecatedKeys: [0],
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: '[id="com.taobao.taobao:id/close"]',
-    },
-    {
       key: 1,
-      name: '全屏广告-限时福利弹窗',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
+          quickFind: true,
           activityIds: [
             'com.taobao.tao.welcome.Welcome',
             'com.taobao.tao.TBMainActivity',
@@ -26,26 +19,16 @@ export default defineAppConfig({
             'com.taobao.android.detail.wrapper.activity.DetailActivity',
             'com.alibaba.triver.container.TriverMainActivity',
           ],
-          matches: '[desc^="限时福利"] < FrameLayout + [desc="关闭按钮"]',
+          matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/12642792', // activityId: com.taobao.tao.welcome.Welcome
-            'https://i.gkd.li/i/13180826', // activityId: com.taobao.tao.TBMainActivity
-            'https://i.gkd.li/i/12648734', // activityId: com.taobao.android.tbabilitykit.pop.StdPopContainerActivity
-            'https://i.gkd.li/i/12648746', // activityId: com.taobao.android.detail.wrapper.activity.DetailActivity
-            'https://i.gkd.li/i/13198239', //com.alibaba.triver.container.TriverMainActivity
-          ],
-        },
-        {
-          key: 1,
-          name: '88VIP开通优惠弹窗',
-          activityIds: [
-            'com.taobao.tao.welcome.Welcome',
-            'com.taobao.tao.TBMainActivity',
-          ],
-          matches: '[desc="淘气值冲刺成功"] < FrameLayout + [desc="关闭按钮"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13198052', //com.taobao.tao.welcome.Welcome
-            'https://i.gkd.li/i/13249418', //com.taobao.tao.TBMainActivity
+            'https://i.gkd.li/i/12642792',
+            'https://i.gkd.li/i/13180826',
+            'https://i.gkd.li/i/12648734',
+            'https://i.gkd.li/i/12648746',
+            'https://i.gkd.li/i/13198239',
+            'https://i.gkd.li/i/13198052',
+            'https://i.gkd.li/i/13249418',
+            'https://i.gkd.li/i/14905372',
           ],
         },
       ],
@@ -53,6 +36,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '局部广告-消息页面-热门活动卡片',
+      quickFind: true,
       activityIds: 'com.taobao.tao.welcome.Welcome',
       rules: 'View[desc.length>0] +2n FrameLayout > TextView[text="퀺"]',
       snapshotUrls: [
@@ -90,20 +74,14 @@ export default defineAppConfig({
       key: 8,
       name: '权限提示-通知权限',
       desc: '自动点击关闭',
+      quickFind: true,
       actionMaximum: 1,
-      activityIds: [
-        'com.taobao.tao.welcome.Welcome',
-        'com.taobao.android.order.bundle.TBOrderDetailActivity',
-        'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
-        'com.taobao.tao.TBMainActivity',
-      ],
-      rules: '[text^="开启系统通知"] + Image[clickable=true]',
+      resetMatch: 'app',
+      rules:
+        '[text^="开启系统通知"] + @Image[clickable=true] <<n [id="com.taobao.taobao:id/poplayer_inner_view"]',
       snapshotUrls: [
-        'https://i.gkd.li/i/13197594', //com.taobao.tao.welcome.Welcome
-        'https://i.gkd.li/i/13222946', //com.taobao.android.order.bundle.TBOrderDetailActivity
-        'https://i.gkd.li/i/13438404', //com.taobao.android.tbabilitykit.pop.StdPopContainerActivity
         'https://i.gkd.li/i/13446901',
-        'https://i.gkd.li/i/13455424', //com.taobao.tao.TBMainActivity
+        'https://i.gkd.li/i/13455424',
       ],
     },
     {
@@ -140,19 +118,13 @@ export default defineAppConfig({
       key: 12,
       name: '更新提示',
       quickFind: true,
-      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: [
-        'com.taobao.android.detail.wrapper.activity.DetailActivity',
-        'com.taobao.android.order.bundle.TBOrderListActivity',
-        'com.taobao.search.sf.MainSearchResultActivity',
-      ],
-      rules: '[id="com.taobao.taobao:id/update_imageview_cancel_v2"]',
+      rules: '[vid="update_imageview_cancel_v2"]',
       snapshotUrls: [
         'https://i.gkd.li/i/13336760',
         'https://i.gkd.li/i/13695520',
-        'https://i.gkd.li/i/13965740', // activityIds: com.taobao.search.sf.MainSearchResultActivity
+        'https://i.gkd.li/i/14899863',
       ],
     },
     {
@@ -185,19 +157,20 @@ export default defineAppConfig({
       key: 15,
       name: '权限提示-悬浮窗权限',
       desc: '点击“否”',
-      activityIds:
-        'com.taobao.android.detail2.core.framework.floatwindow.permission.PermissionActivity',
       quickFind: true,
       actionMaximum: 1,
-      resetMatch: 'activity',
-      matchTime: 10000,
-      rules: {
-        matches: [
-          '[id="android:id/message"][text*="悬浮窗权限"]',
-          '[id="android:id/button2"][text="否"]',
-        ],
-      },
-      snapshotUrls: 'https://i.gkd.li/i/13588165',
+      resetMatch: 'app',
+      activityIds:
+        'com.taobao.android.detail2.core.framework.floatwindow.permission.PermissionActivity',
+      rules: [
+        {
+          matches: [
+            '[id="android:id/message"][text*="悬浮窗权限"]',
+            '[id="android:id/button2"][text="否"]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/13588165',
+        },
+      ],
     },
     {
       key: 16,
