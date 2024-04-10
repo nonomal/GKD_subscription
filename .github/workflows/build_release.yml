@@ -76,6 +76,10 @@ jobs:
           pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
           pnpm publish --publish-branch=main
 
+      - name: sync npmmirror
+        if: ${{ steps.commit.outcome == 'success' }}
+        run: curl -X PUT 'https://registry-direct.npmmirror.com/@adpro/gkd_subscription/sync'
+
       - name: sync jsDelivr
         if: ${{ steps.commit.outcome == 'success' }}
         run: |
