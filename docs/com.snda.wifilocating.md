@@ -1,6 +1,6 @@
 # WiFi万能钥匙
 
-存在 2 规则组 - [com.snda.wifilocating](/src/apps/com.snda.wifilocating.ts)
+存在 3 规则组 - [com.snda.wifilocating](/src/apps/com.snda.wifilocating.ts)
 
 ## 全屏广告-"好看"页面广告弹窗
 
@@ -16,3 +16,9 @@
 默认禁用 - 点击关闭
 
 - [快照-0](https://i.gkd.li/i/14622506)
+
+## 功能类-加速成功自动返回
+
+默认禁用
+
+- [快照-0](https://i.gkd.li/i/14811492)
