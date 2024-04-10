@@ -301,5 +301,24 @@ export default defineAppConfig({
       rules: '[text$="通讯录"] +2 FrameLayout >2 [text="拒绝"]',
       snapshotUrls: 'https://i.gkd.li/i/14735284',
     },
+    {
+      key: 21,
+      name: '青少年模式',
+      quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 0,
+          matches: ['[text*="青少年模式"]', '[text="关闭" || desc="关闭"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/14321107',
+            'https://i.gkd.li/i/14473006',
+            'https://i.gkd.li/i/14567078',
+            'https://i.gkd.li/i/14917848', // 避免误触
+          ],
+        },
+      ],
+    },
   ],
 });
