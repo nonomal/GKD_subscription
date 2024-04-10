@@ -28,6 +28,7 @@ const updateDiabledAppIds = new Set([
 const youngDiabledAppIds = new Set([
   ...commonAppBlackList,
   'xxx.pornhub.fuck', // JavDB
+  'com.netease.cloudmusic', // 网易云音乐 全局规则在 https://i.gkd.li/i/14931708 误触
   ...filterAppsByGroup(apps, '青少年模式'),
 ]);
 
@@ -38,7 +39,6 @@ const openEnabledAppIds = new Set([
   'com.bbk.appstore', // vivo应用商店
   'com.miui.systemAdSolution', // 小米智能服务
   'com.huawei.appmarket', // 华为应用市场
-  'com.xiaomi.market', // 小米应用商店
   'com.miui.player', //小米音乐
 ]);
 const updateEnabledAppIds = new Set([...systemAppWhiteList]);
