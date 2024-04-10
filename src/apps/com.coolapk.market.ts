@@ -115,5 +115,15 @@ export default defineAppConfig({
       rules: '[text="去开启"] - [text="以后再说"]',
       snapshotUrls: 'https://i.gkd.li/i/13296465',
     },
+    {
+      key: 4,
+      name: '功能类-自动查看原图',
+      desc: '查看图片时自动点击原图',
+      enable: false,
+      quickFind: true,
+      activityIds: 'com.coolapk.market.view.photo.PhotoViewActivity',
+      rules: '[vid="load_source_button"][checked=false]',
+      snapshotUrls: ['https://i.gkd.li/i/14913023'],
+    },
   ],
 });
