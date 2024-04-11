@@ -38,7 +38,6 @@ const openEnabledAppIds = new Set([
   ...systemAppWhiteList,
   'com.bbk.theme', // i 主题
   'com.bbk.appstore', // vivo应用商店
-  'com.miui.systemAdSolution', // 小米智能服务
   'com.huawei.appmarket', // 华为应用市场
   'com.miui.player', //小米音乐
 ]);
