@@ -1,6 +1,6 @@
 # 高德地图
 
-存在 8 规则组 - [com.autonavi.minimap](/src/apps/com.autonavi.minimap.ts)
+存在 7 规则组 - [com.autonavi.minimap](/src/apps/com.autonavi.minimap.ts)
 
 ## 更新提示
 
@@ -8,19 +8,6 @@
 
 - [快照-0](https://i.gkd.li/i/13379094)
 - [快照-1](https://i.gkd.li/i/13379426)
-
-## 局部广告-首页-广告卡片
-
-默认禁用 - 关闭首页的所有可关闭的广告卡片
-
-- [示例-0](https://m.gkd.li/101449500/9a0ef511-4acc-4a7e-9c25-e9384662b3d1)
-- [示例-1](https://m.gkd.li/101449500/57d378eb-334c-4552-81f7-f7393a92412b)
-- [示例-2](https://m.gkd.li/101449500/4c78d23e-10b2-40cb-a156-83237d237a6c)
-
-- [快照-0](https://i.gkd.li/i/14715295)
-- [快照-1](https://i.gkd.li/i/14730914)
-- [快照-2](https://i.gkd.li/i/14730915)
-- [快照-3](https://i.gkd.li/i/14784970)
 
 ## 功能类-点亮角落弹窗
 

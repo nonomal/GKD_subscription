@@ -9,10 +9,9 @@
 - [快照-2](https://i.gkd.li/i/13195662)
 - [快照-3](https://i.gkd.li/i/12818335)
 - [快照-4](https://i.gkd.li/i/13206298)
-- [快照-5](https://i.gkd.li/i/13207736)
-- [快照-6](https://i.gkd.li/i/12999739)
-- [快照-7](https://i.gkd.li/i/14046124)
-- [快照-8](https://i.gkd.li/i/12547435)
+- [快照-5](https://i.gkd.li/i/14046124)
+- [快照-6](https://i.gkd.li/i/13207736)
+- [快照-7](https://i.gkd.li/i/14900326)
 
 ## 全屏广告-邮件列表广告
 

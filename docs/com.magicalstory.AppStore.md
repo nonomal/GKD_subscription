@@ -1,6 +1,6 @@
 # 奇妙应用
 
-存在 4 规则组 - [com.magicalstory.AppStore](/src/apps/com.magicalstory.AppStore.ts)
+存在 3 规则组 - [com.magicalstory.AppStore](/src/apps/com.magicalstory.AppStore.ts)
 
 ## 局部广告-卡片式广告
 
@@ -19,12 +19,6 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/i/13437553)
-
-## 更新提示
-
-默认禁用
-
-- [快照-0](https://i.gkd.li/i/13459373)
 
 ## 功能类-签到页-自动签到
 

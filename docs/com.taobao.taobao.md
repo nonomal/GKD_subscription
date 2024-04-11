@@ -1,10 +1,8 @@
 # 淘宝
 
-存在 15 规则组 - [com.taobao.taobao](/src/apps/com.taobao.taobao.ts)
+存在 14 规则组 - [com.taobao.taobao](/src/apps/com.taobao.taobao.ts)
 
-## 开屏广告
-
-## 全屏广告-限时福利弹窗
+## 全屏广告-弹窗广告
 
 默认禁用
 
@@ -15,6 +13,7 @@
 - [快照-4](https://i.gkd.li/i/13198239)
 - [快照-5](https://i.gkd.li/i/13198052)
 - [快照-6](https://i.gkd.li/i/13249418)
+- [快照-7](https://i.gkd.li/i/14905372)
 
 ## 局部广告-消息页面-热门活动卡片
 
@@ -41,11 +40,8 @@
 
 默认禁用 - 自动点击关闭
 
-- [快照-0](https://i.gkd.li/i/13197594)
-- [快照-1](https://i.gkd.li/i/13222946)
-- [快照-2](https://i.gkd.li/i/13438404)
-- [快照-3](https://i.gkd.li/i/13446901)
-- [快照-4](https://i.gkd.li/i/13455424)
+- [快照-0](https://i.gkd.li/i/13446901)
+- [快照-1](https://i.gkd.li/i/13455424)
 
 ## 功能类-各级页面-添加到首页弹窗
 
@@ -72,7 +68,7 @@
 
 - [快照-0](https://i.gkd.li/i/13336760)
 - [快照-1](https://i.gkd.li/i/13695520)
-- [快照-2](https://i.gkd.li/i/13965740)
+- [快照-2](https://i.gkd.li/i/14899863)
 
 ## 功能类-小额免密支付弹窗
 

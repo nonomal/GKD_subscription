@@ -1,12 +1,8 @@
 # 万能遥控
 
-存在 2 规则组 - [com.duokan.phone.remotecontroller](/src/apps/com.duokan.phone.remotecontroller.ts)
+存在 1 规则组 - [com.duokan.phone.remotecontroller](/src/apps/com.duokan.phone.remotecontroller.ts)
 
-## 未分类-底部横幅广告
-
-默认禁用
-
-## 未分类-申请定位
+## 定位提示
 
 默认禁用
 

@@ -1,6 +1,6 @@
 # 抖音
 
-存在 17 规则组 - [com.ss.android.ugc.aweme](/src/apps/com.ss.android.ugc.aweme.ts)
+存在 18 规则组 - [com.ss.android.ugc.aweme](/src/apps/com.ss.android.ugc.aweme.ts)
 
 ## 功能类-关闭用户推荐
 
@@ -123,3 +123,12 @@
 默认禁用 - 点击【拒绝】
 
 - [快照-0](https://i.gkd.li/i/14735284)
+
+## 青少年模式
+
+默认禁用
+
+- [快照-0](https://i.gkd.li/i/14321107)
+- [快照-1](https://i.gkd.li/i/14473006)
+- [快照-2](https://i.gkd.li/i/14567078)
+- [快照-3](https://i.gkd.li/i/14917848)

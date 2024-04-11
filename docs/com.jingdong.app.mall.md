@@ -40,10 +40,11 @@
 
 - [快照-0](https://i.gkd.li/i/13165721)
 - [快照-1](https://i.gkd.li/i/13218034)
-- [快照-2](https://i.gkd.li/i/13241883)
-- [快照-3](https://i.gkd.li/i/132599029)
-- [快照-4](https://i.gkd.li/i/13258996)
-- [快照-5](https://i.gkd.li/i/13336847)
+- [快照-2](https://i.gkd.li/i/14927060)
+- [快照-3](https://i.gkd.li/i/13241883)
+- [快照-4](https://i.gkd.li/i/132599029)
+- [快照-5](https://i.gkd.li/i/13258996)
+- [快照-6](https://i.gkd.li/i/13336847)
 
 ## 局部广告-首页底部横幅广告
 
