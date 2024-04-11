@@ -56,7 +56,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '通知提示-请求通知弹窗',
+      name: '权限提示-通知权限',
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
@@ -64,19 +64,17 @@ export default defineAppConfig({
         {
           key: 0,
           name: '首页底部提示',
-          activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
-          matches:
-            '@[desc="关闭"] - * >n [id="com.alipay.mobile.antui:id/tipTextView"][text^="开启通知权限"]',
+          matches: '@[desc="关闭"] - * >n [text^="开启通知权限"]',
           snapshotUrls: 'https://i.gkd.li/i/13194955',
         },
         {
           key: 1,
           name: '消息页弹窗提示',
-          activityIds:
-            'com.alipay.mobile.rome.pushservice.integration.PushOpenGuideActivity',
-          matches:
-            '[text="选择通知接收范围"] <2 RelativeLayout [text="暂时不用"]',
-          snapshotUrls: 'https://i.gkd.li/i/13669620',
+          matches: '[text="选择通知接收范围"] +3 * > [text="暂时不用"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13669620',
+            'https://i.gkd.li/i/14944514',
+          ],
         },
       ],
     },
