@@ -1,5 +1,6 @@
 import apps from './rawApps';
-import { RawGlobalGroup, RawAppGroup } from '@gkd-kit/api';
+import { RawAppGroup } from '@gkd-kit/api';
+import { defineGkdGlobalGroups } from '@gkd-kit/define';
 import { RawApp } from './types';
 import { orderList } from './utils';
 import { commonAppBlackList, systemAppWhiteList } from './globalDefaultApps';
@@ -44,7 +45,7 @@ const openEnabledAppIds = new Set([
 const updateEnabledAppIds = new Set([...systemAppWhiteList]);
 const youngEnabledAppIds = new Set([...systemAppWhiteList]);
 
-const globalGroups: RawGlobalGroup[] = [
+const globalGroups = defineGkdGlobalGroups([
   {
     key: 0,
     name: '开屏广告',
@@ -112,6 +113,6 @@ const globalGroups: RawGlobalGroup[] = [
       .map((id) => ({ id, enable: false }))
       .concat([...youngEnabledAppIds].map((id) => ({ id, enable: true }))),
   },
-];
+]);
 
 export default globalGroups;

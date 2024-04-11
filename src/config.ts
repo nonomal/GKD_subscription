@@ -1,9 +1,9 @@
 import categories from './categories';
 import globalGroups from './globalGroups';
 import apps from './rawApps';
-import { RawSubscription } from '@gkd-kit/api';
+import { defineGkdSubscription } from '@gkd-kit/define';
 
-const subsConfig: RawSubscription = {
+const subsConfig = defineGkdSubscription({
   id: 825,
   version: 0,
   name: 'AdproのGKD订阅',
@@ -13,6 +13,6 @@ const subsConfig: RawSubscription = {
   globalGroups,
   categories,
   apps,
-};
+});
 
 export default subsConfig;

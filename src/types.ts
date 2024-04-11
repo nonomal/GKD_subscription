@@ -1,4 +1,5 @@
 import * as api from '@gkd-kit/api';
+import { defineGkdApp } from '@gkd-kit/define';
 
 export interface RawApp extends api.RawApp {
   /**
@@ -7,10 +8,6 @@ export interface RawApp extends api.RawApp {
   deprecatedKeys?: api.Integer[];
 }
 
-export const defineSubsConfig = (config: api.RawSubscription) => {
-  return JSON.stringify(config, undefined, 2);
-};
-
 export const defineAppConfig = (config: RawApp) => {
-  return config;
+  return defineGkdApp(config);
 };

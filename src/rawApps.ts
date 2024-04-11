@@ -25,7 +25,6 @@ for await (const tsFp of walk(process.cwd() + '/src/apps')) {
       )} `,
     );
   }
-  delete appConfig.deprecatedKeys;
   appConfig.groups?.forEach((g: RawAppGroup) => {
     for (let i of categories) {
       if (g.name.startsWith(i.name)) {

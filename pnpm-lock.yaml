@@ -23,6 +23,9 @@ devDependencies:
   '@gkd-kit/api':
     specifier: ^0.0.5
     version: 0.0.5
+  '@gkd-kit/define':
+    specifier: ^0.0.0
+    version: 0.0.0(@gkd-kit/api@0.0.5)
   '@gkd-kit/selector':
     specifier: 0.0.25
     version: 0.0.25
@@ -66,8 +69,8 @@ devDependencies:
     specifier: ^1.0.0
     version: 1.0.0
   pinyin-pro:
-    specifier: 3.19.7
-    version: 3.19.7
+    specifier: 3.20.0
+    version: 3.20.0
   prettier:
     specifier: ^3.2.5
     version: 3.2.5
@@ -517,6 +520,14 @@ packages:
 
   /@gkd-kit/api@0.0.5:
     resolution: {integrity: sha512-eKHkqcjlhUiQgg1WUepq7CNxVR/Q3PQWr8TMmfbYTqeq0pO7ABYNDuGkOptR+u2jQ1Qr+8bbX/ODfdB6jK8UfQ==}
+    dev: true
+
+  /@gkd-kit/define@0.0.0(@gkd-kit/api@0.0.5):
+    resolution: {integrity: sha512-uZ81ARF7aoGSA168a+MK27UgC4kw46NiXLGLYQ0ZWR0QcRsnzW/o5Z/MJ7qsfr5j0r8qYBadBQ61OZCoxhEgnw==}
+    peerDependencies:
+      '@gkd-kit/api': '*'
+    dependencies:
+      '@gkd-kit/api': 0.0.5
     dev: true
 
   /@gkd-kit/selector@0.0.25:
@@ -1831,8 +1842,8 @@ packages:
     hasBin: true
     dev: true
 
-  /pinyin-pro@3.19.7:
-    resolution: {integrity: sha512-SydYnjrvUpvW6qRpuZPfutYAz+lgoMJDPAbKUy8fnXt3qQIg+Wdpcd07A/1ljj0mTG7YDoYjXcF/jHTBCPShYQ==}
+  /pinyin-pro@3.20.0:
+    resolution: {integrity: sha512-ASK91P7az8cmKxyfENEpYui6TmxKz3dJqsq+ZeZlF49q41m92H6bRKH1RAEaZKSr/csg3zDVa3q9wQeSEEn9Sw==}
     dev: true
 
   /prelude-ls@1.2.1:

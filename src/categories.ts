@@ -1,6 +1,6 @@
-import { RawCategory } from '@gkd-kit/api';
+import { defineGkdCategories } from '@gkd-kit/define';
 
-const categories: RawCategory[] = [
+const categories = defineGkdCategories([
   {
     key: 0,
     name: '开屏广告',
@@ -66,6 +66,6 @@ const categories: RawCategory[] = [
     // 2.现有分类没有该类型
     // 3.因历史遗留问题而导致没有分类的规则统一分到该分类下
   },
-];
+]);
 
 export default categories;
