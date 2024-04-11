@@ -16,5 +16,19 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 2,
+      name: '权限提示-通知权限',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          matches: '@[vid="iv_close"] < * > [text="开启消息通知"]',
+          snapshotUrls: 'https://i.gkd.li/i/14946137',
+        },
+      ],
+    },
   ],
 });
