@@ -56,8 +56,8 @@ export default defineAppConfig({
     },
     {
       key: 0,
-      name: '卡片广告',
-      desc: '点击卡片右上角按钮->免广告-点击不感兴趣->选择关闭原因-点击不感兴趣',
+      name: '局部广告-广告卡片',
+      desc: '点击卡片右上角按钮->免广告-点击关闭->选择关闭原因-点击不感兴趣',
       quickFind: true,
       activityIds: [
         'com.coolapk.market.view.main.MainActivity', // 缺少快照
@@ -82,15 +82,10 @@ export default defineAppConfig({
         {
           preKeys: [1],
           key: 2,
-          name: '去广告/免广告-点击不感兴趣',
+          name: '去广告/免广告-点击关闭', // 不再适配老版本
           matches:
-            'Button[text$="广告"] <n LinearLayout[childCount=2] > Button[text="不感兴趣"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12707509',
-            'https://i.gkd.li/i/12642132',
-            'https://i.gkd.li/i/12642155',
-            'https://i.gkd.li/i/12774753',
-          ],
+            'Button[text$="广告"] <n LinearLayout[childCount=2] > Button[text="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/i/1495950',
         },
         {
           preKeys: [1, 2],
@@ -123,7 +118,7 @@ export default defineAppConfig({
       quickFind: true,
       activityIds: 'com.coolapk.market.view.photo.PhotoViewActivity',
       rules: '[vid="load_source_button"][checked=false]',
-      snapshotUrls: ['https://i.gkd.li/i/14913023'],
+      snapshotUrls: 'https://i.gkd.li/i/14913023',
     },
   ],
 });
