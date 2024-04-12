@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.tencent.mm',
   name: '微信',
-  deprecatedKeys: [12, 13, 20, 25],
+  deprecatedKeys: [12, 13, 16, 20, 23, 24, 25, 28, 34, 35],
   groups: [
     {
       key: 0,
@@ -235,6 +235,34 @@ export default defineAppConfig({
       ],
     },
     {
+      key: 29,
+      name: '分段广告-订阅号消息页面-推荐阅读',
+      activityIds:
+        'com.tencent.mm.plugin.brandservice.ui.flutter.BizFlutterTLFlutterViewActivity',
+      rules: [
+        {
+          key: 0,
+          matches:
+            'View > Button > View[desc$="推​荐​"] > ImageView[index=1][clickable=true][visibleToUser=true]',
+          exampleUrls:
+            'https://m.gkd.li/101449500/5b815528-1ca2-4016-930e-a3cfb4e5e7ea',
+          snapshotUrls: 'https://i.gkd.li/i/14548701',
+        },
+        {
+          key: 1,
+          preKeys: 0,
+          matches: '[desc="不看此类内容"]',
+          snapshotUrls: 'https://i.gkd.li/i/14549566',
+        },
+        {
+          key: 2,
+          preKeys: 1,
+          matches: '[desc="确定"]',
+          snapshotUrls: 'https://i.gkd.li/i/14549567',
+        },
+      ],
+    },
+    {
       key: 6,
       name: '分段广告-订阅号文章广告',
       desc: '⚠ 此规则有概率误触。自动点击关闭按钮，必须同时启用【订阅号文章广告反馈】规则',
@@ -270,6 +298,53 @@ export default defineAppConfig({
       ],
     },
     {
+      key: 8,
+      name: '分段广告-订阅号文章广告反馈',
+      desc: '⚠ 此规则有概率误触。自动点击反馈理由，配合【订阅号文章广告】规则使用',
+      activityIds: [
+        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
+        'com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI',
+      ],
+      rules: [
+        {
+          key: 1,
+          name: '点击不感兴趣',
+          action: 'clickCenter', // 使用 clickCenter 事件点击，期望在快照 https://i.gkd.li/i/12745280 中成功点击 [与我无关]
+          matches:
+            'View > [id="feedbackTagContainer"][visibleToUser=true] + [id^="menu"] > [id="dislike"][text="不感兴趣"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12642234',
+            'https://i.gkd.li/i/12722301',
+            'https://i.gkd.li/i/12722331', // 使用 [id="feedbackTagContainer"][visibleToUser=true] 进行限定，防止反馈界面未出现就触发规则
+            'https://i.gkd.li/i/14006203', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
+          ],
+        },
+        {
+          key: 2,
+          name: '点击与我无关',
+          matches: 'View > [id^="menu"] > [id="isdismatch"][text="与我无关"]',
+          snapshotUrls: ['https://i.gkd.li/i/12642238'],
+        },
+        {
+          key: 3,
+          name: '点击关闭此广告',
+          matches: 'TextView[id="closeBtn"][text="关闭此广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/12700191',
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '功能类-网页版文件传输助手扫码自动授权',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'activity',
+      activityIds: 'com.tencent.mm.ui.LauncherUI',
+      rules: '[text="打开网页版文件传输助手"] + * > Button[text="打开"]',
+      snapshotUrls: 'https://i.gkd.li/i/12793745',
+    },
+    {
       key: 7,
       name: '功能类-自动选中发送原图',
       desc: '图片和视频选择器-自动选中底部中间的发送原图',
@@ -291,72 +366,6 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 29,
-      name: '分段广告-订阅号消息页面-推荐阅读',
-      activityIds:
-        'com.tencent.mm.plugin.brandservice.ui.flutter.BizFlutterTLFlutterViewActivity',
-      rules: [
-        {
-          key: 0,
-          matches:
-            'View > Button > View[desc$="推​荐​"] > ImageView[index=1][clickable=true][visibleToUser=true]',
-          exampleUrls:
-            'https://m.gkd.li/101449500/5b815528-1ca2-4016-930e-a3cfb4e5e7ea',
-          snapshotUrls: 'https://i.gkd.li/i/14548701',
-        },
-        {
-          key: 1,
-          preKeys: 0,
-          matches: '[desc="不看此类内容"]',
-          snapshotUrls: 'https://i.gkd.li/i/14549566',
-        },
-        {
-          key: 2,
-          preKeys: 1,
-          matches: '[desc="确定"]',
-          snapshotUrls: 'https://i.gkd.li/i/14549567',
-        },
-      ],
-    },
-    {
-      key: 8,
-      name: '分段广告-订阅号文章广告反馈',
-      desc: '⚠ 此规则有概率误触。自动点击反馈理由，配合【订阅号文章广告】规则使用',
-      activityIds: [
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
-        'com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI',
-      ],
-      rules: [
-        {
-          key: 1,
-          // preKeys: [1], 取消 preKeys 提高点击成功率
-          name: '点击不感兴趣',
-          action: 'clickCenter', // 使用 clickCenter 事件点击，期望在快照 https://i.gkd.li/i/12745280 中成功点击 [与我无关]
-          matches:
-            'View > [id="feedbackTagContainer"][visibleToUser=true] + [id^="menu"] > [id="dislike"][text="不感兴趣"][visibleToUser=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12642234',
-            'https://i.gkd.li/i/12722301',
-            'https://i.gkd.li/i/12722331', // 使用 [id="feedbackTagContainer"][visibleToUser=true] 进行限定，防止反馈界面未出现就触发规则
-            'https://i.gkd.li/i/14006203', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
-          ],
-        },
-        {
-          key: 2,
-          // preKeys: [2], 取消 preKeys 提高点击成功率
-          name: '点击与我无关',
-          matches: 'View > [id^="menu"] > [id="isdismatch"][text="与我无关"]',
-          snapshotUrls: ['https://i.gkd.li/i/12642238'],
-        },
-        {
-          key: 3,
-          name: '点击关闭此广告',
-          matches: 'TextView[id="closeBtn"][text="关闭此广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/12700191',
-        },
-      ],
-    },
-    {
       key: 9,
       name: '功能类-自动查看原图',
       desc: '自动点击底部左侧[查看原图（*M）]按钮',
@@ -372,8 +381,6 @@ export default defineAppConfig({
       name: '全屏广告-微信小程序-开屏广告',
       quickFind: true,
       matchTime: 10000,
-      // actionMaximum: 1, // 经常需要点2次，首次点击过早大概率跳不过
-      // resetMatch: 'activity',
       activityIds: [
         'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
         'com.tencent.mm.plugin.appbrand.launching.AppBrandLaunchProxyUI',
@@ -396,17 +403,6 @@ export default defineAppConfig({
           ],
         },
       ],
-    },
-    {
-      key: 11,
-      name: '功能类-网页版文件传输助手扫码自动授权',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'activity',
-      activityIds: 'com.tencent.mm.ui.LauncherUI',
-      rules: '[text="打开网页版文件传输助手"] + * > Button[text="打开"]',
-      snapshotUrls: 'https://i.gkd.li/i/12793745',
     },
     {
       key: 22,
@@ -470,98 +466,6 @@ export default defineAppConfig({
           name: '点击原因【与我无关】',
           matches: '[text="与我无关"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/13200048',
-        },
-      ],
-    },
-    {
-      key: 16,
-      name: '全屏广告-小程序-京东购物',
-      desc: '低价包邮广告',
-      activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
-      rules: {
-        matches:
-          'View[childCount=8] > View[index=6] > View[childCount=4] > Image[visibleToUser=true]',
-        exampleUrls:
-          'https://m.gkd.li/57941037/b4994fa7-26fb-456b-a426-16fb2ffcf7ce',
-        snapshotUrls: 'https://i.gkd.li/i/13298294',
-      },
-    },
-    {
-      key: 23,
-      name: '全屏广告-小程序-中国电信-抽奖赢好礼弹窗',
-      activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
-      rules:
-        '[id="launchAppView"] +n View[childCount=3] > @Image + Image + Image',
-      snapshotUrls: 'https://i.gkd.li/i/14111866',
-    },
-    {
-      key: 24,
-      name: '全屏广告-小程序-粤省事-投资弹窗',
-      activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
-      rules: [
-        {
-          key: 0,
-          matches: [
-            '[text="粤省事码"]',
-            'WebView >n View[childCount=2] + View > View[childCount=2] > TextView + TextView[id=null][visibleToUser=true]',
-          ],
-          exampleUrls:
-            'https://m.gkd.li/101449500/4e808d65-d8f7-4140-a03f-e840bf1c374d',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14113750',
-            'https://i.gkd.li/i/14157089', //在此快照误触
-          ],
-        },
-      ],
-    },
-    {
-      key: 28,
-      name: '功能类-小程序-马上充-放弃安全保证金',
-      activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
-      rules: [
-        {
-          key: 0,
-          matches: '[text^="安全保证金"] +2 [text="不需要"]',
-          exampleUrls:
-            'https://m.gkd.li/101449500/d2e07a1e-bdb9-4526-8c71-9afdab338f69',
-          snapshotUrls: 'https://i.gkd.li/i/14545003',
-        },
-        {
-          preKeys: 0,
-          key: 1,
-          quickFind: true,
-          matches: '[text="不需要"]',
-          exampleUrls:
-            'https://m.gkd.li/101449500/17b90917-64d2-414f-82a6-74f2e12cd636',
-          snapshotUrls: 'https://i.gkd.li/i/14545005',
-        },
-      ],
-    },
-    {
-      key: 34,
-      name: '全屏广告-小程序-青桔单车-弹窗广告',
-      rules: [
-        {
-          key: 0,
-          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
-          matches:
-            'WebView > View[childCount=15] > View > View[childCount=2] > View > Image < * + Image',
-          snapshotUrls: 'https://i.gkd.li/i/14392363',
-        },
-      ],
-    },
-    {
-      key: 35,
-      name: '全屏广告-小程序-微快递',
-      desc: '点击关闭',
-      rules: [
-        {
-          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
-          matches:
-            'View > View[childCount=2] > View > Image < * + TextView[visibleToUser=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/24350c08-ae93-46c9-8d68-cde2402bea8c',
-          snapshotUrls: 'https://i.gkd.li/i/14813758',
         },
       ],
     },
