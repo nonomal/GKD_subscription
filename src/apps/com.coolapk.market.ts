@@ -56,7 +56,7 @@ export default defineAppConfig({
     },
     {
       key: 0,
-      name: '局部广告-广告卡片',
+      name: '分段广告-广告卡片',
       desc: '点击卡片右上角按钮->免广告-点击关闭->选择关闭原因-点击不感兴趣',
       quickFind: true,
       activityIds: [
