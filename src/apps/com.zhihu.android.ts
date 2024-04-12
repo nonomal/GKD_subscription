@@ -113,7 +113,7 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '通知提示-推送通知弹窗',
+      name: '权限提示-通知权限',
       desc: '点击x按钮',
       quickFind: true,
       actionMaximum: 1,
@@ -168,11 +168,27 @@ export default defineAppConfig({
     },
     {
       key: 13,
-      name: '全屏广告-发想法赢奖励弹窗',
-      desc: '点击右上角x',
-      activityIds: 'com.zhihu.android.topic.TopicActivity',
-      rules: '[vid="scene_container"] >n ViewGroup + ImageView',
-      snapshotUrls: 'https://i.gkd.li/i/14020339',
+      name: '全屏广告-比赛、活动弹窗',
+      desc: '点击x',
+      rules: [
+        {
+          key: 0,
+          name: '发想法赢奖励弹窗',
+          quickFind: true,
+          activityIds: 'com.zhihu.android.topic.TopicActivity',
+          matches: '@ImageView - ViewGroup <<n [vid="scene_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/14020339',
+        },
+        {
+          key: 1,
+          name: '古遗址提名大赛弹窗',
+          activityIds:
+            'com.zhihu.android.creatorcenter.CreatorCenterHostActivity',
+          action: 'clickCenter',
+          matches: 'View[text="关闭"] > [text="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/i/14957770',
+        },
+      ],
     },
     {
       key: 14,
