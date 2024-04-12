@@ -1,6 +1,6 @@
 # 酷安
 
-存在 3 规则组 - [com.coolapk.market](/src/apps/com.coolapk.market.ts)
+存在 4 规则组 - [com.coolapk.market](/src/apps/com.coolapk.market.ts)
 
 ## 开屏广告
 
@@ -39,3 +39,9 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/i/13296465)
+
+## 功能类-自动查看原图
+
+默认禁用 - 查看图片时自动点击原图
+
+- [快照-0](https://i.gkd.li/i/14913023)
