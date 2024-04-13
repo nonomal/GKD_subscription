@@ -30,7 +30,6 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 1,
       name: '局部广告-消息页面顶部横幅广告',
       desc: '点击关闭',
