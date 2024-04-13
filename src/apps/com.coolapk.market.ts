@@ -84,7 +84,7 @@ export default defineAppConfig({
           key: 2,
           name: '去广告/免广告-点击关闭', // 不再适配老版本
           matches:
-            'Button[text$="广告"] <n LinearLayout[childCount=2] > Button[text="关闭"]',
+            'Button[text$="广告"] <n LinearLayout[childCount=2] > Button[text="关闭" || text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/i/1495950',
         },
         {
