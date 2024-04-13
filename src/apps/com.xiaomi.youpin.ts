@@ -3,31 +3,21 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.xiaomi.youpin',
   name: '小米有品',
+  deprecatedKeys: [2],
   groups: [
     {
       key: 1,
-      name: '广告弹窗',
-      activityIds: [
-        'com.xiaomi.youpin.globalpopwindow.popwindow.PopWindowActivity',
-      ],
+      name: '全屏广告-弹窗广告',
       rules: [
         {
+          activityIds:
+            'com.xiaomi.youpin.globalpopwindow.popwindow.PopWindowActivity',
           matches:
-            '@Image <2 View[childCount=2] < [id="app"] < [text="有品"] < * < [id="android:id/content"]',
-          snapshotUrls: ['https://i.gkd.li/i/12836727'],
-        },
-      ],
-    },
-    {
-      key: 2,
-      name: '更新提示-版本升级弹窗',
-      activityIds: [
-        'com.xiaomi.youpin.globalpopwindow.popwindow.PopWindowActivity',
-      ],
-      rules: [
-        {
-          matches: '[id="com.xiaomi.youpin:id/ypd_alert_close_image"]',
-          snapshotUrls: ['https://i.gkd.li/i/12836775'],
+            'WebView[text="有品"] > View > View[childCount=2] > Image[index=1][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14964897',
+            'https://i.gkd.li/i/12836727',
+          ],
         },
       ],
     },
