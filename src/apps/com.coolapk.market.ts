@@ -82,10 +82,12 @@ export default defineAppConfig({
         {
           preKeys: [1],
           key: 2,
-          name: '去广告/免广告-点击关闭', // 不再适配老版本
-          matches:
-            'Button[text$="广告"] <n LinearLayout[childCount=2] > Button[text="关闭" || text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/1495950',
+          name: '去广告/免广告-点击关闭或不感兴趣',
+          matches: '@[text="不感兴趣" || text="关闭"] <n * > [text*="广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14959519',
+            'https://i.gkd.li/i/14964859',
+          ],
         },
         {
           preKeys: [1, 2],
