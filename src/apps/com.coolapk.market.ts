@@ -116,7 +116,6 @@ export default defineAppConfig({
       key: 4,
       name: '功能类-自动查看原图',
       desc: '查看图片时自动点击原图',
-      enable: false,
       quickFind: true,
       activityIds: 'com.coolapk.market.view.photo.PhotoViewActivity',
       rules: '[vid="load_source_button"][checked=false]',
