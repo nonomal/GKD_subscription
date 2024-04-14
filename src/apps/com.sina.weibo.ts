@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.sina.weibo',
   name: '微博',
-  deprecatedKeys: [12],
+  deprecatedKeys: [12, 15, 16],
   groups: [
     {
       key: 3,
@@ -98,21 +98,21 @@ export default defineAppConfig({
     },
     {
       key: 7,
-      name: '首页顶部话题分享窗口',
+      name: '局部广告-首页顶部话题分享窗口',
       quickFind: true,
-      activityIds: ['com.sina.weibo.MainTabActivity'],
+      activityIds: 'com.sina.weibo.MainTabActivity',
       rules:
         '[id="com.sina.weibo:id/tvGuide"] + [id="com.sina.weibo:id/v_close"] + [id="com.sina.weibo:id/iv_close"]',
-      snapshotUrls: ['https://i.gkd.li/i/12705972'],
+      snapshotUrls: 'https://i.gkd.li/i/12705972',
     },
     {
       key: 8,
-      name: '弹窗广告',
+      name: '全屏广告-弹窗广告',
+      quickFind: true,
       rules: [
         {
           key: 0,
           activityIds: 'com.sina.weibo.business',
-          quickFind: true,
           matches:
             '@[id="com.sina.weibo:id/btn_close"] - FrameLayout > [id="com.sina.weibo:id/ad_tag"]',
           snapshotUrls: 'https://i.gkd.li/i/12750090',
@@ -121,73 +121,104 @@ export default defineAppConfig({
           key: 1,
           activityIds: 'com.sina.weibo.feed.MPDialogActivity',
           matches:
-            'View[childCount=2] > @TextView[clickable=true] - View >n [text="元"]',
+            'View[childCount=2] > @TextView[clickable=true] - View >n [text="元"] <<n [id="com.sina.weibo:id/container"]',
           snapshotUrls: 'https://i.gkd.li/i/13670266',
         },
         {
           key: 2,
           activityIds: 'com.sina.weibo.page.ad.DiscoverAdDialog',
-          quickFind: true,
           matches:
             '[id="com.sina.weibo:id/ad_portrait_layout"] + [id="com.sina.weibo:id/btn_close"]',
           snapshotUrls: 'https://i.gkd.li/i/12705974',
+        },
+        {
+          key: 3,
+          activityIds: 'com.sina.weibo.feed.MPDialogActivity',
+          matches:
+            '[text^="今日签到"] <n * + @TextView[clickable=true] <<n [vid="container"]',
+          snapshotUrls: 'https://i.gkd.li/i/14969848',
+        },
+        {
+          key: 4,
+          activityIds: 'com.sina.weibo.feed.MPDialogActivity',
+          matches:
+            '@Image[text="close"] < View[childCount=4] <2 * <<n [id="com.sina.weibo:id/container"]',
+          snapshotUrls: 'https://i.gkd.li/i/14033735',
         },
       ],
     },
     {
       key: 9,
-      name: '请求开启通知弹窗',
+      name: '通知提示-请求开启通知弹窗',
       desc: '自动点击暂不开启',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: ['com.sina.weibo.notifyguidev2.NotifyGuideV2Activity'],
       rules:
         '@[id="com.sina.weibo:id/bt_cancel"][text="暂不开启"] + [id="com.sina.weibo:id/bt_confirm"]',
-      snapshotUrls: ['https://i.gkd.li/i/12705979'],
+      snapshotUrls: 'https://i.gkd.li/i/12705979',
     },
     {
       key: 10,
-      name: '请求开启通知提示信息',
-      desc: '自动点击x按钮',
-      quickFind: true,
-      activityIds: ['com.sina.weibo.MainTabActivity'],
-      rules:
-        '[text^="打开通知"] < LinearLayout + ImageView[id="com.sina.weibo:id/right_icon"]',
-      snapshotUrls: ['https://i.gkd.li/i/12705986'],
-    },
-    {
-      key: 11,
-      name: '首页顶部签到卡片',
-      desc: '自动点击x按钮',
-      quickFind: true,
-      activityIds: ['com.sina.weibo.MainTabActivity'],
-      rules:
-        '[id="com.sina.weibo:id/ll_check_in_container"] < FrameLayout - FrameLayout > TextView + [id="com.sina.weibo:id/v_close"]',
-      snapshotUrls: ['https://i.gkd.li/i/12749876'],
-    },
-    {
-      key: 13,
-      name: '悬浮广告',
+      name: '权限提示-通知权限',
       desc: '自动点击x按钮',
       quickFind: true,
       activityIds: 'com.sina.weibo.MainTabActivity',
+      rules:
+        '[text^="打开通知"] < LinearLayout + ImageView[id="com.sina.weibo:id/right_icon"]',
+      snapshotUrls: 'https://i.gkd.li/i/12705986',
+    },
+    {
+      key: 11,
+      name: '局部广告-首页顶部签到卡片',
+      desc: '自动点击x按钮',
+      quickFind: true,
+      activityIds: 'com.sina.weibo.MainTabActivity',
+      rules:
+        '[id="com.sina.weibo:id/ll_check_in_container"] < FrameLayout - FrameLayout > TextView + [id="com.sina.weibo:id/v_close"]',
+      snapshotUrls: 'https://i.gkd.li/i/12749876',
+    },
+    {
+      key: 13,
+      name: '局部广告-悬浮广告',
+      desc: '自动点击x按钮',
+      quickFind: true,
       rules: [
         {
           key: 0,
+          activityIds: 'com.sina.weibo.MainTabActivity',
           matches:
             '[id="com.sina.weibo:id/floating_window"] >2 [id="com.sina.weibo:id/close"]',
           snapshotUrls: 'https://i.gkd.li/i/12750118',
         },
         {
           key: 1,
+          activityIds: 'com.sina.weibo.MainTabActivity',
           matches:
             '[id="com.sina.weibo:id/floating_window"] >n [id="com.sina.weibo:id/closeView"]',
           snapshotUrls: 'https://i.gkd.li/i/13206775',
         },
         {
           key: 2,
+          activityIds: 'com.sina.weibo.MainTabActivity',
           matches:
             '[id="com.sina.weibo:id/tv_tag"] + @*[clickable=true] + [id="com.sina.weibo:id/countdown_btn_close"]',
           snapshotUrls: 'https://i.gkd.li/i/13206841',
+        },
+        {
+          key: 3,
+          activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
+          matches:
+            '@[id="com.sina.weibo:id/close_layout"] - LinearLayout [id="com.sina.weibo:id/btnFollow"]',
+          snapshotUrls: 'https://i.gkd.li/i/13482954',
+        },
+        {
+          key: 4,
+          activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
+          matches:
+            '[text*="一键转发"] < LinearLayout +2 [id="com.sina.weibo:id/tv_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/13482960',
         },
       ],
     },
@@ -214,26 +245,6 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/i/13255595',
         },
       ],
-    },
-    {
-      key: 15,
-      name: '评论区底部-账号推荐关注悬浮窗',
-      desc: '点击【x】',
-      quickFind: true,
-      activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
-      rules:
-        '@[id="com.sina.weibo:id/close_layout"] - LinearLayout [id="com.sina.weibo:id/btnFollow"]',
-      snapshotUrls: 'https://i.gkd.li/i/13482954',
-    },
-    {
-      key: 16,
-      name: '评论区底部-转发推荐悬浮窗',
-      desc: '点击【x】',
-      quickFind: true,
-      activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
-      rules:
-        '[text*="一键转发"] < LinearLayout +2 [id="com.sina.weibo:id/tv_close"]',
-      snapshotUrls: 'https://i.gkd.li/i/13482960',
     },
     {
       key: 17,
