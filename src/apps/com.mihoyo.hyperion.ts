@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 3,
-      name: '自动打卡',
+      name: '功能类-自动打卡',
       desc: '点击[打卡],切换板块自动签到',
       activityIds: 'com.mihoyo.hyperion.main.HyperionMainActivity',
       rules:
