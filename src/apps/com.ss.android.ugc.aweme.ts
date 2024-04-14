@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.ss.android.ugc.aweme',
   name: '抖音',
-  deprecatedKeys: [0, 3],
+  deprecatedKeys: [0, 2, 3],
   groups: [
     {
       key: 1,
@@ -65,17 +65,6 @@ export default defineAppConfig({
           matches: '@[text="不感兴趣"] - * [text*="也关注了"]',
           snapshotUrls: 'https://i.gkd.li/i/14661956',
         },
-      ],
-    },
-    {
-      key: 2,
-      name: '功能类-关闭朋友推荐弹窗',
-      quickFind: true,
-      activityIds: ['com.ss.android.ugc.aweme.main.MainActivity'],
-      rules: '[text="朋友推荐"] +2 [id="com.ss.android.ugc.aweme:id/close"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/12525387',
-        'https://i.gkd.li/i/12525389',
       ],
     },
     {
@@ -316,6 +305,31 @@ export default defineAppConfig({
             'https://i.gkd.li/i/14473006',
             'https://i.gkd.li/i/14567078',
             'https://i.gkd.li/i/14917848', // 避免误触
+          ],
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '全屏广告-[去首页商城]弹窗',
+      desc: '点击[知道了]',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: [
+            'com.ss.android.ugc.aweme.live.LiveDummyActivity',
+            'com.ss.android.ugc.aweme.commerce.sdk.MallContainerActivity',
+            'com.bytedance.android.shopping.store.tabkit.container.TabKitActivity',
+          ],
+          matches: [
+            'FlattenUIText[text*="首页商城"]',
+            'FlattenUIText[text="去看看"]',
+            'FlattenUIText[text="知道了"]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/14533732',
+            'https://i.gkd.li/i/14969825',
+            'https://i.gkd.li/i/14969835',
           ],
         },
       ],
