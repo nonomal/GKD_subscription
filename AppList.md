@@ -203,7 +203,7 @@
 | 饿了么                 | [me.ele](/docs/me.ele.md)                                                                                                                                         | 11     |
 | 二柄                   | [com.diershoubing.erbing](/docs/com.diershoubing.erbing.md)                                                                                                       | 2      |
 | 返利                   | [com.fanli.android.apps](/docs/com.fanli.android.apps.md)                                                                                                         | 1      |
-| 番茄免费小说           | [com.dragon.read](/docs/com.dragon.read.md)                                                                                                                       | 12     |
+| 番茄免费小说           | [com.dragon.read](/docs/com.dragon.read.md)                                                                                                                       | 13     |
 | 飞常准业内版           | [com.feeyo.vz.pro.cdm](/docs/com.feeyo.vz.pro.cdm.md)                                                                                                             | 1      |
 | 翡翠视频               | [com.feicui.vdhelper](/docs/com.feicui.vdhelper.md)                                                                                                               | 1      |
 | 飞客                   | [com.ideal.flyerteacafes](/docs/com.ideal.flyerteacafes.md)                                                                                                       | 1      |
@@ -491,7 +491,7 @@
 | 万能小组件 Top Widgets | [com.growing.topwidgets](/docs/com.growing.topwidgets.md)                                                                                                         | 2      |
 | 万能遥控               | [com.duokan.phone.remotecontroller](/docs/com.duokan.phone.remotecontroller.md)                                                                                   | 1      |
 | 万年历                 | [com.youloft.calendar](/docs/com.youloft.calendar.md)                                                                                                             | 1      |
-| 微博                   | [com.sina.weibo](/docs/com.sina.weibo.md)                                                                                                                         | 17     |
+| 微博                   | [com.sina.weibo](/docs/com.sina.weibo.md)                                                                                                                         | 15     |
 | 微博极速版             | [com.sina.weibolite](/docs/com.sina.weibolite.md)                                                                                                                 | 2      |
 | 微博轻享版             | [com.weico.international](/docs/com.weico.international.md)                                                                                                       | 2      |
 | 微店                   | [com.koudai.weidian.buyer](/docs/com.koudai.weidian.buyer.md)                                                                                                     | 1      |
