@@ -74,9 +74,14 @@ export default defineAppConfig({
     {
       key: 6,
       name: '评价提示',
-      activityIds: 'com.taobao.cainiao.logistic.ui.view.LogisticDetailActivity',
+      quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '@[text="取消"] + [text="好评"]',
-      snapshotUrls: 'https://i.gkd.li/i/13692761',
+      snapshotUrls: [
+        'https://i.gkd.li/i/13692761',
+        'https://i.gkd.li/i/14969859',
+      ],
     },
     {
       key: 7,
