@@ -212,5 +212,22 @@ export default defineAppConfig({
         'https://m.gkd.li/101449500/0c6e8831-9cde-47f1-8e4b-25ecfa5b2881',
       snapshotUrls: 'https://i.gkd.li/i/14539504',
     },
+    {
+      key: 19,
+      name: '全屏广告-会员福利弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.dragon.read.reader.ui.ReaderActivity',
+          matches:
+            '@ImageView[clickable=true][visibleToUser=true] <n * > [text="领取限时福利"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14430326',
+            'https://i.gkd.li/i/14969861',
+          ],
+        },
+      ],
+    },
   ],
 });
