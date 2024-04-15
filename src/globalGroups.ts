@@ -24,6 +24,7 @@ const openDiabledAppIds = new Set([
 const updateDiabledAppIds = new Set([
   ...commonAppBlackList,
   'info.muge.appshare', // AppShare
+  'com.coolapk.market', // 酷安
   ...filterAppsByGroup(apps, '更新提示'),
 ]);
 const youngDiabledAppIds = new Set([
