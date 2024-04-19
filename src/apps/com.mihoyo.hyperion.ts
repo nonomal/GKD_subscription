@@ -20,6 +20,7 @@ export default defineGkdApp({
       key: 4,
       name: '功能类-原神自动签到',
       desc: '点击签到-关闭弹窗-返回',
+      forcedTime: 5000,
       activityIds: 'com.mihoyo.hyperion.web2.MiHoYoWebActivity',
       rules: [
         {
@@ -60,6 +61,7 @@ export default defineGkdApp({
       key: 5,
       name: '功能类-星穹铁道自动签到',
       desc: '点击签到-关闭弹窗-返回',
+      forcedTime: 5000,
       activityIds: 'com.mihoyo.hyperion.web2.MiHoYoWebActivity',
       rules: [
         {
