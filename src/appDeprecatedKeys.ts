@@ -656,4 +656,9 @@ export const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
     name: '哔哩哔哩HD',
     deprecatedKeys: [1],
   },
+  {
+    id: 'com.eg.android.AlipayGphone',
+    name: '支付宝',
+    deprecatedKeys: [10, 13, 17],
+  },
 ];
