@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 2,
-      name: '直播间悬浮广告',
+      name: '局部广告-直播间悬浮广告',
       activityIds: 'com.duowan.kiwi.liveroom.ChannelPage',
       rules: [
         {
@@ -44,7 +44,6 @@ export default defineGkdApp({
     {
       key: 3,
       name: '更新提示',
-
       activityIds: 'com.duowan.kiwi.homepage.Homepage',
       quickFind: true,
       matchTime: 10000,
@@ -72,7 +71,7 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: 'root提示',
+      name: '功能类-root提示',
       desc: '您的设备已经被ROOT',
       quickFind: true,
       matchTime: 10000,
