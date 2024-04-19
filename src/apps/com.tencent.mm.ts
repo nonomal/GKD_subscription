@@ -475,14 +475,14 @@ export default defineGkdApp({
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: [
-        'com.tencent.mm.plugin.finder.ui',
+        'com.tencent.mm.plugin.finder.ui.',
         'com.tencent.mm.ui.LauncherUI',
       ],
-      rules:
-        'TextView[text^="为呵护未成年人健康成长，微信推出青少年模式"] +2 Button[text="我知道了"]',
+      rules: '[text*="青少年模式"] <n * > [text="我知道了"]',
       snapshotUrls: [
         'https://i.gkd.li/i/13538145',
         'https://i.gkd.li/i/13575195',
+        'https://i.gkd.li/i/14735456',
         'https://i.gkd.li/i/14896723',
       ],
     },
@@ -515,16 +515,14 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          name: '8.0.44以下',
           quickFind: true,
           activityIds:
             'com.tencent.mm.plugin.brandservice.ui.timeline.BizTimeLineUI',
-          matches: '[text="展开更早的消息"] < [id="com.tencent.mm:id/aqc"]',
+          matches: '@[clickable=true] > [text="展开更早的消息"]',
           snapshotUrls: 'https://i.gkd.li/i/13790550',
         },
         {
           key: 1,
-          name: '8.0.44',
           matches: '[desc="展开更早的消息"]',
           snapshotUrls: 'https://i.gkd.li/i/13790949',
         },
