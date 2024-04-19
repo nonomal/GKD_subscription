@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tencent.mm',
   name: '微信',
-  deprecatedKeys: [12, 13, 16, 20, 23, 24, 25, 28, 34, 35],
   groups: [
     {
       key: 0,

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.huabenapp',
   name: '话本小说',
   groups: [

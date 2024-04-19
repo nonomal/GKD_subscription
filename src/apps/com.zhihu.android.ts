@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.zhihu.android',
   name: '知乎',
-  deprecatedKeys: [0, 1, 2, 3, 5, 8, 11],
   groups: [
     {
       key: 6,

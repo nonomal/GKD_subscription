@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.qidian.QDReader',
   name: '起点读书',
-  deprecatedKeys: [1, 2],
   groups: [
     {
       key: 3,

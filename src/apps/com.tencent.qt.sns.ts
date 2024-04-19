@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tencent.qt.sns',
   name: '掌上穿越火线',
-  deprecatedKeys: [2],
   groups: [
     {
       key: 1,

@@ -1,9 +1,12 @@
-import apps from './rawApps';
-import { RawAppGroup } from '@gkd-kit/api';
 import { defineGkdGlobalGroups } from '@gkd-kit/define';
-import { RawApp } from './types';
-import { orderList } from './utils';
+import { batchImportApps } from '@gkd-kit/tools';
+import { RawApp, RawAppGroup } from '@gkd-kit/api';
 import { commonAppBlackList, systemAppWhiteList } from './globalDefaultApps';
+
+const apps = await batchImportApps(`${import.meta.dirname}/apps`);
+const orderList: number[] = [
+  -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1,
+];
 
 // 如果应用规则已有全局规则中的某一类的规则, 则在对应全局规则禁用此应用
 function filterAppsByGroup(apps: RawApp[], groupNamePrefix: string): string[] {
@@ -46,7 +49,7 @@ const openEnabledAppIds = new Set([
 const updateEnabledAppIds = new Set([...systemAppWhiteList]);
 const youngEnabledAppIds = new Set([...systemAppWhiteList]);
 
-const globalGroups = defineGkdGlobalGroups([
+export default defineGkdGlobalGroups([
   {
     key: 0,
     name: '开屏广告',
@@ -115,5 +118,3 @@ const globalGroups = defineGkdGlobalGroups([
       .concat([...youngEnabledAppIds].map((id) => ({ id, enable: true }))),
   },
 ]);
-
-export default globalGroups;

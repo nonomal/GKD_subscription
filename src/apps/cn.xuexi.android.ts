@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.xuexi.android',
   name: '学习强国',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 10,

@@ -2,13 +2,9 @@
 
 ## 使用前须知
 
-1. 本仓库仅为本人学习研究的成果。
+本仓库仅为本人学习研究的成果。
 
-2. 使用第三方订阅需要执行以下操作之一（**请公众号、B站等分享第三方订阅的文章、视频作者务必说明**）：
-
-- 关闭（或删除）默认订阅
-
-- 将**所有**第三方订阅长按拖动到默认订阅之前
+使用者使用过程中所带来的一切后果均与本人无关。
 
 ## 说明
 
@@ -24,7 +20,7 @@ https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_g
 
 当前订阅文件已适配 --APP_SIZE-- 个 APP, 含 --GROUP_SIZE-- 应用规则组， --GLOBALGROUP_SIZE-- 全局规则组。
 
-查看 [适配规则列表](./AppList.md)
+查看 [适配规则列表](./dist/README.md)
 
 查看 [第三方订阅规则汇总](https://github.com/Adpro-Team/GKD_THS_List) By [@adproqwq(Adpro-Team)](https://github.com/adproqwq)
 
@@ -40,7 +36,7 @@ https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_g
 
 此后以同步AIsouler订阅更新为主，夹带个人规则更新。
 
-同时随时面临不定时、不定长的停更风险（若停更，停更至多半年）。
+同时随时面临不定时、不定长的停更风险。
 
 更新时间不固定。
 
@@ -51,6 +47,8 @@ https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_g
 ### 感谢以下项目
 
 [gkd-kit/subscription](https://github.com/gkd-kit/subscription)
+
+[gkd-kit/subscription-template](https://github.com/gkd-kit/subscription-template)
 
 ### 感谢以下开发者的贡献
 

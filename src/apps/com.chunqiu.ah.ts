@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.chunqiu.ah',
   name: 'AH视频',
-  deprecatedKeys: [5],
   groups: [
     {
       key: 0,

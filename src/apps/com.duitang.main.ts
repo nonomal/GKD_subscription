@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.duitang.main',
   name: '堆糖',
-  deprecatedKeys: [1],
   groups: [
     {
       name: '首页-推荐浏览广告',

@@ -1,8 +1,8 @@
-import { defineAppConfig } from '../types';
-export default defineAppConfig({
+import { defineGkdApp } from "@gkd-kit/define";
+
+export default defineGkdApp({
   id: 'com.greenpoint.android.mc10086.activity',
   name: '中国移动',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,

@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.duowan.kiwi',
   name: '虎牙直播',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,

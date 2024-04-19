@@ -1,6 +1,6 @@
 import { defineGkdCategories } from '@gkd-kit/define';
 
-const categories = defineGkdCategories([
+export default defineGkdCategories([
   {
     key: 0,
     name: '开屏广告',
@@ -67,5 +67,3 @@ const categories = defineGkdCategories([
     // 3.因历史遗留问题而导致没有分类的规则统一分到该分类下
   },
 ]);
-
-export default categories;

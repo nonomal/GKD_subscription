@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.coloros.gallery3d',
   name: '相册',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 6,

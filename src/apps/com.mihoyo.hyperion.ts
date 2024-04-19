@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from "@gkd-kit/define";
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.mihoyo.hyperion',
   name: '米游社',
-  deprecatedKeys: [1, 2],
   groups: [
     {
       key: 3,
