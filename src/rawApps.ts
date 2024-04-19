@@ -12,13 +12,13 @@ apps.forEach((appConfig) => {
       if (g.name.startsWith(i.name)) {
         if (!g.name.startsWith(categories[0].name)) g.enable = false;
         else g.order = orderList[categories[0].key];
-  
+
         if (g.name.startsWith(categories[1].name))
           g.order = orderList[categories[1].key];
-  
+
         if (g.name.startsWith(categories[2].name))
           g.order = orderList[categories[2].key];
-  
+
         return;
       }
     }

@@ -1,4 +1,4 @@
-import { defineGkdApp } from "@gkd-kit/define";
+import { defineGkdApp } from '@gkd-kit/define';
 export default defineGkdApp({
   id: 'com.changyou.app.qi',
   name: '777影视',

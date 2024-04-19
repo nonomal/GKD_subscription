@@ -1,4 +1,4 @@
-import { defineGkdApp } from "@gkd-kit/define";
+import { defineGkdApp } from '@gkd-kit/define';
 
 export default defineGkdApp({
   id: 'tw.com.gamer.android.activecenter',

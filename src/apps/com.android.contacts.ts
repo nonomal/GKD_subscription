@@ -1,4 +1,4 @@
-import { defineGkdApp } from "@gkd-kit/define";
+import { defineGkdApp } from '@gkd-kit/define';
 export default defineGkdApp({
   id: 'com.android.contacts',
   name: '通讯录与拨号',

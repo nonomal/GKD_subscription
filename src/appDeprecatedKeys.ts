@@ -1,4 +1,4 @@
-import { RawDeprecatedKeysSetting } from "./types";
+import { RawDeprecatedKeysSetting } from './types';
 
 export const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
   {

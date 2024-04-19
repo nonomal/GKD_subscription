@@ -13,4 +13,4 @@ export interface RawDeprecatedKeysSetting {
    * 废弃的key值
    */
   deprecatedKeys: number[];
-};
+}
