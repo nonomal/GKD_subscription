@@ -23,8 +23,7 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          matches:
-            '@ImageView[visibleToUser=true] < * - * > [text*="立即更新"]',
+          matches: '[vid="update_pop_cancel_btn"]',
           snapshotUrls: 'https://i.gkd.li/i/15004486',
         },
       ],
