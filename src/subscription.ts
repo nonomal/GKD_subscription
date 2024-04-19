@@ -1,7 +1,7 @@
 import { defineGkdSubscription } from '@gkd-kit/define';
-import { batchImportApps } from '@gkd-kit/tools';
 import categories from './categories';
 import globalGroups from './globalGroups';
+import apps from './rawApps';
 
 export default defineGkdSubscription({
   id: 825,
@@ -12,5 +12,5 @@ export default defineGkdSubscription({
   supportUri: 'https://github.com/Adpro-Team/GKD_subscription/issues',
   categories,
   globalGroups,
-  apps: await batchImportApps(`${import.meta.dirname}/apps`),
+  apps: apps,
 });

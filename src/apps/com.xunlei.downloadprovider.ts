@@ -6,11 +6,11 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '视频详情页广告',
+      name: '综合广告-视频详情页广告',
       rules: [
         {
           key: 0,
-          name: '点击右上角x按钮',
+          name: '点击右上角x按钮-1',
           activityIds:
             'com.xunlei.downloadprovider.download.taskdetails.newui.DownloadDetailsActivity',
           quickFind: true,
@@ -46,7 +46,7 @@ export default defineGkdApp({
         },
         {
           key: 3,
-          name: '点击右上角x按钮',
+          name: '点击右上角x按钮-2',
           activityIds:
             'com.xunlei.downloadprovider.download.taskdetails.newui.DownloadDetailsActivity',
           quickFind: true,
