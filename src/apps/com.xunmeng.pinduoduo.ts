@@ -34,6 +34,7 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
+          key: 0,
           matches:
             'FrameLayout > ViewGroup[vid="pdd"] > ViewGroup > ViewGroup[childCount<3] > ViewGroup[childCount=3 || childCount=2] >(1,2) ImageView[clickable=true][visibleToUser=true]',
           exampleUrls:
@@ -44,6 +45,12 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14662202', // 避免在此页面误触
           ],
         },
+        {
+          key: 1,
+          quickFind: true,
+          matches: '@ImageView[clickable=true] + * >2 [text="开启通知"]',
+          snapshotUrls: 'https://i.gkd.li/i/15004580',
+        },
       ],
     },
     {
@@ -52,7 +59,6 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          name: '首页优惠弹窗1',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches:
             'FrameLayout > FrameLayout > RelativeLayout[childCount=2] > @ImageView[id!=null][clickable=true][visibleToUser=true] + ImageView',
@@ -60,7 +66,6 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          name: '首页优惠弹窗2',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches:
             'View[id=null] > TextView + View > View +(4) View[clickable=true] > Image[id=null]',
@@ -68,11 +73,18 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          name: '首页优惠弹窗3',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches:
             'ImageView < @ViewGroup[clickable=true][visibleToUser=true] < ViewGroup + ViewGroup >7 [text="开心收下"]',
           snapshotUrls: 'https://i.gkd.li/i/13761182',
+        },
+        {
+          key: 3,
+          quickFind: true,
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches:
+            '@ImageView[visibleToUser=true] < * < * +2 * [text="去抢购"]',
+          snapshotUrls: 'https://i.gkd.li/i/15032649',
         },
       ],
     },
@@ -154,8 +166,6 @@ export default defineGkdApp({
           quickFind: true,
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches: '@ImageView[clickable=true] + * >4 [text="去刮奖"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/f9f73d28-a124-41ba-9781-261a3af281c6',
           snapshotUrls: 'https://i.gkd.li/i/14456101',
         },
       ],
@@ -234,8 +244,7 @@ export default defineGkdApp({
         {
           quickFind: true,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
-          matches:
-            '[vid="iv_float_window_close"] > TextView[text=""][visibleToUser=true]',
+          matches: '[vid="iv_float_window_close"]',
           exampleUrls:
             'https://m.gkd.li/57941037/560162d0-940d-413a-8f2e-e40c21c976e2',
           snapshotUrls: 'https://i.gkd.li/i/14549415',
@@ -248,7 +257,7 @@ export default defineGkdApp({
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
-      activityIds: ['com.xunmeng.pinduoduo.ui.activity.HomeActivity'],
+      activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
       rules: [
         {
           key: 0,
@@ -348,9 +357,16 @@ export default defineGkdApp({
             '[text="拼单返现"]',
             'WebView[text="拼多多"] >3 View[index=0] > Image[clickable=true][visibleToUser=true][childCount=0]',
           ],
-          exampleUrls:
-            'https://m.gkd.li/57941037/abc035bb-0d18-4711-b64c-a5319dd2191d',
           snapshotUrls: 'https://i.gkd.li/i/14549422',
+        },
+        {
+          key: 2,
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
+          matches: [
+            '[text="赶快邀请好友来拼单吧"]',
+            '[text$="下单成功"] + Image[visibleToUser=true]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/15025702',
         },
       ],
     },
