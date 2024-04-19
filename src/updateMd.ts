@@ -21,7 +21,8 @@ const parseReadMeMd = async () => {
 
 // 更新 README.md 的模板内容并写入文件
 export const updateReadMeMd = async () => {
-  const { APP_SIZE, GROUP_SIZE, GLOBALGROUP_SIZE, VERSION } = await parseReadMeMd();
+  const { APP_SIZE, GROUP_SIZE, GLOBALGROUP_SIZE, VERSION } =
+    await parseReadMeMd();
 
   const mdTemplatePath = process.cwd() + '/Template.md';
   const readmeMdPath = process.cwd() + '/README.md';

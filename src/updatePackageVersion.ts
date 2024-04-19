@@ -23,7 +23,10 @@ export const updatePackageVersion = async () => {
   const pkg = JSON.parse(pkgF);
   const pkgKeys = Object.keys(pkg);
 
-  const versionF = await fs.readFile(`${process.cwd()}/dist/Adpro_gkd.version.json5`, 'utf-8');
+  const versionF = await fs.readFile(
+    `${process.cwd()}/dist/Adpro_gkd.version.json5`,
+    'utf-8',
+  );
   const version = json5.parse(versionF).version;
 
   pkg.version = `1.${version}.0`;
