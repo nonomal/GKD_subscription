@@ -35,6 +35,13 @@ export default defineGkdApp({
             'https://i.gkd.li/i/13218134',
           ],
         },
+        {
+          key: 4,
+          quickFind: true,
+          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
+          matches: '@[clickable=true] > [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/15041019',
+        },
       ],
     },
     {
@@ -106,6 +113,14 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/15010226',
         },
       ],
+    },
+    {
+      key: 8,
+      name: '全屏广告-看广告免费听歌弹窗',
+      desc: '点击X',
+      activityIds: 'com.tencent.qqmusiccommon.hybrid.HybridViewActivity',
+      rules: '@[desc="关闭按钮"] <n * > [desc^="看广告"]',
+      snapshotUrls: 'https://i.gkd.li/i/13806773',
     },
   ],
 });
