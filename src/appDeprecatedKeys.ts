@@ -661,4 +661,9 @@ export const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
     name: '支付宝',
     deprecatedKeys: [10, 13, 17],
   },
+  {
+    id: 'com.bankcomm.Bankcomm',
+    name: '交通银行',
+    deprecatedKeys: [1],
+  },
 ];
