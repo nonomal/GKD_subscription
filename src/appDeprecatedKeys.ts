@@ -429,7 +429,7 @@ export const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
   {
     id: 'com.jingdong.app.mall',
     name: '京东',
-    deprecatedKeys: [7],
+    deprecatedKeys: [3, 7],
   },
   {
     id: 'com.kmxs.reader',
