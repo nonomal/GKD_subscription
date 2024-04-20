@@ -148,16 +148,19 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '请求开启通知权限弹窗',
+      name: '权限提示-通知权限',
       desc: '点击跳过',
       quickFind: true,
+      matchTime: 10000,
       actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
-          activityIds: 'com.meituan.android.pt.homepage.activity.MainActivity',
-          matches:
-            '[id="com.sankuai.meituan:id/notify_open_hint_title"] +n [id="com.sankuai.meituan:id/later"]',
-          snapshotUrls: 'https://i.gkd.li/i/13439134',
+          matches: '@[vid="iv_close" || text="跳过"] <n * > [text^="开启通知"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13439134',
+            'https://i.gkd.li/i/15047918',
+          ],
         },
       ],
     },
@@ -195,23 +198,24 @@ export default defineGkdApp({
     {
       key: 12,
       name: '功能类-付款后自动点击完成',
+      quickFind: true,
       rules: [
         {
           key: 0,
-          quickFind: true,
           activityIds:
             'com.sankuai.waimai.platform.machpro.container.WMMPActivity',
-          matches:
-            '[vid="mach_pro_root"] ViewGroup[childCount=3] > [text="完成"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/257a3a0d-966b-4c16-89d9-abf9acaef9a9',
+          matches: [
+            '[text="商家已接单"][visibleToUser=true]',
+            '[text="完成"][visibleToUser=true]',
+          ],
           snapshotUrls: 'https://i.gkd.li/i/14163717',
         },
         {
           key: 1,
           activityIds:
             'com.meituan.android.hybridcashier.HybridCashierActivity',
-          matches: '[text="支付成功"] >n [text="完成"][clickable=true]',
+          matches:
+            '[text="支付成功"] >5 @[text="完成"][clickable=true] <<n [vid="mil_container"]',
           snapshotUrls: 'https://i.gkd.li/i/14392284',
         },
       ],
