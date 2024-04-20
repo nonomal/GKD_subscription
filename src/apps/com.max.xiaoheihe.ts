@@ -6,17 +6,20 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '弹窗_签到成功',
+      name: '功能类-签到成功弹窗',
+      desc: '返回关闭弹窗',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
       rules: [
         {
-          matches: [
-            '[text="签到成功!"]',
-            '[id="com.max.xiaoheihe:id/tv_confirm"]',
+          action: 'back',
+          matches: '[text*="签到成功"][text.length<10]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13421535',
+            'https://i.gkd.li/i/15048252',
           ],
-          snapshotUrls: 'https://i.gkd.li/i/13421535',
         },
       ],
     },
