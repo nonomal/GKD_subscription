@@ -65,8 +65,8 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./dist/Adpro_gkd.json5
-          asset_name: Adpro_gkd_${{ steps.version.outputs.version }}.json5
-          asset_content_type: application/json          
+          asset_name: Adpro_gkd_1.0.${{ steps.version.outputs.version }}.json5
+          asset_content_type: application/json     
 
       - name: Publish package
         env:
