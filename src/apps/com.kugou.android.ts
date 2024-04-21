@@ -34,19 +34,19 @@ export default defineGkdApp({
     {
       key: 1,
       name: '局部广告-卡片广告',
+      activityIds: 'com.kugou.android.app.MediaActivity',
       rules: [
         {
           key: 0,
-          activityIds: 'com.kugou.android.app.MediaActivity',
+          forcedTime: 5000,
           matches:
-            'ViewGroup[childCount=2] > ImageView + FrameLayout > LinearLayout > ImageView',
+            'ViewGroup[childCount=2] > ImageView + @FrameLayout[clickable=true] > LinearLayout > ImageView',
           exampleUrls:
             'https://m.gkd.li/87047583/9e150986-2103-4130-a12f-12ed2b07ef90',
           snapshotUrls: 'https://i.gkd.li/i/13558426',
         },
         {
           key: 1,
-          activityIds: 'com.kugou.android.app.MediaActivity',
           matches:
             'TextView[text!=null] <2 ViewGroup[childCount=6] > ImageView[desc="关闭"]',
           exampleUrls:
@@ -58,7 +58,6 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          activityIds: 'com.kugou.android.app.MediaActivity',
           matches: '[desc="关闭广告"][clickable=true][visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/8bd6dafc-e610-4c0d-a486-02a11535e610',
