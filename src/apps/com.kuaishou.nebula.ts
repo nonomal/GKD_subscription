@@ -27,7 +27,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches: '[text="朋友推荐"] + [vid="close_btn"]',
+          matches: '@[vid="close_btn"] <n * > [text="朋友推荐"]',
           snapshotUrls: 'https://i.gkd.li/i/15061832',
         },
       ],
