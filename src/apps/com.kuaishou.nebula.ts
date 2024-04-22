@@ -19,5 +19,18 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '功能类-朋友推荐弹窗',
+      quickFind: true,
+      activityIds: 'com.yxcorp.gifshow.HomeActivity',
+      rules: [
+        {
+          key: 0,
+          matches: '[text="朋友推荐"] + [vid="close_btn"]',
+          snapshotUrls: 'https://i.gkd.li/i/15061832',
+        },
+      ],
+    },
   ],
 });
