@@ -46,29 +46,33 @@ export default defineGkdApp({
     },
     {
       key: 1,
-      name: '局部广告-软件详情页卡片广告',
+      name: '局部广告-卡片广告',
       desc: '点击关闭',
-      activityIds: 'info.muge.appshare.view.app.detail.AppDetailActivity',
       rules: [
         {
           key: 0,
+          name: '软件详情页卡片广告',
           quickFind: true,
+          activityIds: 'info.muge.appshare.view.app.detail.AppDetailActivity',
           matches:
-            '@FrameLayout[index=2] <3 FrameLayout[childCount=5] <<n [id="info.muge.appshare:id/adContainer"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/c19bb8e3-abae-46ee-bfe9-d7846cd868bc',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14160820',
-            'https://i.gkd.li/i/13712716',
-            'https://i.gkd.li/i/13761259',
-          ],
+            'FrameLayout[childCount=5] > @FrameLayout[visibleToUser=true] > ImageView <<n [vid="adContainer"]',
+          snapshotUrls: 'https://i.gkd.li/i/14382413',
+        },
+        {
+          key: 1,
+          name: '搜索页卡片广告',
+          quickFind: true,
+          activityIds: 'info.muge.appshare.view.search.app.SearchAppActivity',
+          matches:
+            'FrameLayout[childCount=5] > @FrameLayout[visibleToUser=true] > ImageView <<n [vid="adView"]',
+          snapshotUrls: 'https://i.gkd.li/i/14368946',
         },
       ],
     },
     {
       key: 2,
-      quickFind: true,
       name: '功能类-自动签到',
+      quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -97,7 +101,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            '@View[clickable=true] < FrameLayout[desc*="dislike"] <3 * < * <3 FrameLayout[childCount=3] <<n [id="info.muge.appshare:id/adContainer"]',
+            'FrameLayout[childCount=3] >3 [desc^="dislike"] > @View[clickable=true] <<n [id="info.muge.appshare:id/adContainer"]',
           exampleUrls:
             'https://m.gkd.li/57941037/3bc12aa2-7673-4261-9e3d-7e1605b22847',
           snapshotUrls: 'https://i.gkd.li/i/13758909',
@@ -105,13 +109,12 @@ export default defineGkdApp({
         {
           key: 1,
           matches:
-            '@View[index=1] <2 View[childCount=3] <2 * < * <2 * <<n FrameLayout <3 FrameLayout[childCount=3] <<n [id="info.muge.appshare:id/adContainer"]',
+            'FrameLayout[childCount=3] >2 WebView >6 @View[visibleToUser=true] > Image <<n [vid="adContainer"]',
           exampleUrls:
             'https://m.gkd.li/57941037/fefece63-2ec2-413c-a292-4583d58478fe',
           snapshotUrls: 'https://i.gkd.li/i/14160959',
         },
         // 中间的key预留给第一段广告
-
         {
           // preKeys有概率导致二段不触发
           key: 10,
