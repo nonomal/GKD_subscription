@@ -165,14 +165,16 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      quickFind: true,
-      name: '通知提示-请求通知权限弹窗',
+      name: '权限提示-通知权限',
       desc: '点击"Not now"',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
-          activityIds: 'com.twitter.app.main.MainActivity',
           matches:
-            '[id="com.twitter.android:id/secondary_button"] [text="Not now"]',
+            '@[clickable=true] > [text="Not now"] <<n [vid="half_cover_recycler_view_holder"]',
           snapshotUrls: 'https://i.gkd.li/i/13930126',
         },
       ],
