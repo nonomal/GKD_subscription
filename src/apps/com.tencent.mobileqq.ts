@@ -145,7 +145,7 @@ export default defineGkdApp({
           },
           activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
           matches:
-            '@View[clickable=false] <<3 LinearLayout <<n LinearLayout[childCount=4] <<3 FrameLayout + * >2 [text="动态"]',
+            'LinearLayout[childCount=4] > LinearLayout > FrameLayout > FrameLayout > @View[visibleToUser=true] <<n [vid="root"]',
           exampleUrls:
             'https://m.gkd.li/57941037/940f4965-0058-4101-ab62-20d131e9c1d1',
           snapshotUrls: 'https://i.gkd.li/i/14732983',
@@ -367,17 +367,21 @@ export default defineGkdApp({
       key: 13,
       name: '开屏广告-QQ小程序开屏广告',
       desc: '点击右下角跳过',
+      actionMaximum: 1,
       activityIds: [
         'com.tencent.mobileqq.mini.appbrand.ui.AppBrandUI',
         'com.tencent.mobileqq.activity.miniaio.MiniChatActivity',
       ],
       rules: [
         {
-          matches:
-            'TextView[text = "广告"] < RelativeLayout + RelativeLayout TextView[text = "跳过"]',
+          matches: [
+            '[text="广告"][visibleToUser=true]',
+            '[text="跳过"][visibleToUser=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/12877215',
             'https://i.gkd.li/i/12919195',
+            'https://i.gkd.li/i/15130235',
           ],
         },
       ],
@@ -587,6 +591,41 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14193973', // 误触
             'https://i.gkd.li/i/14734790', // 误触
           ],
+        },
+      ],
+    },
+    {
+      key: 25,
+      name: '全屏广告-腾讯文档页面-"使用App"弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          activityIds:
+            'com.tencent.mobileqq.activity.TeamWorkDocEditBrowserActivity',
+          matches:
+            '@TextView[clickable=true] + * > [text^="使用 APP"] <<n [vid="webview"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/6efc2dfd-79f3-43b5-bf20-f59a88295ddb',
+          snapshotUrls: 'https://i.gkd.li/i/14188983',
+        },
+      ],
+    },
+    {
+      key: 26,
+      name: '功能类-申请入群后自动点击右上角关闭',
+      actionMaximum: 1,
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
+          matches: [
+            'TextView[text="入群申请中"][visibleToUser=true]',
+            'TextView[text="关闭"][visibleToUser=true]',
+          ],
+          exampleUrls:
+            'https://m.gkd.li/57941037/df526685-8a68-48cd-8328-0292079ff030',
+          snapshotUrls: 'https://i.gkd.li/i/14235163',
         },
       ],
     },
