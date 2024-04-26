@@ -58,8 +58,7 @@ export default defineGkdApp({
     {
       key: 10,
       name: '权限提示-通知权限',
-      activityIds:
-        'com.ss.android.article.news.activity.MainActivity',
+      activityIds: 'com.ss.android.article.news.activity.MainActivity',
       rules: [
         {
           key: 0,
