@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 0,
       name: '分段广告-朋友圈广告',
-      desc: '点击广告卡片右上角，直接关闭/出现菜单，确认关闭',
+      desc: '点击广告卡片右上角,直接关闭/出现菜单,确认关闭',
       activityIds: [
         'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
         'com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI',
@@ -39,8 +39,7 @@ export default defineGkdApp({
           matches: '@LinearLayout >2 [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/14783802',
         },
-
-        // 预留 key
+        // 预留key
         // 第二段
         {
           preKeys: [0],
@@ -56,10 +55,13 @@ export default defineGkdApp({
         {
           preKeys: [0],
           key: 26,
-          name: '点击[Close the ad]',
+          name: '点击[Close]',
           quickFind: true,
-          matches: '[text="Close the ad"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/14207480',
+          matches: '[text*="Close"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14207480',
+            'https://i.gkd.li/i/15137016',
+          ],
         },
         {
           preKeys: [0],
@@ -90,7 +92,7 @@ export default defineGkdApp({
           matches: '@LinearLayout[clickable=true] > [text="Close the ad"]',
           snapshotUrls: 'https://i.gkd.li/i/12905838',
         },
-        // 预留 key
+        // 预留key
         // 第三段
         {
           preKeys: [28],
@@ -110,7 +112,7 @@ export default defineGkdApp({
           matches: '[text="Close"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/12905846',
         },
-        // 预留 key
+        // 预留key
         // 第四段
         {
           preKeys: [50],
