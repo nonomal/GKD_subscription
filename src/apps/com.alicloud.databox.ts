@@ -22,19 +22,14 @@ export default defineGkdApp({
         {
           preKeys: [0],
           key: 1,
-          name: '关闭弹窗-1',
+          name: '关闭弹窗',
+          actionMaximum: 2,
           matches: '[vid="ivClose"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13038304',
             'https://i.gkd.li/i/14235221',
+            'https://i.gkd.li/i/15119433',
           ],
-        },
-        {
-          preKeys: [1],
-          key: 2,
-          name: '关闭弹窗-2',
-          matches: '[vid="ivClose"]',
-          snapshotUrls: 'https://i.gkd.li/i/15119433',
         },
       ],
     },
