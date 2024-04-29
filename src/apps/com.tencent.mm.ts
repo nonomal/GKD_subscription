@@ -640,7 +640,7 @@ export default defineGkdApp({
       snapshotUrls: 'https://i.gkd.li/i/14735456',
     },
     {
-      key: 34,
+      key: 36,
       name: '功能类-付款时自动点击[支付]',
       quickFind: true,
       actionMaximum: 1,
