@@ -366,7 +366,7 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '全屏广告-微信小程序-开屏广告',
+      name: '开屏广告-微信小程序',
       quickFind: true,
       matchTime: 10000,
       activityIds: [
