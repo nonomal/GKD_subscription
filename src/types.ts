@@ -10,7 +10,7 @@ export interface RawDeprecatedKeysSetting {
   name: string;
 
   /**
-   * 废弃的key值
+   * 废弃的key值，不可再次使用。
    */
   deprecatedKeys: number[];
 }
