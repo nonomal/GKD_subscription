@@ -30,6 +30,8 @@ https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_g
 
 查看 [订阅规则管理工具](https://rules.adproqwq.xyz) By [@adproqwq](https://github.com/adproqwq)
 
+查看 [GKD网页审查工具 for QQNT](https://github.com/adproqwq/LiteLoaderQQNT-GKDInspectForQQNT) By [@adproqwq](https://github.com/adproqwq)
+
 如何编写订阅/贡献此项目 -> [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## 更新策略
