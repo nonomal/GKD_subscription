@@ -64,8 +64,20 @@ export default defineGkdApp({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      rules: 'ImageView[id="com.ct.client:id/msg_close"]',
-      snapshotUrls: 'https://i.gkd.li/i/13043522',
+      rules: [
+        {
+          key: 0,
+          matches: 'ImageView[id="com.ct.client:id/msg_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/13043522',
+        },
+        {
+          key: 1,
+          quickFind: true,
+          activityIds: 'com.ct.client.activity.MainActivity',
+          matches: '[text^="开启消息通知"] <n * > [vid="ivClose"]',
+          snapshotUrls: 'https://i.gkd.li/i/15209597',
+        },
+      ],
     },
     {
       key: 6,
