@@ -160,24 +160,30 @@ export default defineGkdApp({
     {
       key: 15,
       name: '分段广告-扫码成功底部卡片广告',
+      desc: '点击[展开更多]-点击[对该内容不感兴趣]',
+      quickFind: true,
       activityIds:
         'com.alipay.android.phone.wallet.aptrip.ui.activity.result.ResultPageActivityV2',
       rules: [
         {
           key: 0,
-          matches: '@[desc="展开更多选项"] > ImageView',
+          name: '点击[展开更多]',
+          matches: '@[desc="展开更多选项"] - * >2 [text="广告"]',
           exampleUrls:
-            'https://m.gkd.li/101449500/251acfea-4c83-46b9-a016-e718dacaa75b',
+            'https://m.gkd.li/57941037/d7c12df8-a92e-45be-a462-bef23ca9b5fc',
           snapshotUrls: 'https://i.gkd.li/i/14546044',
         },
         {
           key: 1,
-          preKeys: 0,
-          quickFind: true,
-          matches: '@RelativeLayout >2 [text="对该内容不感兴趣"]',
+          preKeys: [0],
+          name: '点击[对该内容不感兴趣]',
+          matches: '@RelativeLayout[clickable=true] >2 [text$="内容不感兴趣"]',
           exampleUrls:
-            'https://m.gkd.li/101449500/22b353c4-fc2a-4461-b0b5-6e5cd7253893',
-          snapshotUrls: 'https://i.gkd.li/i/14546047',
+            'https://m.gkd.li/57941037/7008e1da-738c-4790-9f12-6a5155d42c47',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14546047',
+            'https://i.gkd.li/i/15209602',
+          ],
         },
       ],
     },
