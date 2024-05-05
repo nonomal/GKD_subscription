@@ -129,13 +129,21 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '全屏广告-试听开通VIP弹框',
+      name: '全屏广告-VIP弹窗',
       desc: '点击X',
       rules: [
         {
+          key: 0,
+          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
+          matches: '[id="android:id/content"] >4 ViewGroup[childCount=0]',
+          snapshotUrls: 'https://i.gkd.li/i/13806782',
+        },
+        {
+          key: 1,
           activityIds:
             'com.tencent.qqmusic.activity.TranslucentWebViewActivity',
-          matches: 'View[clickable=true][desc="关闭"]',
+          matches:
+            '@View[clickable=true][desc="关闭"] + * > [text^="正在试听"]',
           snapshotUrls: 'https://i.gkd.li/i/15209764',
         },
       ],
