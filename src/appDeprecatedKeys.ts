@@ -189,7 +189,7 @@ export const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
   {
     id: 'com.baidu.youavideo',
     name: '一刻相册',
-    deprecatedKeys: [1],
+    deprecatedKeys: [1, 11],
   },
   {
     id: 'com.banjixiaoguanjia.app',
