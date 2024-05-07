@@ -16,7 +16,7 @@ Adpro-Team维护的GKD订阅 仅启用 `开屏广告` 一类规则, 其它所有
 https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_gkd.json5
 ```
 
-当前版本: v79
+当前版本: v80
 
 当前订阅文件已适配 668 个 APP, 含 1536 应用规则组， 3 全局规则组。
 
@@ -54,7 +54,7 @@ https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_g
 
 ### 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=Adpro-Team/GKD_subscription&_v=79)
+![img](https://contrib.rocks/image?repo=Adpro-Team/GKD_subscription&_v=80)
 
 ---
 
@@ -88,4 +88,10 @@ SATA 协议大意：
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Adpro-Team/GKD_subscription&type=Date)](https://star-history.com/#Adpro-Team/GKD_subscription&Date)
+<a href="https://star-history.com/#Adpro-Team/GKD_subscription&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Adpro-Team/GKD_subscription&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Adpro-Team/GKD_subscription&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Adpro-Team/GKD_subscription&type=Date" />
+ </picture>
+</a>
