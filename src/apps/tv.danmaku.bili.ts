@@ -237,5 +237,27 @@ export default defineGkdApp({
       rules: '[vid="button_follow"] <3 * < * +2 [vid="close"]',
       snapshotUrls: 'https://i.gkd.li/i/14782965',
     },
+    {
+      key: 13,
+      name: '全屏广告-会员中心-开通会员弹窗',
+      rules: [
+        {
+          key: 0,
+          actionMaximum: 1,
+          forcedTime: 2000,
+          quickFind: true,
+          activityIds: [
+            'com.bilibili.vip.web.VipWebActivity',
+            'tv.danmaku.bili.MainActivityV2',
+          ],
+          matches:
+            '@TextView[visibleToUser=true] < * <2 * -2 [text="大会员服务协议"] <<n [vid="webview"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15219142',
+            'https://i.gkd.li/i/15220560',
+          ],
+        },
+      ],
+    },
   ],
 });
