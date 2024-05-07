@@ -74,7 +74,7 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '全屏广告-优惠券弹窗',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
@@ -93,6 +93,27 @@ export default defineGkdApp({
           matches:
             '@ImageView[clickable=true] <2 LinearLayout[childCount=2] < [id="android:id/content"][childCount=1]',
           snapshotUrls: 'https://i.gkd.li/i/12878266',
+        },
+        {
+          key: 2,
+          name: '抽奖赢好礼',
+          quickFind: true,
+          activityIds: 'com.dragon.read.pages.main.MainFragmentActivity',
+          matches: '@LynxFlattenUI[clickable=true] - [text="前往抽奖"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/77c4098a-818f-4d0f-8492-e98818d0da27',
+          snapshotUrls: 'https://i.gkd.li/i/14292475',
+        },
+        {
+          key: 3,
+          name: '签到弹窗',
+          quickFind: true,
+          activityIds: 'com.dragon.read.pages.main.MainFragmentActivity',
+          matches:
+            '@LynxFlattenUI[clickable=true][visibleToUser=true][text=""] -27 FlattenUIText[text^="立即签到"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/96afbb4f-afd5-4f64-948d-15fc7bb14075',
+          snapshotUrls: 'https://i.gkd.li/i/15223416',
         },
       ],
     },
@@ -181,13 +202,6 @@ export default defineGkdApp({
       rules:
         '[id="com.dragon.read:id/readFlowNonRoundEntranceLayout"] [id="com.dragon.read:id/relativeRight"]',
       snapshotUrls: 'https://i.gkd.li/i/13674556',
-    },
-    {
-      key: 15,
-      name: '全屏广告-福利页面弹窗',
-      activityIds: 'com.dragon.read.pages.main.MainFragmentActivity',
-      rules: '@LynxFlattenUI[clickable=true] - [text="前往抽奖"]',
-      snapshotUrls: 'https://i.gkd.li/i/14292475',
     },
     {
       key: 16,

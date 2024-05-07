@@ -354,7 +354,7 @@ export const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
   {
     id: 'com.dragon.read',
     name: '番茄免费小说',
-    deprecatedKeys: [-1, 1, 11, 18],
+    deprecatedKeys: [-1, 1, 11, 15, 18],
   },
   {
     id: 'com.duitang.main',
