@@ -264,7 +264,7 @@ export const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
   {
     id: 'com.chunqiu.ah',
     name: 'AH视频',
-    deprecatedKeys: [5],
+    deprecatedKeys: [3, 5, 6],
   },
   {
     id: 'com.cmbchina.ccd.pluto.cmbActivity',
