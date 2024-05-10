@@ -7,40 +7,36 @@ export default defineGkdApp({
     {
       key: 0,
       name: '开屏广告',
+      quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      actionMaximumKey: 0,
       rules: [
         {
-          key: 1,
-          matches: '[text*="跳过"][text.length<=10]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12683168',
-            'https://i.gkd.li/i/12683211',
-            'https://i.gkd.li/i/12748893',
-          ],
-        },
-        {
           key: 0,
-          matches: '[id$="tt_splash_skip_btn"] <<n [vid="rlAdView"]',
+          matches:
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView <<n [id="android:id/content"]',
           snapshotUrls: [
             'https://i.gkd.li/i/12683145',
             'https://i.gkd.li/i/12683173',
             'https://i.gkd.li/i/13702708',
+            'https://i.gkd.li/i/13842826',
+            'https://i.gkd.li/i/13939089',
+            'https://i.gkd.li/i/14260635',
           ],
         },
         {
-          key: 2,
-          matches:
-            '@View <3 FrameLayout <2 FrameLayout < FrameLayout < [vid="rlAdView"]',
-          snapshotUrls: 'https://i.gkd.li/i/13842826',
+          key: 1,
+          matches: '[text*="跳过"][visibleToUser=true][text.length<=10]',
+          snapshotUrls: 'https://i.gkd.li/i/14553551',
         },
         {
-          key: 3,
-          name: '穿山甲SDK',
-          matches: '@View[clickable=true] <<n [vid="tp_splash_container_id"]',
-          snapshotUrls: 'https://i.gkd.li/i/13939089',
+          key: 2,
+          order: -1,
+          matches:
+            '@ImageView[clickable=true] < * >2 [text*="跳过"][visibleToUser=true][text.length<10]',
+          snapshotUrls: 'https://i.gkd.li/i/15269380',
         },
       ],
     },
