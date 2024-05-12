@@ -2,7 +2,7 @@ import { defineGkdApp } from '@gkd-kit/define';
 
 export default defineGkdApp({
   id: 'com.android.thememanager',
-  name: 'miui主题壁纸',
+  name: '主题壁纸',
   groups: [
     {
       key: 1,
