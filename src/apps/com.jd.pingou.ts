@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '底部申请定位浮窗',
+      name: '权限提示-定位权限',
       activityIds: 'com.jd.jdlite.MainFrameActivity',
       rules: '[text*="开启定位授权"] +2 ImageView',
       snapshotUrls: 'https://i.gkd.li/i/13804515',

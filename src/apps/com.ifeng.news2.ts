@@ -51,7 +51,7 @@ export default defineGkdApp({
     {
       enable: true,
       key: 10,
-      name: '请求位置权限弹窗',
+      name: '权限提示-定位权限',
       desc: '自动点击取消',
       activityIds: 'com.ifeng.news2.activity.IfengTabMainActivity',
       rules:

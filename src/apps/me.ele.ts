@@ -134,7 +134,7 @@ export default defineGkdApp({
     },
     {
       key: 8,
-      name: '定位提示',
+      name: '权限提示-定位权限',
       desc: '自动点击X',
       quickFind: true,
       rules: [

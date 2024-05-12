@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 4,
-      name: '定位提示',
+      name: '权限提示-定位权限',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

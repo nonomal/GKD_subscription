@@ -19,7 +19,7 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '禁止获取定位',
+      name: '权限提示-定位权限',
       desc: '关闭【允许联网及定位】后，每次打开手机管家都会出现',
       quickFind: true,
       activityIds: [

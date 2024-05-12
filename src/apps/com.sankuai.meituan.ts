@@ -127,7 +127,7 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '定位提示',
+      name: '权限提示-定位权限',
       desc: '首页/外卖界面-【打开位置开关弹窗】-点击右侧x关闭',
       activityIds: [
         'com.meituan.android.pt.homepage.activity.MainActivity',

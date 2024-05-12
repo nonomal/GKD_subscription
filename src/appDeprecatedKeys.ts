@@ -579,7 +579,7 @@ export const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
   {
     id: 'com.unionpay',
     name: '云闪付',
-    deprecatedKeys: [1],
+    deprecatedKeys: [1, 10],
   },
   {
     id: 'com.upupoo.apu.mobile',
@@ -665,5 +665,10 @@ export const appDeprecatedKeys: RawDeprecatedKeysSetting[] = [
     id: 'com.bankcomm.Bankcomm',
     name: '交通银行',
     deprecatedKeys: [1],
+  },
+  {
+    id: 'com.maxhom.weibu',
+    name: '暮瑟',
+    deprecatedKeys: [4],
   },
 ];
