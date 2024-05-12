@@ -23,7 +23,7 @@ apps.forEach((appConfig) => {
       }
     }
     g.enable = false;
-    g.name = `${categories[12].name}-${g.name}`;
+    g.name = `${categories[11].name}-${g.name}`;
   });
   rawApps.push(appConfig);
 });
