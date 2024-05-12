@@ -20,17 +20,37 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 1,
-      name: '青少年模式',
-      actionMaximum: 1,
-      resetMatch: 'app',
-      quickFind: true,
-      rules: '[text$="青少年模式"] + [text="我知道了"]',
-      snapshotUrls: 'https://i.gkd.li/i/13796869',
+      key: 2,
+      name: '综合广告-信息流广告',
+      desc: '伪装正常内容广告',
+      activityIds: 'com.sup.android.base.MainActivity',
+      rules: [
+        // 局部广告
+        {
+          key: 0,
+          quickFind: true,
+          matches: '@[text="关闭广告"] + RelativeLayout > [text="立即下载"]',
+          snapshotUrls: 'https://i.gkd.li/i/14471889',
+        },
+        // 分段广告
+        {
+          key: 1,
+          matches:
+            'RecyclerView > FrameLayout[id!=null] >6 ImageView[clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/14886478',
+        },
+        {
+          key: 2,
+          preKeys: 1,
+          quickFind: true,
+          matches: '@RelativeLayout > [text="不感兴趣"]',
+          snapshotUrls: 'https://i.gkd.li/i/14886477',
+        },
+      ],
     },
     {
       key: 5,
-      name: '通知提示-请求开启通知权限弹窗',
+      name: '权限提示-通知权限',
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -108,27 +128,6 @@ export default defineGkdApp({
           exampleUrls:
             'https://m.gkd.li/57941037/af1e7624-540b-4646-b812-3b748966e903',
           snapshotUrls: 'https://i.gkd.li/i/14471869',
-        },
-      ],
-    },
-    {
-      key: 11,
-      name: '分段广告-信息流广告',
-      desc: '点击展开-点击[不感兴趣]',
-      activityIds: 'com.sup.android.base.MainActivity',
-      rules: [
-        {
-          key: 0,
-          matches:
-            'RecyclerView > FrameLayout[id!=null] >6 ImageView[clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/14886478',
-        },
-        {
-          preKeys: [0],
-          key: 1,
-          quickFind: true,
-          matches: '@[clickable=true] > [text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/14886477',
         },
       ],
     },
