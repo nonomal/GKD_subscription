@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '信息流广告',
+      name: '分段广告-信息流广告',
       activityIds: 'com.ifeng.news2.activity.IfengTabMainActivity',
       rules: [
         {
