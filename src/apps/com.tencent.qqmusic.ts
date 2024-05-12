@@ -72,10 +72,20 @@ export default defineGkdApp({
       key: 4,
       name: '全屏广告-免流弹窗',
       desc: '点击[流量够用]',
-      activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
-      quickFind: true,
-      rules: '[text="流量够用"]',
-      snapshotUrls: 'https://i.gkd.li/i/13197868',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: [
+            'com.tencent.qqmusic.activity.AppStarterActivity',
+            'com.tencent.qqmusic.business.playernew.view.NewPlayerActivity',
+          ],
+          matches: '[text="流量够用"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13197868',
+            'https://i.gkd.li/i/15285647',
+          ],
+        },
+      ],
     },
     {
       key: 5,
