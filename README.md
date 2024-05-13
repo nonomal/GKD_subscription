@@ -44,6 +44,16 @@ https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_g
 
 ---
 
+## 与我联系
+
+- [Telegram频道](https://t.me/+Qw01uo5sbfpmNWVl)
+
+- [Telegram群组](https://t.me/+P4y5kLo3UrUxMWY1)
+
+- [Discord服务器](https://discord.com/invite/FmqFdDngR8)
+
+- adpro_qwq@qq.com adpro@adproqwq.top
+
 ## 致谢
 
 ### 感谢以下项目
