@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cmb.pb',
   name: '招商银行',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
@@ -34,7 +33,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '定位提示-请求定位权限弹窗',
+      name: '权限提示-定位权限',
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',

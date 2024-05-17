@@ -1,52 +1,7 @@
 {
   "name": "@adpro/gkd_subscription",
+  "version": "1.0.85",
   "type": "module",
-  "version": "1.66.0",
-  "main": "./dist/Adpro_gkd.json5",
-  "unpkg": "./dist/Adpro_gkd.json5",
-  "jsdelivr": "./dist/Adpro_gkd.json5",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "files": [
-    "./dist"
-  ],
-  "scripts": {
-    "prepare": "husky install",
-    "format": "prettier --cache --write .",
-    "lint": "eslint --cache --fix ./**/*.{js,ts,jsx,tsx}",
-    "build": "tsc --noEmit && tsx ./scripts/build.ts",
-    "check": "tsc --noEmit && tsx ./scripts/check.ts",
-    "updateSubs": "tsx ./scripts/updateSubs.ts"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^19.2.2",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@commitlint/types": "^19.0.3",
-    "@eslint/eslintrc": "^3.0.2",
-    "@eslint/js": "^9.0.0",
-    "@gkd-kit/api": "^0.0.5",
-    "@gkd-kit/define": "^0.0.1",
-    "@gkd-kit/selector": "0.0.25",
-    "@types/lodash": "^4.17.0",
-    "@types/node": "^20.12.7",
-    "@typescript-eslint/eslint-plugin": "7.7.0",
-    "@typescript-eslint/parser": "7.7.0",
-    "dayjs": "^1.11.10",
-    "eslint": "^9.0.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-define-config": "2.1.0",
-    "husky": "^9.0.11",
-    "json5": "^2.2.3",
-    "lint-staged": "^15.2.2",
-    "lodash": "^4.17.21",
-    "picocolors": "^1.0.0",
-    "pinyin-pro": "3.20.2",
-    "prettier": "^3.2.5",
-    "tsx": "^4.7.2",
-    "typescript": "^5.4.5"
-  },
   "author": "Adpro",
   "license": "MIT",
   "homepage": "https://github.com/Adpro-Team/GKD_subscription#readme",
@@ -57,21 +12,70 @@
     "type": "git",
     "url": "https://github.com/Adpro-Team/GKD_subscription.git"
   },
-  "volta": {
-    "node": "20.12.2"
+  "scripts": {
+    "postinstall": "simple-git-hooks",
+    "format": "prettier --cache --write ./**/*.{js,cjs,mjs,ts,jsx,tsx,json}",
+    "lint": "eslint --cache --fix ./**/*.{js,cjs,mjs,ts,jsx,tsx}",
+    "check": "tsc --noEmit && tsx ./scripts/check.ts",
+    "build": "tsc --noEmit && tsx ./scripts/build.ts"
   },
-  "packageManager": "pnpm@8.15.7",
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+  "gkd": {
+    "outDir": "dist",
+    "file": "Adpro_gkd.json5",
+    "versionFile": "Adpro_gkd.version.json5",
+    "changelog": "CHANGELOG.md",
+    "README.md": "README.md"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged",
+    "commit-msg": "pnpm exec commitlint --config commitlint.config.ts --edit ${1}",
+    "pre-push": "pnpm run check"
   },
   "lint-staged": {
-    "*": [
-      "prettier --cache --write --ignore-unknown"
-    ],
-    "*.{js,ts,jsx,tsx}": [
+    "*.{js,cjs,mjs,ts,jsx,tsx}": [
+      "prettier --cache --write",
       "eslint --cache --fix"
+    ],
+    "*.json": [
+      "prettier --cache --write"
     ]
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "./dist"
+  ],
+  "dependencies": {
+    "@commitlint/cli": "19.3.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "@commitlint/types": "19.0.3",
+    "@eslint/eslintrc": "^3.0.2",
+    "@eslint/js": "^9.2.0",
+    "@gkd-kit/api": "0.0.5",
+    "@gkd-kit/define": "0.0.1",
+    "@gkd-kit/tools": "0.2.0",
+    "@types/node": "20.12.12",
+    "@typescript-eslint/eslint-plugin": "7.9.0",
+    "@typescript-eslint/parser": "7.9.0",
+    "eslint": "9.2.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-define-config": "2.1.0",
+    "eslint-plugin-unused-imports": "3.2.0",
+    "json5": "2.2.3",
+    "lint-staged": "15.2.2",
+    "prettier": "3.2.5",
+    "simple-git-hooks": "2.11.1",
+    "tsx": "4.10.2",
+    "typescript": "5.4.5"
+  },
+  "volta": {
+    "node": "20.13.1"
+  },
+  "packageManager": "pnpm@9.1.1",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=20"
   }
 }

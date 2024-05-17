@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tencent.qqmusic',
   name: 'QQ音乐',
   groups: [
@@ -35,16 +35,28 @@ export default defineAppConfig({
             'https://i.gkd.li/i/13218134',
           ],
         },
+        {
+          key: 4,
+          quickFind: true,
+          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
+          matches: '@[clickable=true] > [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/15041019',
+        },
       ],
     },
     {
       key: 2,
-      name: '全屏广告-首页-底部广告弹窗',
+      name: '全屏广告-弹窗广告',
       activityIds: 'com.tencent.qqmusic.activity.TranslucentWebViewActivity',
-      rules: 'View[id="js_close_btn"][desc="关闭"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/13115121',
-        'https://i.gkd.li/i/14798904',
+      rules: [
+        {
+          forcedTime: 5000,
+          matches: 'View[id="js_close_btn"][desc="关闭"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13115121',
+            'https://i.gkd.li/i/14798904',
+          ],
+        },
       ],
     },
     {
@@ -60,10 +72,20 @@ export default defineAppConfig({
       key: 4,
       name: '全屏广告-免流弹窗',
       desc: '点击[流量够用]',
-      activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
-      quickFind: true,
-      rules: '[text="流量够用"]',
-      snapshotUrls: 'https://i.gkd.li/i/13197868',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: [
+            'com.tencent.qqmusic.activity.AppStarterActivity',
+            'com.tencent.qqmusic.business.playernew.view.NewPlayerActivity',
+          ],
+          matches: '[text="流量够用"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13197868',
+            'https://i.gkd.li/i/15285647',
+          ],
+        },
+      ],
     },
     {
       key: 5,
@@ -85,6 +107,59 @@ export default defineAppConfig({
       activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
       rules: '[text*="好评"] <4 ViewGroup + [vid="close_btn"]',
       snapshotUrls: 'https://i.gkd.li/i/14881903',
+    },
+    {
+      key: 7,
+      name: '分段广告-评论区广告',
+      desc: '点击右下角展开-点击[不感兴趣]',
+      activityIds:
+        'com.tencent.qqmusic.activity.base.FragmentActivityWithMinibar',
+      rules: [
+        {
+          key: 0,
+          matches:
+            'RecyclerView > ViewGroup > ViewGroup[childCount=6] > @ViewGroup[clickable=true][childCount=1] > ViewGroup > View',
+          snapshotUrls: 'https://i.gkd.li/i/15010210',
+        },
+        {
+          preKeys: [0],
+          quickFind: true,
+          matches: '@[clickable=true] > [text="不感兴趣"]',
+          snapshotUrls: 'https://i.gkd.li/i/15010226',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '全屏广告-看广告免费听歌弹窗',
+      desc: '点击X',
+      activityIds: 'com.tencent.qqmusiccommon.hybrid.HybridViewActivity',
+      rules: '@[desc="关闭按钮"] <n * > [desc^="看广告"]',
+      snapshotUrls: 'https://i.gkd.li/i/13806773',
+    },
+    {
+      key: 9,
+      name: '全屏广告-VIP弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          key: 0,
+          activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
+          matches: '[id="android:id/content"] >4 ViewGroup[childCount=0]',
+          snapshotUrls: 'https://i.gkd.li/i/13806782',
+        },
+        {
+          key: 1,
+          activityIds:
+            'com.tencent.qqmusic.activity.TranslucentWebViewActivity',
+          matches:
+            '@View[clickable=true][desc="关闭"] +2 * >2 [desc$="确认协议并开通" || desc="立即开通会员"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15209764',
+            'https://i.gkd.li/i/15261116',
+          ],
+        },
+      ],
     },
   ],
 });

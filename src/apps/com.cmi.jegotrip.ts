@@ -1,12 +1,12 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.cmi.jegotrip',
   name: '无忧行',
   groups: [
     {
       key: 2,
-      name: '应用内广告弹窗',
+      name: '全屏广告-广告弹窗',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
@@ -19,7 +19,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '请求定位权限弹窗',
+      name: '权限提示-定位权限',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,

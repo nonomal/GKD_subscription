@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tencent.mm',
   name: '微信',
-  deprecatedKeys: [12, 13, 16, 20, 23, 24, 25, 28, 34, 35],
   groups: [
     {
       key: 0,
       name: '分段广告-朋友圈广告',
-      desc: '点击广告卡片右上角，直接关闭/出现菜单，确认关闭',
+      desc: '点击广告卡片右上角,直接关闭/出现菜单,确认关闭',
       activityIds: [
         'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
         'com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI',
@@ -40,8 +39,7 @@ export default defineAppConfig({
           matches: '@LinearLayout >2 [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/14783802',
         },
-
-        // 预留 key
+        // 预留key
         // 第二段
         {
           preKeys: [0],
@@ -57,10 +55,13 @@ export default defineAppConfig({
         {
           preKeys: [0],
           key: 26,
-          name: '点击[Close the ad]',
+          name: '点击[Close]',
           quickFind: true,
-          matches: '[text="Close the ad"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/14207480',
+          matches: '[text*="Close"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14207480',
+            'https://i.gkd.li/i/15137016',
+          ],
         },
         {
           preKeys: [0],
@@ -88,10 +89,13 @@ export default defineAppConfig({
           key: 29,
           name: '点击[Close the ad]',
           quickFind: true,
-          matches: '@LinearLayout[clickable=true] > [text="Close the ad"]',
-          snapshotUrls: 'https://i.gkd.li/i/12905838',
+          matches: '@LinearLayout[clickable=true] > [text*="Close"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12905838',
+            'https://i.gkd.li/i/15284966',
+          ],
         },
-        // 预留 key
+        // 预留key
         // 第三段
         {
           preKeys: [28],
@@ -111,7 +115,7 @@ export default defineAppConfig({
           matches: '[text="Close"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/12905846',
         },
-        // 预留 key
+        // 预留key
         // 第四段
         {
           preKeys: [50],
@@ -143,30 +147,26 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '功能类-浏览器扫码微信登录自动授权',
+      name: '功能类-自动授权登录',
       desc: '自动允许使用头像昵称等',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
-      resetMatch: 'activity',
       activityIds: [
-        'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
+        'com.tencent.mm.plugin.base.stub.UIEntryStub',
         'com.tencent.mm.ui.LauncherUI',
+        'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
       ],
-      rules: 'Button[text="拒绝"] - Button[text="允许"]',
-      snapshotUrls: 'https://i.gkd.li/i/13065462', //com.tencent.mm.ui.LauncherUI
-    },
-    {
-      key: 3,
-      name: '功能类-第三方APP申请使用授权弹窗',
-      desc: '自动点击允许,但由于此界面可以额外新建昵称头像,默认不启用',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'activity',
-      activityIds: 'com.tencent.mm.plugin.base.stub.UIEntryStub',
-      rules: 'Button[text="拒绝"] - Button[text="允许"]',
-      snapshotUrls: 'https://i.gkd.li/i/12663602',
+      rules: [
+        {
+          matches: ['[text^="获取你的"]', '[text="允许"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/12663602',
+            'https://i.gkd.li/i/13065462',
+            'https://i.gkd.li/i/15271716',
+          ],
+        },
+      ],
     },
     {
       key: 4,
@@ -263,77 +263,6 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 6,
-      name: '分段广告-订阅号文章广告',
-      desc: '⚠ 此规则有概率误触。自动点击关闭按钮，必须同时启用【订阅号文章广告反馈】规则',
-      activityIds: [
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
-      ],
-      rules: [
-        {
-          key: 1,
-          name: '广告类型1',
-          matches: [
-            'View[id="ad_container"] > View[childCount=1] >n @View > [id=null][text^="广告"][visibleToUser=true]',
-          ],
-          snapshotUrls: [
-            'https://i.gkd.li/i/12642232', // ui.TmplWebViewMMUI
-            'https://i.gkd.li/i/13199281', // ui.TmplWebViewTooLMpUI
-            'https://i.gkd.li/i/12646837', // 事件完成后，反馈按钮仍然存在，使用 View[childCount=1] 进行限定，防止频繁触发规则
-            'https://i.gkd.li/i/12678937', // 文章未浏览至页面底部，广告反馈按钮不可见，使用 [visibleToUser=true] 进行限定，防止打开文章就频繁触发规则
-            'https://i.gkd.li/i/12714427', // 优化规则，使用 View[id="ad_container"] 作为特征节点
-          ],
-        },
-        {
-          key: 2,
-          name: '广告类型2',
-          matches:
-            'View[childCount=1] > @[id="feedbackTagContainer"][visibleToUser=true] > [id="feedbackTag"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12700183',
-            'https://i.gkd.li/i/12701503', // 事件完成后，采用[childCount=1]进行限定，防止频繁触发规则
-            'https://i.gkd.li/i/12714424',
-          ],
-        },
-      ],
-    },
-    {
-      key: 8,
-      name: '分段广告-订阅号文章广告反馈',
-      desc: '⚠ 此规则有概率误触。自动点击反馈理由，配合【订阅号文章广告】规则使用',
-      activityIds: [
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
-        'com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI',
-      ],
-      rules: [
-        {
-          key: 1,
-          name: '点击不感兴趣',
-          action: 'clickCenter', // 使用 clickCenter 事件点击，期望在快照 https://i.gkd.li/i/12745280 中成功点击 [与我无关]
-          matches:
-            'View > [id="feedbackTagContainer"][visibleToUser=true] + [id^="menu"] > [id="dislike"][text="不感兴趣"][visibleToUser=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12642234',
-            'https://i.gkd.li/i/12722301',
-            'https://i.gkd.li/i/12722331', // 使用 [id="feedbackTagContainer"][visibleToUser=true] 进行限定，防止反馈界面未出现就触发规则
-            'https://i.gkd.li/i/14006203', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
-          ],
-        },
-        {
-          key: 2,
-          name: '点击与我无关',
-          matches: 'View > [id^="menu"] > [id="isdismatch"][text="与我无关"]',
-          snapshotUrls: ['https://i.gkd.li/i/12642238'],
-        },
-        {
-          key: 3,
-          name: '点击关闭此广告',
-          matches: 'TextView[id="closeBtn"][text="关闭此广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/12700191',
-        },
-      ],
-    },
-    {
       key: 11,
       name: '功能类-网页版文件传输助手扫码自动授权',
       quickFind: true,
@@ -378,7 +307,7 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '全屏广告-微信小程序-开屏广告',
+      name: '开屏广告-微信小程序',
       quickFind: true,
       matchTime: 10000,
       activityIds: [
@@ -389,17 +318,14 @@ export default defineAppConfig({
         {
           actionDelay: 800, // 过早点击首次大概率跳不过
           matches: [
-            'FrameLayout > TextView + FrameLayout > TextView[text="广告"]',
-            'FrameLayout > TextView + FrameLayout > TextView[text="跳过"]',
+            '[text="广告"][visibleToUser=true]',
+            '[text="跳过"][visibleToUser=true]',
           ],
           snapshotUrls: [
-            'https://i.gkd.li/i/12701979',
-            'https://i.gkd.li/i/12777076',
-            'https://i.gkd.li/i/12785012',
             'https://i.gkd.li/i/12785183',
             'https://i.gkd.li/i/13306883',
-            'https://i.gkd.li/i/12785246',
             'https://i.gkd.li/i/13407275',
+            'https://i.gkd.li/i/15108441',
           ],
         },
       ],
@@ -475,16 +401,20 @@ export default defineAppConfig({
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: [
-        'com.tencent.mm.plugin.finder.ui',
-        'com.tencent.mm.ui.LauncherUI',
-      ],
-      rules:
-        'TextView[text^="为呵护未成年人健康成长，微信推出青少年模式"] +2 Button[text="我知道了"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/13538145',
-        'https://i.gkd.li/i/13575195',
-        'https://i.gkd.li/i/14896723',
+      rules: [
+        {
+          activityIds: [
+            'com.tencent.mm.plugin.finder.ui.',
+            'com.tencent.mm.ui.LauncherUI',
+          ],
+          matches: ['[text*="青少年模式"]', '[text="我知道了"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/13538145',
+            'https://i.gkd.li/i/13575195',
+            'https://i.gkd.li/i/14735456',
+            'https://i.gkd.li/i/14896723',
+          ],
+        },
       ],
     },
     {
@@ -516,16 +446,14 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '8.0.44以下',
           quickFind: true,
           activityIds:
             'com.tencent.mm.plugin.brandservice.ui.timeline.BizTimeLineUI',
-          matches: '[text="展开更早的消息"] < [id="com.tencent.mm:id/aqc"]',
+          matches: '@[clickable=true] > [text="展开更早的消息"]',
           snapshotUrls: 'https://i.gkd.li/i/13790550',
         },
         {
           key: 1,
-          name: '8.0.44',
           matches: '[desc="展开更早的消息"]',
           snapshotUrls: 'https://i.gkd.li/i/13790949',
         },
@@ -539,7 +467,7 @@ export default defineAppConfig({
           quickFind: true,
           activityIds: 'com.tencent.mm.framework.app.UIPageFragmentActivity',
           matches:
-            '[text="完成" || text="返回商家"] <2 [vid="kinda_button_impl_wrapper"]',
+            '[vid="kinda_button_impl_wrapper"][desc="完成" || desc="返回商家"]',
           exampleUrls:
             'https://m.gkd.li/57941037/a5177d9d-6745-443f-baf5-af57153430d8',
           snapshotUrls: [
@@ -612,13 +540,14 @@ export default defineAppConfig({
     },
     {
       key: 31,
-      name: '全屏广告-文档页面-腾讯文档 APP 弹窗',
+      name: '全屏广告-文档页面-腾讯文档APP弹窗',
       desc: '点击关闭',
       rules: [
         {
+          quickFind: true,
           activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
           matches:
-            '@TextView[clickable=true] + * > [text="腾讯文档"] + [text^="使用 APP"]',
+            '@TextView[clickable=true] + * > [text^="使用 APP"] <<n [id="android:id/content"]',
           exampleUrls:
             'https://m.gkd.li/57941037/2228f99e-e0a1-4915-864f-d60e3d8580a6',
           snapshotUrls: 'https://i.gkd.li/i/14533286',
@@ -636,7 +565,7 @@ export default defineAppConfig({
         {
           quickFind: true,
           activityIds: 'com.tencent.mm.pluginsdk.permission.PermissionActivity',
-          matches: '@[text="取消"] < * < * - * >3 [text="权限申请"]',
+          matches: ['[text="权限申请"]', '[text="取消"]'],
           exampleUrls:
             'https://m.gkd.li/57941037/43632b72-d389-4fe7-9708-dac78e900679',
           snapshotUrls: 'https://i.gkd.li/i/14645385',
@@ -650,6 +579,30 @@ export default defineAppConfig({
       activityIds: 'com.tencent.mm.plugin.finder.ui.FinderMultiTaskRouterUI',
       rules: '[text*="青少年模式"] +3 [text="我知道了"]',
       snapshotUrls: 'https://i.gkd.li/i/14735456',
+    },
+    {
+      key: 36,
+      name: '功能类-付款时自动点击[支付]',
+      quickFind: true,
+      actionMaximum: 1,
+      activityIds: 'com.tencent.mm.framework.app.UIPageFragmentActivity',
+      rules: [
+        {
+          key: 0,
+          matches: '[vid="kinda_button_impl_wrapper"][desc="立即支付"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/13fd1e89-6d75-4efe-90d6-91687de8c9b1',
+          snapshotUrls: 'https://i.gkd.li/i/15144571',
+        },
+        {
+          preKeys: [0],
+          key: 1,
+          matches: '[vid="kinda_button_impl_wrapper"][desc="支付"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/69380aa0-e6d2-4ea4-8ee7-6a1e45889e6c',
+          snapshotUrls: 'https://i.gkd.li/i/15144570',
+        },
+      ],
     },
   ],
 });

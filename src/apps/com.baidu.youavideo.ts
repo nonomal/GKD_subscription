@@ -1,14 +1,15 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.baidu.youavideo',
   name: '一刻相册',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,
-      name: '软件升级提醒',
-      activityIds: ['com.baidu.youavideo.home.view.HomeActivity'],
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
       rules: [
         {
@@ -20,7 +21,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '悬浮窗',
+      name: '局部广告-悬浮窗广告',
       desc: '关闭广告悬浮窗',
       activityIds: ['com.baidu.youavideo.home.view.HomeActivity'],
       quickFind: true,
@@ -33,9 +34,11 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '评价',
+      name: '评价提示',
       desc: '点击下次再说',
-      activityIds: ['com.baidu.youavideo.home.view.HomeActivity'],
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
       rules: [
         {
@@ -46,7 +49,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '会员充值提示',
+      name: '全屏广告-会员充值提示',
       desc: '点击x关闭充值提示',
       activityIds: ['com.baidu.youavideo.home.view.HomeActivity'],
       quickFind: true,
@@ -60,22 +63,39 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '弹窗广告',
+      name: '全屏广告-弹窗广告',
       desc: '点击x关闭广告提示',
-      activityIds: ['com.baidu.youavideo.home.view.HomeActivity'],
       quickFind: true,
+      activityIds: [
+        'com.baidu.youavideo.home.view.HomeActivity',
+        'com.baidu.youavideo.preview.ui.hometimeline.TimelinePreviewActivity',
+        'com.baidu.youavideo.preview.ui.search.SearchPreviewActivity',
+      ],
       rules: [
         {
+          key: 0,
           matches:
             '[id="com.baidu.youavideo:id/dialog_home_pop_close_button"] ',
           snapshotUrls: ['https://i.gkd.li/i/13048700'],
+        },
+        {
+          key: 1,
+          matches: '[id="com.baidu.youavideo:id/iv_close"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/3aa0e107-e31f-4e5a-8969-1fcd8310281d',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14133595',
+            'https://i.gkd.li/i/14217352',
+          ],
         },
       ],
     },
     {
       key: 7,
-      name: '请求开启通知权限弹窗',
-      activityIds: 'com.baidu.youavideo.app.ui.HomeActivity',
+      name: '权限提示-通知权限',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
       rules:
         '[id="com.baidu.youavideo:id/dialog_open_guide_notification_root"] > [id="com.baidu.youavideo:id/img_close"]',
@@ -83,7 +103,7 @@ export default defineAppConfig({
     },
     {
       key: 8,
-      name: '照片-底部浮窗广告',
+      name: '局部广告-照片页底部浮窗广告',
       activityIds: 'com.baidu.youavideo.home.view.HomeActivity',
       quickFind: true,
       rules:
@@ -92,13 +112,12 @@ export default defineAppConfig({
     },
     {
       key: 9,
-      name: '局部广告-广告卡片',
+      name: '局部广告-卡片广告',
       quickFind: true,
-      activityIds: 'com.baidu.youavideo.home.view.HomeActivity',
-      rules: '[vid="iv_close"][visibleToUser=true]',
+      rules: '[vid="riv_banner"] < * > [vid="iv_close"][visibleToUser=true]',
       snapshotUrls: [
         'https://i.gkd.li/i/13874124',
-        'https://i.gkd.li/i/14038825', //误触快照
+        'https://i.gkd.li/i/15220559', // 避免误触
       ],
     },
     {
@@ -109,26 +128,6 @@ export default defineAppConfig({
       rules:
         '[text*="电池优化权限"] < * +n [vid="bottom_two_button_layout"] >n [vid="cancel"]',
       snapshotUrls: 'https://i.gkd.li/i/14065510',
-    },
-    {
-      key: 11,
-      name: '全屏广告',
-      rules: [
-        {
-          key: 0,
-          quickFind: true,
-          activityIds: [
-            'com.baidu.youavideo.preview.ui.album.AlbumPreviewActivity',
-            'com.baidu.youavideo.preview.ui.hometimeline.TimelinePreviewActivity',
-          ],
-          matches: '[text="广告"] -n [vid="iv_close"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14107272',
-            'https://i.gkd.li/i/14038825', //[vid="iv_close"]在该页面误触
-            'https://i.gkd.li/i/14151128', //activityId: com.baidu.youavideo.preview.ui.hometimeline.TimelinePreviewActivity
-          ],
-        },
-      ],
     },
     {
       key: 12,

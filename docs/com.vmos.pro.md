@@ -1,7 +1,0 @@
-# VMOS Pro
-
-存在 1 规则组 - [com.vmos.pro](/src/apps/com.vmos.pro.ts)
-
-## 未分类-广告弹窗
-
-- [快照-0](https://i.gkd.li/i/13536416)

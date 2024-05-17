@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ss.android.article.news',
   name: '今日头条',
   groups: [
@@ -18,7 +18,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '浮窗广告',
+      name: '局部广告-浮窗广告',
       rules: [
         {
           key: 0,
@@ -39,24 +39,43 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 10,
-      name: '请求通知权限弹窗',
-      activityIds: ['com.ss.android.article.news.activity.MainActivity'],
+      key: 3,
+      name: '功能类-[下次打开APP默认进入发现频道]弹窗',
+      desc: '点击取消',
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
+          quickFind: true,
+          activityIds: 'com.ss.android.article.news.activity.MainActivity',
+          matches: '[text^="下次打开APP默认进入"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/6166519d-d38d-49c0-b54b-72c25670aa24',
+          snapshotUrls: 'https://i.gkd.li/i/15102876',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '权限提示-通知权限',
+      activityIds: 'com.ss.android.article.news.activity.MainActivity',
+      rules: [
+        {
+          key: 0,
           matches: '[text^="开启通知"] + LinearLayout > [text="暂不开启"]',
-          snapshotUrls: ['https://i.gkd.li/i/12706699'],
+          snapshotUrls: 'https://i.gkd.li/i/12706699',
         },
         {
+          key: 1,
           matches:
             '[text^="开启通知"] < LinearLayout +2 ImageView[desc="关闭"]',
-          snapshotUrls: ['https://i.gkd.li/i/12840217'],
+          snapshotUrls: 'https://i.gkd.li/i/12840217',
         },
       ],
     },
     {
       key: 11,
-      name: '竖屏视频广告',
+      name: '分段广告-竖屏视频广告',
       desc: '检测到广告时,点击右上角[更多]图标按钮,出现菜单,点击不感兴趣',
       activityIds: 'com.ss.android.ugc.detail.activity.TikTokActivity',
       rules: [

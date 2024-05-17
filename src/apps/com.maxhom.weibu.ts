@@ -1,12 +1,12 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.maxhom.weibu',
   name: '暮瑟',
   groups: [
     {
       key: 3,
-      name: '交友-底部广告',
+      name: '综合广告-底部广告',
       activityIds: [
         'com.maxhom.weibu.tool.home.activity.NewMainActivity',
         'com.maxhom.weibu.WelcomeActivity',
@@ -45,26 +45,8 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 4,
-      name: '漂流瓶-提示弹窗',
-      quickFind: true,
-      activityIds: [
-        'com.maxhom.weibu.tool.home.activity.ToolBottleActivity',
-        'com.maxhom.weibu.tool.home.activity.NewMainActivity',
-      ],
-      rules: [
-        {
-          matches: '[id="com.maxhom.weibu:id/ivClose"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13377649',
-            'https://i.gkd.li/i/13457015',
-          ],
-        },
-      ],
-    },
-    {
       key: 5,
-      name: '漂流瓶-定位弹窗',
+      name: '权限提示-定位权限',
       desc: '自动点击取消',
 
       quickFind: true,

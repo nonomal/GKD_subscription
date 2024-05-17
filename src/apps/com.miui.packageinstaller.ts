@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.miui.packageinstaller',
   name: '应用包管理组件',
   groups: [
@@ -73,7 +73,7 @@ export default defineAppConfig({
         // 正常安装
         {
           key: 0,
-          name: '点击【继续安装】',
+          name: '点击【继续安装】-1',
           activityIds: [
             'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
             'com.miui.packageInstaller.NewInstallerPrepareActivity',
@@ -87,7 +87,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          name: '点击【继续安装】',
+          name: '点击【继续安装】-2',
           activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
           matches: '@[text="继续安装"] + [text="取消安装"]',
           snapshotUrls: 'https://i.gkd.li/i/12889120',
@@ -163,7 +163,7 @@ export default defineAppConfig({
         // 正常更新
         {
           key: 0,
-          name: '点击【继续更新】',
+          name: '点击【继续更新】-1',
           activityIds: [
             'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
             'com.miui.packageInstaller.NewInstallerPrepareActivity',
@@ -177,7 +177,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          name: '点击【继续更新】',
+          name: '点击【继续更新】-2',
           activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
           matches: '@[text="继续更新"] + [text="取消更新"]',
           snapshotUrls: [

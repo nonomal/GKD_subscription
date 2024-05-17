@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tencent.androidqqmail',
   name: 'QQ邮箱',
   groups: [
@@ -16,7 +16,7 @@ export default defineAppConfig({
     },
     {
       key: 0,
-      name: '列表卡片广告',
+      name: '分段广告-列表卡片广告',
       quickFind: true,
       activityIds: 'com.tencent.qqmail.fragment.base.MailFragmentActivity',
       rules: [
@@ -43,22 +43,23 @@ export default defineAppConfig({
           preKeys: [0, 1], // https://github.com/gkd-kit/subscription/issues/1776
           key: 9,
           name: '点击[不感兴趣]',
-          matches:
-            '[text="赞助商提供的广告"] < FrameLayout + @FrameLayout > [text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/12775862',
+          matches: '[text="赞助商提供的广告"] < * < * >2 [text="不感兴趣"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12775862',
+            'https://i.gkd.li/i/15051479',
+          ],
         },
       ],
     },
     {
       key: 1,
-      name: '开启通知提醒',
-
+      name: '权限提示-通知权限',
       quickFind: true,
       activityIds: 'com.tencent.qqmail.fragment.base.MailFragmentActivity',
       rules: [
         {
           matches: '[text="立刻开启"] - [text="以后再说"]',
-          snapshotUrls: ['https://i.gkd.li/i/13043069'],
+          snapshotUrls: 'https://i.gkd.li/i/13043069',
         },
       ],
     },

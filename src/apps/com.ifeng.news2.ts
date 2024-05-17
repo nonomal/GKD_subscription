@@ -1,12 +1,12 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ifeng.news2',
   name: '凤凰新闻',
   groups: [
     {
       key: 1,
-      name: '信息流广告',
+      name: '分段广告-信息流广告',
       activityIds: 'com.ifeng.news2.activity.IfengTabMainActivity',
       rules: [
         {
@@ -51,7 +51,7 @@ export default defineAppConfig({
     {
       enable: true,
       key: 10,
-      name: '请求位置权限弹窗',
+      name: '权限提示-定位权限',
       desc: '自动点击取消',
       activityIds: 'com.ifeng.news2.activity.IfengTabMainActivity',
       rules:

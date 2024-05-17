@@ -1,8 +1,0 @@
-# WiFi万能钥匙
-
-存在 1 规则组 - [com.wifitutu](/src/apps/com.wifitutu.ts)
-
-## 未分类-首页-WiFi列表广告
-
-- [快照-0](https://i.gkd.li/i/13233916)
-- [快照-1](https://i.gkd.li/i/13234048)

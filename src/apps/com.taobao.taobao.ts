@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.taobao.taobao',
   name: '淘宝',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
@@ -78,10 +77,11 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
       rules:
-        '[text^="开启系统通知"] + @Image[clickable=true] <<n [id="com.taobao.taobao:id/poplayer_inner_view"]',
+        '[text^="开启系统通知"] + @Image[visibleToUser=true] <<n [vid="poplayer_inner_view"]',
       snapshotUrls: [
         'https://i.gkd.li/i/13446901',
         'https://i.gkd.li/i/13455424',
+        'https://i.gkd.li/i/15104645',
       ],
     },
     {
@@ -209,6 +209,22 @@ export default defineAppConfig({
       activityIds: 'com.taobao.search.sf.MainSearchResultActivity',
       rules: '[desc="不喜欢这个商品"]',
       snapshotUrls: 'https://i.gkd.li/i/14142196',
+    },
+    {
+      key: 18,
+      name: '局部广告-商品详情页直播悬浮窗',
+      desc: '点击关闭',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      rules: [
+        {
+          activityIds:
+            'com.taobao.android.detail.wrapper.activity.DetailActivity',
+          matches: '[vid="view_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/15124094',
+        },
+      ],
     },
   ],
 });

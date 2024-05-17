@@ -1,6 +1,6 @@
 # 编写订阅贡献指南
 
-很高兴能有更多人参与到本项目默认订阅规则的开发中
+很高兴能有更多人参与到本订阅的规则贡献中
 
 需要: 一台 Android 设备, 一台电脑(可选)
 
@@ -24,6 +24,7 @@ Android>=11 的无障碍可以自己截屏, 所以如果你的设备不满足 An
 有 2 种方式打快照
 
 - 通过悬浮窗按钮: 高级设置/主页-允许悬浮窗授权 - 然后回到APP开启悬浮窗服务, 此时界面会出现一个截屏按钮, 点击这个按钮即可打快照
+- 通过手机控制中心：在手机控制中心中添加名为：`捕获快照`的快捷功能，点击即可打快照
 - 网页端审查工具: 打开网页端审查工具连接设备-点击快照按钮即可打快照, 网页端审查工具的使用在下面说明
 
 我们以 WPS 为例子, WPS 首页文档列表有一个广告, 我们先给 WPS 打一个快照, 然后使用 网页审查工具 编写测试规则订阅 关闭这个广告
@@ -63,7 +64,7 @@ Android>=11 的无障碍可以自己截屏, 所以如果你的设备不满足 An
 
 浏览器打开 <https://i.gkd.li/>, 然后在这个网站启用油猴脚本的注入功能, 然后点击右上角 Android 小图标去连接设备
 
-在设置页面左上角输入上诉地址 `http://192.168.1.3:8888`, 然后点击 `刷新连接`, 即可成功连接设备
+在设置页面左上角输入上述地址 `http://192.168.1.3:8888`, 然后点击 `刷新连接`, 即可成功连接设备
 
 ![image](https://github.com/gkd-kit/subscription/assets/38517192/d3a956ca-f54b-4d9d-a2ae-3792b5a18aa4)
 
@@ -86,7 +87,7 @@ Android>=11 的无障碍可以自己截屏, 所以如果你的设备不满足 An
 了解完了之后, 编写的选择器也很简单 `[id="com.mopub.ad.xiaomi:id/nativeclose"]`
 
 接下来测试这个选择器能否选中这个图标按钮, 点击审查工具的 选择器查询, 输入刚刚这个规则, 然后点击查询
-`这里点击右侧的分享-生成链接-zip才能获取快照链接（以/i/开头）`
+`这里点击右侧的分享-生成链接-zip才能获取快照链接（以https://i.gkd.li/i/开头）`
 
 ![image](https://github.com/gkd-kit/subscription/assets/38517192/3aea04fd-da91-4f43-a79e-e40fdad4a5d4)
 
@@ -128,7 +129,7 @@ Android>=11 的无障碍可以自己截屏, 所以如果你的设备不满足 An
   groups: [
     {
       key: 1,
-      name: '首页-文档列表广告',
+      name: '分段广告-首页-文档列表广告',
       activityIds: ['cn.wps.moffice.main.StartPublicActivity', 'cn.wps.moffice.main.local.HomeRootActivity'],
       rules: [
         {
@@ -160,14 +161,14 @@ Android>=11 的无障碍可以自己截屏, 所以如果你的设备不满足 An
 
 ## 提交代码
 
-如果你要添加 APP 不存在本项目, 那么需要在 [apps](https://github.com/gkd-kit/subscription/tree/main/src/apps) 目录下新建文件 xxx.ts, xxx 是 appId 比如 WPS 是 cn.wps.moffice_eng.ts
+如果你要添加 APP 不存在本项目, 那么需要在 [apps](https://github.com/Adpro-Team/GKD_subscription/tree/main/src/apps) 目录下新建文件 xxx.ts, xxx 是 appId 比如 WPS 是 cn.wps.moffice_eng.ts
 
 这个文件的初始内容是
 
 ```ts
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.wps.moffice_eng',
   name: 'WPS',
   groups: [],
@@ -177,15 +178,15 @@ export default defineAppConfig({
 然后在的 group 节点后添加你的规则及其快照链接, 文件内容变成
 
 ```ts
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.wps.moffice_eng',
   name: 'WPS',
   groups: [
     {
       key: 1,
-      name: '首页-文档列表广告',
+      name: '分段广告-首页-文档列表广告',
       exampleUrls: [
         'https://github.com/gkd-kit/subscription/assets/38517192/57787554-0443-4bc0-9f29-1759aae07b9b',
       ],
@@ -212,6 +213,10 @@ export default defineAppConfig({
 ```
 
 注意每个规则一定要添加快照链接, 否则后期维护根本不知道这个规则到底点的是啥
+
+特别注意的是，每个规则的命名，即上方规则中的`分段广告-首页-文档列表广告`，都需以一个确切的分类开头，具体分类请看[这里](https://github.com/Adpro-Team/GKD_subscription/blob/main/src/categories.ts)。该分类沿用自[`默认订阅`](https://github.com/gkd-kit/subscription)，大致与其它第三方项目一致，但有些许不同，需要留意。
+
+`未分类`分类在除特殊情况，特别说明并获得许可外，禁止使用
 
 然后运行校验命令 `npm run check`, 它会检测你的规则是否书写正确, 也会检测每个选择器语法是否正确
 

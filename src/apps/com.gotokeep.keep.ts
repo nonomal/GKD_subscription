@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.gotokeep.keep',
   name: 'Keep',
-  deprecatedKeys: [1, 6],
   groups: [
     {
       key: 2,

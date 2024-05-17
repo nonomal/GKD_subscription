@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.jingyao.easybike',
   name: '哈啰',
   groups: [
     // 预留 key 0-8
     {
       key: 8,
-      name: '请求通知权限弹窗',
+      name: '权限提示-通知权限',
       quickFind: true,
       activityIds: [
         'com.yanzhenjie.permission.PermissionActivity',
@@ -21,7 +21,7 @@ export default defineAppConfig({
     },
     {
       key: 9,
-      name: '请求定位权限弹窗',
+      name: '权限提示-定位权限',
       quickFind: true,
       activityIds: 'com.hellobike.atlas.business.portal.PortalActivity',
       rules:
@@ -30,7 +30,7 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '应用内活动、广告弹窗（大部分）',
+      name: '全屏广告-广告弹窗',
       activityIds: [
         'com.hellobike.ads.widget.insert.dialog.HBAdvertDialog',
         'com.hellobike.atlas.business.portal.PortalActivity',
@@ -45,7 +45,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '哈啰智能电动车-广告弹窗',
+      name: '全屏广告-哈啰智能电动车-广告弹窗',
       quickFind: true,
       activityIds: [
         'com.hellobike.evehicle.business.main.EVehicleHomeManagerActivity',
@@ -56,7 +56,7 @@ export default defineAppConfig({
     },
     {
       key: 12,
-      name: '右侧悬浮广告',
+      name: '局部广告-悬浮广告',
       quickFind: true,
       activityIds: ['com.hellobike.atlas.business.portal.PortalActivity'],
       rules:
@@ -65,7 +65,7 @@ export default defineAppConfig({
     },
     {
       key: 13,
-      name: '骑行订单完成-广告弹窗',
+      name: '全屏广告-骑行订单完成-广告弹窗',
       activityIds: ['com.alipay.mobile.nebulacore.ui.H5Activity'],
       rules:
         '[text="订单完成"] >(2) View[childCount=2] > Image[id=null][clickable=true]',
@@ -73,7 +73,7 @@ export default defineAppConfig({
     },
     {
       key: 14,
-      name: '骑行卡-优惠券弹窗',
+      name: '全屏广告-骑行卡-优惠券弹窗',
       activityIds: ['com.hellobike.atlas.business.portal.PortalActivity'],
       rules: '[desc="去使用"] + Button[text=null][visibleToUser=true]',
       snapshotUrls: ['https://i.gkd.li/i/12739316'],

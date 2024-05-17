@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ss.android.ugc.aweme',
   name: '抖音',
-  deprecatedKeys: [0, 2, 3],
   groups: [
     {
       key: 1,
@@ -233,7 +232,7 @@ export default defineAppConfig({
     },
     {
       key: 17,
-      name: '定位提示',
+      name: '权限提示-定位权限',
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',

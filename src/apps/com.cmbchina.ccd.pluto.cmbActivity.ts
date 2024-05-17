@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.cmbchina.ccd.pluto.cmbActivity',
   name: '掌上生活',
-  deprecatedKeys: [0, 1],
   groups: [
     {
       key: 2,
@@ -79,7 +78,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '定位提示-请求开启定位权限弹窗',
+      name: '权限提示-定位权限',
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',

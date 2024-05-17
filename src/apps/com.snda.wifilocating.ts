@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.snda.wifilocating',
   name: 'WiFi万能钥匙',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
@@ -61,6 +60,32 @@ export default defineAppConfig({
       activityIds: 'com.wifitutu.ui.tools.SpeedUpActivity',
       rules: '[vid="success_desc"] + [vid="back_layout"]',
       snapshotUrls: 'https://i.gkd.li/i/14811492',
+    },
+    {
+      key: 4,
+      name: '局部广告-连接WiFi界面右侧悬浮广告',
+      rules: [
+        {
+          key: 0,
+          quickFind: true,
+          activityIds: 'com.wifitutu.ui.main.MainActivity',
+          matches: '[vid="img_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/15284722',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '局部广告-“我的”界面广告卡片',
+      rules: [
+        {
+          key: 0,
+          quickFind: true,
+          activityIds: 'com.wifitutu.ui.main.MainActivity',
+          matches: '@* - [vid="native_express_ad_logo_tv"]',
+          snapshotUrls: 'https://i.gkd.li/i/15284730',
+        },
+      ],
     },
   ],
 });

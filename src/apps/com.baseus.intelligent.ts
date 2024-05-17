@@ -1,12 +1,12 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.baseus.intelligent',
   name: '倍思',
   groups: [
     {
       key: 1,
-      name: '定位提示-定位请求',
+      name: '权限提示-定位权限',
       desc: '点击取消-点击取消',
       rules: [
         {

@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.mihoyo.hyperion',
   name: '米游社',
-  deprecatedKeys: [1, 2],
   groups: [
     {
       key: 3,
@@ -21,6 +20,7 @@ export default defineAppConfig({
       key: 4,
       name: '功能类-原神自动签到',
       desc: '点击签到-关闭弹窗-返回',
+      forcedTime: 5000,
       activityIds: 'com.mihoyo.hyperion.web2.MiHoYoWebActivity',
       rules: [
         {
@@ -61,6 +61,7 @@ export default defineAppConfig({
       key: 5,
       name: '功能类-星穹铁道自动签到',
       desc: '点击签到-关闭弹窗-返回',
+      forcedTime: 5000,
       activityIds: 'com.mihoyo.hyperion.web2.MiHoYoWebActivity',
       rules: [
         {

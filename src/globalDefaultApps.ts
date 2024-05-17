@@ -63,6 +63,29 @@ export const commonAppBlackList: string[] = [
   'dev.anilbeesetti.nextplayer', // Next Player
   'org.kde.kdeconnect_tp', // KDE Connect
   'xyz.adproqwq.GKDTool', // GKDTool
+  'com.alibaba.aliyun', // 阿里云
+  'com.alicloud.databox', // 阿里云盘 开屏广告在 https://i.gkd.li/i/15144565 误触导致自动签到规则执行中断
+
+  'com.canghai.haoka',
+  'com.xy.td',
+  'com.bug.hookvip',
+  'one.yufz.hmspush',
+  'io.github.huskydg.magisk',
+  'xzr.konabess',
+  'org.lsposed.manager',
+  'com.microsoft.office.officehub',
+  'bin.mt.plus',
+  'tw.nekomimi.nekogram',
+  'io.github.qauxv',
+  'com.rezvorck.tiktokplugin',
+  'com.zhiliaoapp.musically',
+  'com.github.tianma8023.xposed.smscode',
+  'Han.GJZS',
+  'org.adblockplus.adblockplussbrowser',
+  'com.viewblocker.jrsen',
+  'com.tsng.hidemyapplist',
+  'com.pittvandewitt.wavelet',
+  'one.yufz.onebox',
 
   // 系统自带非系统应用
   // 小米

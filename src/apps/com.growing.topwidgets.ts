@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.growing.topwidgets',
   name: '万能小组件 Top Widgets',
   groups: [
@@ -21,6 +21,11 @@ export default defineAppConfig({
           matches: '@ImageView < * - * > [text="查看详情"]',
           snapshotUrls: 'https://i.gkd.li/i/14945536',
         },
+        {
+          key: 2,
+          matches: '[vid="ms_item_pre_render_large_iamge_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/15137361',
+        },
       ],
     },
     {
@@ -32,8 +37,12 @@ export default defineAppConfig({
           key: 0,
           quickFind: true,
           activityIds: 'com.baidu.mobads.sdk.api.MobRewardVideoActivity',
-          matches: '@ImageView[clickable=true] - * >2 [text="反馈"]',
-          snapshotUrls: 'https://i.gkd.li/i/14945552',
+          matches:
+            '@ImageView[clickable=true][visibleToUser=true] <(2,3) * >(2,3) [text="反馈"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14945552',
+            'https://i.gkd.li/i/15286451',
+          ],
         },
         {
           key: 1,

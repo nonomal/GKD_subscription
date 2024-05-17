@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.huawei.android.thememanager',
   name: '华为主题',
-  deprecatedKeys: [8],
   groups: [
     {
       key: 0,

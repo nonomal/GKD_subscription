@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.jd.app.reader',
   name: '京东读书',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,

@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'tv.danmaku.bili',
   name: '哔哩哔哩',
-  deprecatedKeys: [1, 3, 5],
   groups: [
     {
       key: -1,
@@ -237,6 +236,34 @@ export default defineAppConfig({
       activityIds: 'com.bilibili.bililive.room.ui.roomv3.LiveRoomActivityV3',
       rules: '[vid="button_follow"] <3 * < * +2 [vid="close"]',
       snapshotUrls: 'https://i.gkd.li/i/14782965',
+    },
+    {
+      key: 13,
+      name: '全屏广告-会员中心-开通会员弹窗',
+      actionMaximum: 1,
+      forcedTime: 5000,
+      quickFind: true,
+      activityIds: [
+        'com.bilibili.vip.web.VipWebActivity',
+        'tv.danmaku.bili.MainActivityV2',
+      ],
+      rules: [
+        {
+          key: -1,
+          matches:
+            '@TextView[visibleToUser=true] <2 * <2 * -2 [text="大会员服务协议"] <<n [vid="webview"]',
+          snapshotUrls: 'https://i.gkd.li/i/15289942',
+        },
+        {
+          key: 0,
+          matches:
+            '@TextView[visibleToUser=true] < * <2 * -2 [text="大会员服务协议"] <<n [vid="webview"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15219142',
+            'https://i.gkd.li/i/15220560',
+          ],
+        },
+      ],
     },
   ],
 });

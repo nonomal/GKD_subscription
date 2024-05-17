@@ -1,9 +1,9 @@
-import apps from './rawApps';
-import { RawAppGroup } from '@gkd-kit/api';
 import { defineGkdGlobalGroups } from '@gkd-kit/define';
-import { RawApp } from './types';
-import { orderList } from './utils';
+import { batchImportApps } from '@gkd-kit/tools';
+import { RawApp, RawAppGroup } from '@gkd-kit/api';
 import { commonAppBlackList, systemAppWhiteList } from './globalDefaultApps';
+
+const apps = await batchImportApps(`${import.meta.dirname}/apps`);
 
 // 如果应用规则已有全局规则中的某一类的规则, 则在对应全局规则禁用此应用
 function filterAppsByGroup(apps: RawApp[], groupNamePrefix: string): string[] {
@@ -32,6 +32,7 @@ const youngDiabledAppIds = new Set([
   'xxx.pornhub.fuck', // JavDB
   'com.netease.cloudmusic', // 网易云音乐 全局规则在 https://i.gkd.li/i/14931708 误触
   'com.zhihu.android', // 知乎 全局规则在 https://i.gkd.li/i/14964990 误触
+  'com.luna.music', // 汽水音乐 全局规则在 https://i.gkd.li/i/15124801 误触
   ...filterAppsByGroup(apps, '青少年模式'),
 ]);
 
@@ -42,11 +43,16 @@ const openEnabledAppIds = new Set([
   'com.bbk.appstore', // vivo应用商店
   'com.huawei.appmarket', // 华为应用市场
   'com.miui.player', //小米音乐
+  'com.tencent.southpole.appstore', // 黑鲨应用市场
 ]);
 const updateEnabledAppIds = new Set([...systemAppWhiteList]);
 const youngEnabledAppIds = new Set([...systemAppWhiteList]);
 
-const globalGroups = defineGkdGlobalGroups([
+export const orderList: number[] = [
+  -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1,
+];
+
+export default defineGkdGlobalGroups([
   {
     key: 0,
     name: '开屏广告',
@@ -63,9 +69,9 @@ const globalGroups = defineGkdGlobalGroups([
         matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
       },
       {
-        key: -1,
+        key: 1,
         matches:
-          '[childCount=0][visibleToUser=true][(text.length<10 && (text*="跳过" || text*="跳過" || text*="skip" || text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || desc*="跳过" || desc*="skip" || (vid*="count" && vid*="down" && vid!*="countdown" && vid!*="load" && vid!*="add" && vid!*="ead" && vid!*="time")]',
+          '[childCount=0][visibleToUser=true][((text*="跳过" || text*="跳過" || text~="(?is).*skip.*") && text.length<10) || id~="(?is).*tt_splash_skip_btn" || vid~="(?is).*skip.*" || (vid~="(?is).*count.*" && vid~="(?is).*down.*" && vid!~="(?is).*load.*" && vid!~="(?is).*time.*" && vid!~="(?is).*hour.*" && vid!~="(?is).*minute.*" && vid!~="(?is).*second.*" && vid!~="(?is).*add.*" && vid!~="(?is).*ead.*") || ((desc*="跳过" || desc*="跳過" || desc~="(?is).*skip.*") && desc.length<10)]',
       },
     ],
     apps: [...openDiabledAppIds]
@@ -83,9 +89,9 @@ const globalGroups = defineGkdGlobalGroups([
       {
         key: 0,
         matches: [
-          '[name!$=".CheckBox"][childCount=0][visibleToUser=true][height>0&&width>0][(text*="内测" || text*="测试版" || text*="新版" || text*="更新" || text*="升级" || text*="体验" || text*="內測" || text*="測試版" || text*="升級" || text*="體驗" || text*="Update" || text*="Upgrade" || text*="Experience")&&text!*="自动"&&text!*="自動"&&(text!*="成功"&&text!*="失败"&&text!*="失敗"&&(text!*="已" || text*="已知")&&text!*="检查更新")]',
-          '[name!$=".CheckBox"][childCount=0][visibleToUser=true][height>0&&width>0][(((text*="立即" || text*="马上" || text*="并" || text*="现在" || text*="立刻" || text*="抢先" || text*="去" || text*="在线")&&(text*="更新" || text*="下载" || text*="安装" || text*="升级" || text*="查看" || text*="体验")) || text="更新" || text="下载" || text="安装" || text="升级" || text="确定" || text="好，升级")&&text.length<6]',
-          '[name!$=".CheckBox"][childCount=0][visibleToUser=true][height>0&&width>0][text^="不再" || text$="再说" || text$="拒绝" || text$="再想想" || text*="忽略" || text^="暂不" || text^="放弃" || text^="取消" || text$="不要" || text$="再說" || text$="暫不" || text$="拒絕" || text$="Later" || text^="Ignore" || text^="Not now" || text^="Cancel" || vid^="close" || vid^="Close" || vid^="closeIv" || vid*="_close" || vid*="_Close" || vid$="close" || vid$="Close" || vid$="cancel" || vid$="Cancel" || vid$="cancle" || vid$="Cancle" || vid$="ignore" || vid$="Ignore"]',
+          '[name!$=".CheckBox"][childCount=0][visibleToUser=true][(text*="内测" || text*="测试版" || text*="新版" || text*="更新" || text*="升级" || text*="体验" || text*="內測" || text*="測試版" || text*="升級" || text*="體驗" || text*="Update" || text*="Upgrade" || text*="Experience") && text!*="自动" && text!*="自動" && (text!*="成功" && text!*="失败" && text!*="失敗" && (text!*="已" || text*="已知") && text!*="检查更新")]',
+          '[name!$=".CheckBox"][childCount=0][visibleToUser=true][(((text*="立即" || text*="马上" || text*="并" || text*="现在" || text*="立刻" || text*="抢先" || text*="在线" || text*="提醒")&&(text*="更新" || text*="下载" || text*="安装" || text*="升级" || text*="查看" || text*="体验")) || text="更新" || text="下载" || text="安装" || text="升级" || text="确定" || text="好,升级") && text.length<6]',
+          '[name!$=".CheckBox"][childCount=0][visibleToUser=true][text^="不再" || text$="再说" || text$="拒绝" || text$="再想想" || text^="忽略" || text^="暂不" || text^="放弃" || text^="取消" || text$="不要" || text$="再說" || text$="暫不" || text$="拒絕" || text^="稍后" || text$="Later" || text^="Ignore" || text^="Not now" || text^="Cancel" || vid^="close" || vid^="Close" || vid^="closeIv" || vid*="_close" || vid*="_Close" || vid$="close" || vid$="Close" || vid$="cancel" || vid$="Cancel" || vid$="cancle" || vid$="Cancle"]',
         ],
       },
     ],
@@ -115,5 +121,3 @@ const globalGroups = defineGkdGlobalGroups([
       .concat([...youngEnabledAppIds].map((id) => ({ id, enable: true }))),
   },
 ]);
-
-export default globalGroups;

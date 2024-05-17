@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.taptap',
   name: 'TapTap',
   groups: [
@@ -16,7 +16,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '局部广告-游戏浏览界面-推荐广告',
+      name: '分段广告-游戏浏览界面-推荐广告',
       desc: '自动点击【对此内容不感兴趣】',
       rules: [
         {

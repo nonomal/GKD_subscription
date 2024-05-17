@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.baidu.BaiduMap',
   name: '百度地图',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
@@ -47,7 +46,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '定位提示-请求定位弹窗',
+      name: '权限提示-定位权限',
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -110,9 +109,8 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
-      rules:
-        '[text="打开通知权限"] <n LinearLayout + ImageView[id="com.baidu.BaiduMap:id/push_close"]',
-      snapshotUrls: 'https://i.gkd.li/i/13258995',
+      rules: '[vid="push_close"]',
+      snapshotUrls: 'https://i.gkd.li/i/15284736',
     },
     {
       key: 9,

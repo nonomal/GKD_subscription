@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.qiekj.user',
   name: '胖乖生活',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 0,

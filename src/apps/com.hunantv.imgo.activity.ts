@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.hunantv.imgo.activity',
   name: '芒果TV',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,

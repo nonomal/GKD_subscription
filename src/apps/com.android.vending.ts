@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.android.vending',
   name: 'Google Play 商店',
   groups: [
@@ -20,12 +20,23 @@ export default defineAppConfig({
       key: 2,
       name: '全屏广告-[体验 Google Play Pass]弹窗',
       desc: '点击[以后再说]',
+      quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
-      activityIds: 'com.google.android.finsky.activities.MainActivity',
-      rules: '[text^="体验 Google Play Pass"] +3 * > [text="以后再说"]',
-      snapshotUrls: 'https://i.gkd.li/i/14958783',
+      rules: [
+        {
+          position: {
+            left: 'width * 0.5',
+            top: 'width * 1.5',
+          },
+          activityIds: 'com.google.android.finsky.activities.MainActivity',
+          matches: '[text="体验 Google Play Pass，免费试用 1 个月"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14958783',
+            'https://i.gkd.li/i/15286041',
+          ],
+        },
+      ],
     },
   ],
 });

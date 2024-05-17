@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.kugou.android',
   name: '酷狗音乐',
   groups: [
@@ -34,24 +34,34 @@ export default defineAppConfig({
     {
       key: 1,
       name: '局部广告-卡片广告',
+      activityIds: 'com.kugou.android.app.MediaActivity',
       rules: [
         {
           key: 0,
-          activityIds: 'com.kugou.android.app.MediaActivity',
+          forcedTime: 5000,
           matches:
-            'ViewGroup[childCount=2] > ImageView + FrameLayout > LinearLayout > ImageView',
+            'ViewGroup[childCount=2] > ImageView + @FrameLayout[clickable=true] > LinearLayout > ImageView',
           exampleUrls:
             'https://m.gkd.li/87047583/9e150986-2103-4130-a12f-12ed2b07ef90',
           snapshotUrls: 'https://i.gkd.li/i/13558426',
         },
         {
           key: 1,
-          quickFind: true,
-          activityIds: 'com.kugou.android.app.MediaActivity',
-          matches: '@[desc="关闭"] <n * > [text^="豪华VIP"]',
+          matches:
+            'TextView[text!=null] <2 ViewGroup[childCount=6] > ImageView[desc="关闭"]',
           exampleUrls:
             'https://m.gkd.li/57941037/adb9a250-d23d-48ef-b1a5-5e828d56cb97',
-          snapshotUrls: 'https://i.gkd.li/i/14964889',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14964889',
+            'https://i.gkd.li/i/15024041',
+          ],
+        },
+        {
+          key: 2,
+          matches: '[desc="关闭广告"][clickable=true][visibleToUser=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/8bd6dafc-e610-4c0d-a486-02a11535e610',
+          snapshotUrls: 'https://i.gkd.li/i/15024812',
         },
       ],
     },

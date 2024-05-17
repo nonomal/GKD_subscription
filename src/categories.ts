@@ -1,6 +1,6 @@
 import { defineGkdCategories } from '@gkd-kit/define';
 
-const categories = defineGkdCategories([
+export default defineGkdCategories([
   {
     key: 0,
     name: '开屏广告',
@@ -20,52 +20,47 @@ const categories = defineGkdCategories([
   {
     key: 4,
     name: '通知提示',
+    // 软件用于告知用户信息的弹窗
+    // 具体体现为公告弹窗一类
   },
   {
     key: 5,
-    name: '定位提示',
+    name: '权限提示',
+    // 一切申请权限的弹窗、横幅，归入此类
   },
   {
     key: 6,
-    name: '权限提示',
-  },
-  {
-    key: 7,
     name: '局部广告',
     // 不影响使用的广告, 所有的广告卡片及悬浮广告按钮
   },
   {
-    key: 8,
+    key: 7,
     name: '全屏广告',
     // 不关闭广告就无法进行其它操作的广告弹窗, 它阻碍用户操作
     // 一般是刚进入APP时显示的全屏弹窗
   },
   {
-    key: 9,
+    key: 8,
     name: '分段广告',
     // 如微信朋友圈广告/酷安帖子广告/贴吧帖子广告
     // 需要分阶段多步操作才能关闭, 会造成屏幕略微闪烁, 稍微影响用户体验
   },
   {
-    key: 10,
+    key: 9,
     name: '综合广告',
     // 同一个广告含有多种广告
     // 如：评论区广告，同时含有局部广告和分段广告，使用该分类
     // 使用时，应在rules内中的name属性注明广告具体类型
   },
   {
-    key: 11,
+    key: 10,
     name: '功能类',
     // 非广告, 点击某些功能按钮
   },
   {
-    key: 12,
+    key: 11,
     name: '未分类',
-    // 以下几种情况使用该分类
-    // 1.分类不明确
-    // 2.现有分类没有该类型
-    // 3.因历史遗留问题而导致没有分类的规则统一分到该分类下
+    // 由历史遗留问题导致尚未分类的适用该分类
+    // 当该问题解决后，将会废弃
   },
 ]);
-
-export default categories;

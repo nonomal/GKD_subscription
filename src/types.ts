@@ -1,13 +1,16 @@
-import * as api from '@gkd-kit/api';
-import { defineGkdApp } from '@gkd-kit/define';
-
-export interface RawApp extends api.RawApp {
+export interface RawDeprecatedKeysSetting {
   /**
-   * 某些规则组被移除不使用时, 为了避免 key 在后续被复用, 需要将已经删除的规则组的 key 填入此数组做校验使用
+   * 应用ID
    */
-  deprecatedKeys?: api.Integer[];
-}
+  id: string;
 
-export const defineAppConfig = (config: RawApp) => {
-  return defineGkdApp(config);
-};
+  /**
+   * 应用名称
+   */
+  name: string;
+
+  /**
+   * 废弃的key值，不可再次使用。
+   */
+  deprecatedKeys: number[];
+}

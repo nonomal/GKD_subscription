@@ -1,13 +1,12 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.duowan.kiwi',
   name: '虎牙直播',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,
-      name: '直播间悬浮广告',
+      name: '局部广告-直播间悬浮广告',
       activityIds: 'com.duowan.kiwi.liveroom.ChannelPage',
       rules: [
         {
@@ -45,7 +44,6 @@ export default defineAppConfig({
     {
       key: 3,
       name: '更新提示',
-
       activityIds: 'com.duowan.kiwi.homepage.Homepage',
       quickFind: true,
       matchTime: 10000,
@@ -73,7 +71,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: 'root提示',
+      name: '功能类-root提示',
       desc: '您的设备已经被ROOT',
       quickFind: true,
       matchTime: 10000,

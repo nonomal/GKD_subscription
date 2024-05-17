@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.miui.securitycenter',
   name: '小米手机管家',
   groups: [
@@ -19,7 +19,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '禁止获取定位',
+      name: '权限提示-定位权限',
       desc: '关闭【允许联网及定位】后，每次打开手机管家都会出现',
       quickFind: true,
       activityIds: [
@@ -41,19 +41,17 @@ export default defineAppConfig({
     },
     {
       key: 12,
-      name: '忽略体检分数',
-      desc: '退出时忽略体检优化分数',
+      name: '功能类-使用返回退出时直接点击[退出]',
+      desc: '退出时忽略[体检优化分数]/忽略[存储空间预警]',
       quickFind: true,
       activityIds: 'com.miui.securityscan.MainActivity',
       rules: [
         {
-          matches: [
-            '[text="手机体检分数不足75分，是否立即优化？"][id$="id/message"]',
-            '[text="退出"]',
-          ],
+          matches: '[text="退出"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13474504', // app版本v5
             'https://i.gkd.li/i/13476770', // app版本v8
+            'https://i.gkd.li/i/15137908',
           ],
         },
       ],
@@ -75,16 +73,23 @@ export default defineAppConfig({
       name: '功能类-高敏感权限自动确定',
       desc: '勾选[我已知晓可能存在的风险]-10s后点击[确定]',
       quickFind: true,
-      activityIds:
+      activityIds: [
         'com.miui.permcenter.privacymanager.SpecialPermissionInterceptActivity',
+        'com.miui.permcenter.privacymanager.DeviceManagerApplyActivity',
+      ],
       rules: [
         {
           key: 0,
-          matches:
-            '@[checked=false] + [text="我已知晓可能存在的风险，并自愿承担可能导致的后果"]',
+          matches: [
+            '[text="我已知晓可能存在的风险，并自愿承担可能导致的后果"]',
+            '@[vid="check_box"][checked=false]',
+          ],
           exampleUrls:
             'https://m.gkd.li/57941037/e9672ccd-8dd1-4060-bdbe-52bb355d404f',
-          snapshotUrls: 'https://i.gkd.li/i/14965657',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14965657',
+            'https://i.gkd.li/i/15242826',
+          ],
         },
         {
           preKeys: [0],
@@ -92,7 +97,10 @@ export default defineAppConfig({
           matches: '[text="确定"]',
           exampleUrls:
             'https://m.gkd.li/57941037/1f2a118a-db2a-448d-a95d-f10d746b72e3',
-          snapshotUrls: 'https://i.gkd.li/i/14965656',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14965656',
+            'https://i.gkd.li/i/15242825',
+          ],
         },
       ],
     },

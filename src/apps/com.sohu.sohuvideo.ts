@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.sohu.sohuvideo',
   name: '搜狐视频',
-  deprecatedKeys: [2],
   groups: [
     {
       key: 1,

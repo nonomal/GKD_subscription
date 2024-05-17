@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.sup.android.superb',
   name: '皮皮虾',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 0,
@@ -74,10 +73,61 @@ export default defineAppConfig({
       quickFind: true,
       name: '更新提示',
       desc: '点击我再想想',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           matches: '[text="发现新版本"] +2 * > [text="我再想想"]',
           snapshotUrls: 'https://i.gkd.li/i/13858490',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '评价提示',
+      desc: '点击取消',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          matches: ['[text^="喜欢皮皮虾吗"]', '[text="取消"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/14005608',
+            'https://i.gkd.li/i/15285383',
+          ],
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '全屏广告-集五福弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.sup.android.base.MainActivity',
+          matches: '[id="com.sup.android.superb:id/afa"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/246d1d0b-d493-4d40-bbb7-9c04ae6b457d',
+          snapshotUrls: 'https://i.gkd.li/i/14151026',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '局部广告-卡片广告',
+      desc: '点击[关闭广告]',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.sup.android.base.MainActivity',
+          matches: '[text="关闭广告"][clickable=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/af1e7624-540b-4646-b812-3b748966e903',
+          snapshotUrls: 'https://i.gkd.li/i/14471869',
         },
       ],
     },

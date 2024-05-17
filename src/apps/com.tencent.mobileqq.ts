@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tencent.mobileqq',
   name: 'QQ',
-  deprecatedKeys: [6, 14],
   groups: [
     {
       key: 0,
@@ -146,7 +145,7 @@ export default defineAppConfig({
           },
           activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
           matches:
-            '@View[clickable=false] <<3 LinearLayout <<n LinearLayout[childCount=4] <<3 FrameLayout + * >2 [text="动态"]',
+            'LinearLayout[childCount=4] > LinearLayout > FrameLayout > FrameLayout > @View[visibleToUser=true] <<n [vid="root"]',
           exampleUrls:
             'https://m.gkd.li/57941037/940f4965-0058-4101-ab62-20d131e9c1d1',
           snapshotUrls: 'https://i.gkd.li/i/14732983',
@@ -167,12 +166,12 @@ export default defineAppConfig({
           matches:
             'ImageView[id="com.tencent.mobileqq:id/close"][clickable=true]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13206663', // com.tencent.mobileqq.activity.SplashActivity
-            'https://i.gkd.li/i/12642081', // com.tencent.qqlive.module.videoreport.inject.dialog.ReportDialog
+            'https://i.gkd.li/i/13206663',
+            'https://i.gkd.li/i/12642081',
           ],
         },
         {
-          key: 1,
+          key: 2,
           name: '钱包页面弹窗广告',
           activityIds: 'cooperation.qwallet.plugin.QWalletToolFragmentActivity',
           matches: '[desc="弹窗推荐活动"] + [desc="关闭"]',
@@ -181,7 +180,7 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/i/14822290',
         },
         {
-          key: 2,
+          key: 3,
           name: '黄钻页面弹窗广告',
           activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
           matches:
@@ -190,6 +189,15 @@ export default defineAppConfig({
             'https://i.gkd.li/i/12914978',
             'https://i.gkd.li/i/12914886',
           ],
+        },
+        {
+          key: 4,
+          quickFind: true,
+          activityIds:
+            'com.tencent.mobileqq.activity.QPublicTransFragmentActivity',
+          matches:
+            'ViewGroup[childCount=6] > @ViewGroup[index=2][clickable=true][visibleToUser=true] <<n [id="android:id/content"]',
+          snapshotUrls: 'https://i.gkd.li/i/15136939',
         },
       ],
     },
@@ -368,17 +376,21 @@ export default defineAppConfig({
       key: 13,
       name: '开屏广告-QQ小程序开屏广告',
       desc: '点击右下角跳过',
+      actionMaximum: 1,
       activityIds: [
         'com.tencent.mobileqq.mini.appbrand.ui.AppBrandUI',
         'com.tencent.mobileqq.activity.miniaio.MiniChatActivity',
       ],
       rules: [
         {
-          matches:
-            'TextView[text = "广告"] < RelativeLayout + RelativeLayout TextView[text = "跳过"]',
+          matches: [
+            '[text="广告"][visibleToUser=true]',
+            '[text="跳过"][visibleToUser=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/12877215',
             'https://i.gkd.li/i/12919195',
+            'https://i.gkd.li/i/15130235',
           ],
         },
       ],
@@ -559,15 +571,27 @@ export default defineAppConfig({
     },
     {
       key: 23,
-      name: '全屏广告-个人主页浮层广告',
+      name: '全屏广告-个人主页广告',
+      desc: '点击关闭',
       rules: [
         {
           key: 0,
-          name: '个性装扮浮层广告',
+          name: '迷你窝弹窗',
+          quickFind: true,
+          action: 'back',
           activityIds:
             'com.tencent.mobileqq.profilecard.activity.FriendProfileCardActivity',
-          matches: '[desc="关闭浮层"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/14074727',
+          matches: '[text="开启迷你窝"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/882ab889-a145-4951-9a44-1dc192490c79',
+          snapshotUrls: 'https://i.gkd.li/i/14188980',
+        },
+        {
+          key: 1,
+          name: '个性装扮弹窗',
+          activityIds: 'cooperation.vip.ad.UserLeadingActivity',
+          matches: '[desc="关闭"][visibleToUser=true]', // 右侧关闭按钮无效
+          snapshotUrls: 'https://i.gkd.li/i/15137056',
         },
       ],
     },
@@ -588,6 +612,41 @@ export default defineAppConfig({
             'https://i.gkd.li/i/14193973', // 误触
             'https://i.gkd.li/i/14734790', // 误触
           ],
+        },
+      ],
+    },
+    {
+      key: 25,
+      name: '全屏广告-腾讯文档页面-"使用App"弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          activityIds:
+            'com.tencent.mobileqq.activity.TeamWorkDocEditBrowserActivity',
+          matches:
+            '@TextView[clickable=true] + * > [text^="使用 APP"] <<n [vid="webview"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/6efc2dfd-79f3-43b5-bf20-f59a88295ddb',
+          snapshotUrls: 'https://i.gkd.li/i/14188983',
+        },
+      ],
+    },
+    {
+      key: 26,
+      name: '功能类-申请入群后自动点击右上角关闭',
+      actionMaximum: 1,
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
+          matches: [
+            'TextView[text="入群申请中"][visibleToUser=true]',
+            'TextView[text="关闭"][visibleToUser=true]',
+          ],
+          exampleUrls:
+            'https://m.gkd.li/57941037/df526685-8a68-48cd-8328-0292079ff030',
+          snapshotUrls: 'https://i.gkd.li/i/14235163',
         },
       ],
     },
