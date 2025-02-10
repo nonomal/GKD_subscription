@@ -1,34 +1,28 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'make.more.r2d2.cellular_z',
   name: 'Cellular-Z',
-  deprecatedKeys: [2],
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      resetMatch: 'app',
-      actionMaximum: 1,
+      fastQuery: true,
       matchTime: 10000,
-      actionCdKey: 0,
+      actionMaximum: 1,
+      resetMatch: 'app',
       actionMaximumKey: 0,
       rules: [
         {
           key: 0,
-          quickFind: true,
           matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
-        },
-        {
-          key: -1,
-          matches:
-            '[childCount=0][visibleToUser=true][(text.length<10 && (text*="跳过" || text*="跳過" || text*="skip" || text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || desc*="跳过" || desc*="skip" || (vid*="count" && vid*="down" && vid!*="countdown" && vid!*="load" && vid!*="add" && vid!*="ead" && vid!*="time")]',
+          exampleUrls: 'https://e.gkd.li/10fa1ebe-c208-4127-a456-48ac91901984',
+          snapshotUrls: 'https://i.gkd.li/i/16486491',
         },
         {
           key: 1,
-          name: '字节广告SDK',
           matches:
-            'TextView - @View[clickable=true] <n FrameLayout <2 FrameLayout[childCount=2]', // 字节开屏通用规则
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[text=null] <<n [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/13978978',
         },
       ],

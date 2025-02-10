@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.jxedt',
   name: '驾校一点通',
   groups: [
@@ -18,7 +18,7 @@ export default defineAppConfig({
         {
           key: 0,
           activityIds: 'com.jxedt.ui.activitys.NewHomeActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.jxedt:id/img_dialog_ad_close"]',
           snapshotUrls: 'https://i.gkd.li/i/13476741',
         },

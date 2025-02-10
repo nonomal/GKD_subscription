@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.lptiyu.tanke',
   name: '步道乐跑',
   groups: [
@@ -46,7 +46,7 @@ export default defineAppConfig({
           key: 3,
           name: '快手广告-2',
           activityIds: 'com.lptiyu.tanke.activities.splash.SplashActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[text="广告"] <2 ViewGroup - ViewGroup > ViewGroup > [text="跳过"]',
           snapshotUrls: 'https://i.gkd.li/i/13476172',
@@ -55,7 +55,7 @@ export default defineAppConfig({
           key: 4,
           name: '快手广告-3',
           activityIds: 'com.lptiyu.tanke.activities.splash.SplashActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.lptiyu.tanke:id/ksad_splash_circle_skip_left_view"]',
           snapshotUrls: 'https://i.gkd.li/i/13625386',

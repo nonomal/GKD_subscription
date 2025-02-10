@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xueqiu.android',
   name: '雪球',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
       name: '局部广告-首页信息流广告',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.xueqiu.android.mainnesting.view.MainNestingActivity',
           matches: '[id="com.xueqiu.android:id/ad_close"]',
@@ -25,7 +25,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.xueqiu.android.community.StatusDetailActivity',
           matches: '[id="com.xueqiu.android:id/ad_card_close"]',
           exampleUrls:

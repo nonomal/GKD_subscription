@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.realmecomm.app',
   name: 'realme社区',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '功能类-自动点击签到',
       desc: '自动点击签到',
-      quickFind: true,
+      fastQuery: true,
       resetMatch: 'app',
       actionMaximum: 1,
       activityIds: 'com.android.realme2.home.view.MainActivity',

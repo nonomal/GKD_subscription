@@ -1,22 +1,26 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.android.packageinstaller',
   name: '软件包安装程序',
   groups: [
     {
       key: 1,
       name: '功能类-自动安装应用',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
           name: '点击[继续安装]',
-          activityIds: 'com.android.packageinstaller.PackageInstallerActivity',
+          activityIds: [
+            'com.android.packageinstaller.PackageInstallerActivity',
+            'com.android.packageinstaller.FlymePackageInstallerActivity',
+          ],
           matches: '[text="继续安装"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13206444',
             'https://i.gkd.li/i/14046749',
+            'https://i.gkd.li/i/16550275',
           ],
         },
         {
@@ -26,6 +30,7 @@ export default defineAppConfig({
             'com.android.packageinstaller.NewInstallInstalling',
             'com.android.packageinstaller.InstallSuccess',
             'com.android.packageinstaller.oplus.InstallAppProgress',
+            'com.android.packageinstaller.FlymePackageInstallerActivity',
           ],
           matches: '[text="完成"]',
           snapshotUrls: [
@@ -34,12 +39,13 @@ export default defineAppConfig({
             'https://i.gkd.li/i/13962438',
             'https://i.gkd.li/i/14138323',
             'https://i.gkd.li/i/14471862',
+            'https://i.gkd.li/i/16550273',
           ],
         },
         {
           key: 2,
           name: '点击[安装]',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.android.packageinstaller.DeleteStagedFileOnResult',
           matches: '[vid="confirm_bottom_button_layout"]',
           snapshotUrls: 'https://i.gkd.li/i/14228348',
@@ -47,14 +53,14 @@ export default defineAppConfig({
         {
           key: 3,
           name: '勾选[已了解此应用未经检测，可能存在风险]',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.android.packageinstaller.PackageInstallerActivity',
           matches: '[vid="checkbox"][checked=false]',
           snapshotUrls: 'https://i.gkd.li/i/14595443',
         },
         {
           key: 4,
-          quickFind: true,
+          fastQuery: true,
           position: {
             left: 'width * 0.7185',
             top: 'width * 0.1157',

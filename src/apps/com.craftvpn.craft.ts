@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.craftvpn.craft',
   name: '小牛加速器',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '开屏广告',
       desc: '点击X',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       matchTime: 10000,
       resetMatch: 'app',

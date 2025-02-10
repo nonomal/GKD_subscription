@@ -1,12 +1,12 @@
-import { defineAppConfig } from '../types';
-export default defineAppConfig({
+import { defineGkdApp } from '@gkd-kit/define';
+export default defineGkdApp({
   id: 'com.x2era.xcloud.app',
   name: 'Fa米家',
   groups: [
     {
       key: 1,
       name: 'Fa米家-升级提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       desc: '关闭升级弹窗',

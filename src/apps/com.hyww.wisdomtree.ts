@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.hyww.wisdomtree',
   name: '智慧树',
   groups: [
@@ -28,7 +28,7 @@ export default defineAppConfig({
         {
           key: 0,
           name: '信息流广告',
-          quickFind: true,
+          fastQuery: true,
           matches: '[vid="time_line_type"] <<n * > * > [vid="rl_down"]',
           snapshotUrls: 'https://i.gkd.li/i/13852023',
         },

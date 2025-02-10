@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.netease.mobimail',
   name: '网易邮箱',
   groups: [
@@ -13,7 +13,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[text*="跳过"][text.length<=10][id!="com.netease.mobimail:id/ad_skip"]',
           snapshotUrls: [

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xbxxhz.box',
   name: '小白学习打印',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
         {
           key: 0,
           name: '红包弹窗',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.mango.login.main.MainAct',
           matches: '[vid="dg_dialog_frag_ads_popup_x"][clickable=true]',
           exampleUrls:
@@ -30,7 +30,7 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.mango.appfile.print_finish.PrintFinishAct',
           matches:
             'ImageView < @FrameLayout +2 FrameLayout >2 [text="打开或下载第三方应用"]',

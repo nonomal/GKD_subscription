@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.baidu.tieba',
   name: '百度贴吧',
-  deprecatedKeys: [4, 7],
   groups: [
     {
       key: 0,
@@ -14,7 +13,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           name: '【跳过+倒计时】型',
           matches: 'TextView[text^="跳过"][text.length<=10]',
           snapshotUrls: [
@@ -32,7 +31,7 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          quickFind: true,
+          fastQuery: true,
           name: '【x+关闭】型',
           matches:
             'TextView[text="广告"] - @LinearLayout[clickable=true] > [text="关闭"]',
@@ -203,7 +202,7 @@ export default defineAppConfig({
         {
           key: 1,
           name: '评论区左侧悬浮广告',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
           matches: 'LinearLayout[childCount=2] > @ImageView + [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/13296280',
@@ -229,7 +228,7 @@ export default defineAppConfig({
       actionMaximum: 1,
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
           matches: '[vid="tip_close"]',
           exampleUrls:
@@ -247,16 +246,22 @@ export default defineAppConfig({
           name: '贴吧页签到',
           activityIds: 'com.baidu.tieba.forum.ForumActivity',
           matches:
-            'WebView[text="frs"] > View > View > View > View > TextView[text="签到"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/13776801',
+            'WebView[text="frs"] > View > View > View > View > TextView[text="签到"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13776801',
+            'https://i.gkd.li/i/15087289',
+          ],
         },
         {
           key: 1,
-          name: '签到成功-弹窗',
+          name: '关闭签到成功弹窗',
           activityIds: 'com.baidu.tbadk.browser.TBWebContainerActivity',
           matches:
-            'WebView[text="签到弹窗"] > View > View > TextView[text=""][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/13776424',
+            'WebView[text="签到弹窗"] > View > View > TextView[text=""][index=2][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13776424',
+            'https://i.gkd.li/i/15087327',
+          ],
         },
       ],
     },
@@ -267,7 +272,7 @@ export default defineAppConfig({
       actionMaximum: 1,
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
           matches: '@ImageView[clickable=true] -2 [text="进入话题查看更多"]',
           exampleUrls:
@@ -284,12 +289,20 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'com.baidu.tieba.tblauncher.MainTabActivity',
+          forcedTime: 5000,
+          activityIds: [
+            'com.baidu.tieba.tblauncher.MainTabActivity',
+            'com.baidu.tbadk.browser.TBWebContainerActivity',
+          ],
           matches:
-            '[text="会员弹窗"] >3 Image[clickable=true][index=2][text!=null]',
+            'WebView[text="会员弹窗" || text="一键签到"] >3 TextView + Image[text!=null][childCount=0][visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/dd2f2a00-e9d3-47fa-986d-09ae6180d932',
-          snapshotUrls: 'https://i.gkd.li/i/14630806',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14630806',
+            'https://i.gkd.li/i/15119439',
+            'https://i.gkd.li/i/15119451',
+          ],
         },
       ],
     },

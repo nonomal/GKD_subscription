@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.nowcasting.activity',
   name: '彩云天气',
   groups: [
     {
       key: 1,
       name: '全屏广告-VIP弹窗广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.nowcasting.activity.WeatherActivity',
       rules: [
         {
@@ -20,7 +20,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '全屏广告-弹窗广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.nowcasting.activity.WeatherActivity',
       rules: [
         {
@@ -34,7 +34,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          quickFind: true,
+          fastQuery: true,
           matches:
             'ImageView < @ViewGroup[clickable=true] <<n ViewGroup +n ViewGroup [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/14814374',
@@ -44,7 +44,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '综合广告-卡片广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.nowcasting.activity.WeatherActivity',
       rules: [
         // 分段广告
@@ -78,7 +78,7 @@ export default defineAppConfig({
       name: '功能类-点击收起顶部工具栏',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.nowcasting.activity.WeatherActivity',
           matches:
             'ViewGroup[childCount=2][visibleToUser=true] > [vid="fl_arrow"][visibleToUser=true]',

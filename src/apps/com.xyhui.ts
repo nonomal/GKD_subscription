@@ -1,15 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xyhui',
   name: 'PU口袋校园',
-  deprecatedKeys: [4],
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      actionCdKey: 0,
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -17,27 +15,27 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
-          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
-        },
-        {
-          key: -1,
           matches:
-            '[childCount=0][visibleToUser=true][(text.length<10 && (text*="跳过" || text*="跳過" || text*="skip" || text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || desc*="跳过" || desc*="skip" || (vid*="count" && vid*="down" && vid!*="countdown" && vid!*="load" && vid!*="add" && vid!*="ead" && vid!*="time")]',
-        },
-        {
-          key: 1,
-          matches:
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView <<n [id="android:id/content"]',
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[text=null] <<n [id="android:id/content"]',
           snapshotUrls: [
             'https://i.gkd.li/i/14560058',
             'https://i.gkd.li/i/14560214',
           ],
         },
         {
+          key: 1,
+          matches: '[text^="跳过"][text.length<=10]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12642486',
+            'https://i.gkd.li/i/12846496',
+            'https://i.gkd.li/i/12868232',
+          ],
+        },
+        {
           key: 2,
-          matches: '[id="com.xyhui:id/ms_skipView"]',
-          snapshotUrls: 'https://i.gkd.li/i/13197417',
+          action: 'clickCenter',
+          matches: '[vid="ms_skipView"]',
+          snapshotUrls: 'https://i.gkd.li/i/16486847',
         },
       ],
     },
@@ -65,7 +63,7 @@ export default defineAppConfig({
         {
           key: 2,
           name: '快手广告',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.xyhui.start.LoadingActivity',
           matches:
             'ImageView < @ViewGroup[clickable=true] < * <2 * + * >3 [text="广告"]',
@@ -77,7 +75,7 @@ export default defineAppConfig({
         {
           key: 3,
           name: '字节广告',
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
           matches: 'View[clickable=true] < FrameLayout +4 * >2 [text="反馈"]',
@@ -86,7 +84,7 @@ export default defineAppConfig({
         {
           key: 4,
           name: '美数广告',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.meishu.sdk.activity.SdkInterstitialActivity',
           matches: '[id="com.xyhui:id/ms_activity_sdk_interstitial_cacel"]',
           snapshotUrls: 'https://i.gkd.li/i/13458692',
@@ -103,7 +101,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '局部广告-首页-右侧浮窗广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.xyhui.start.PUMainActivity',
         'com.xyhui.start.LoadingActivity',
@@ -117,11 +115,10 @@ export default defineAppConfig({
     {
       key: 3,
       name: '更新提示',
-      quickFind: true,
-      activityIds: [
-        'com.xyhui.start.PUMainActivity',
-        'com.xyhui.start.LoadingActivity',
-      ],
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
       rules: 'ImageView[id="com.xyhui:id/closeIv"]',
       snapshotUrls: [
         'https://i.gkd.li/i/12908853',

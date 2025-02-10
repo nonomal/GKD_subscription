@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.TuHu.android',
   name: '途虎养车',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
       name: '广告弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'cn.TuHu.Activity.tuhutab.TuHuTabActivity',
       rules:
         '@[id="cn.TuHu.android:id/imgClose"] - [id="cn.TuHu.android:id/rlContent"] > [id="cn.TuHu.android:id/img_jump"]',
@@ -16,7 +15,7 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      quickFind: true,
+      fastQuery: true,
       name: '请求通知权限弹窗',
       activityIds: 'cn.TuHu.Activity.tuhutab.TuHuTabActivity',
       rules: '[id="cn.TuHu.android:id/imgClose"]',

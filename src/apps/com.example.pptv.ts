@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.example.pptv',
   name: '人人视频',
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -29,7 +29,7 @@ export default defineAppConfig({
       name: '青少年模式',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '@[text="我知道了"] - * > [text="未成年模式"]',
       snapshotUrls: 'https://i.gkd.li/i/13761159',
     },

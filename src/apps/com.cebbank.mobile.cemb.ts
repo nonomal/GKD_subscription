@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.cebbank.mobile.cemb',
   name: '光大银行',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -19,7 +18,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '首页广告弹窗',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

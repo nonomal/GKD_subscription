@@ -1,7 +1,0 @@
-# 飞鸟听书
-
-存在 1 规则组 - [cn.ms.pages](/src/apps/cn.ms.pages.ts)
-
-## 未分类-弹窗广告
-
-- [快照-0](https://i.gkd.li/i/13450787)

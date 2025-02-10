@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.soft.blued',
   name: 'Blued',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           activityIds: [
             'com.blued.android.core.ui.TerminalActivity',
             'com.soft.blued.ui.home.HomeActivity',
@@ -28,7 +28,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '全屏广告-会员购买弹窗',
-      quickFind: true,
+      fastQuery: true,
       resetMatch: 'app',
       activityIds: 'com.blued.android.core.ui.TransparentActivity',
       rules: '[vid="blued_ad_layout"] +n [vid="img_close"]',
@@ -39,7 +39,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '全屏广告-首充弹窗',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -54,7 +54,7 @@ export default defineAppConfig({
       rules: [
         {
           activityIds: 'com.blued.android.core.ui.TerminalActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.soft.blued:id/iv_close"]',
           exampleUrls:
             'https://m.gkd.li/57941037/37ea59cf-9606-4cd6-a74a-84f353f07975',

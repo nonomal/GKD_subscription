@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ctm',
   name: 'CTM Buddy',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
       name: '浮窗广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ctm.home.page.MainActivity',
       rules: '[id="com.ctm:id/iv_close"]',
       snapshotUrls: 'https://i.gkd.li/i/13350575',
@@ -16,7 +15,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '底部横幅广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ctm.home.page.MainActivity',
       rules: '[id="com.ctm:id/btn_close"]',
       snapshotUrls: 'https://i.gkd.li/i/13350612',

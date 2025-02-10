@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tencent.wework',
   name: '企业微信',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           name: '点击别人发的红包',
           activityIds:
             'com.tencent.wework.msg.controller.ExternalContactMessageListActivity',

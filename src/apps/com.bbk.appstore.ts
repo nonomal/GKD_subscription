@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.bbk.appstore',
   name: 'vivo应用商店',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
       name: '通知提示',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: [

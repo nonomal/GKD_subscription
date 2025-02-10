@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.gotokeep.keep',
   name: 'Keep',
-  deprecatedKeys: [1, 6],
   groups: [
     {
       key: 2,
@@ -58,7 +57,7 @@ export default defineAppConfig({
       name: '请求开启通知权限弹窗',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '@[text="暂不开启"] +2 [text="开启通知权限"]',
       snapshotUrls: 'https://i.gkd.li/i/13761671',
     },

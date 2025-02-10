@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tipsoon.android',
   name: '简讯',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           action: 'clickCenter',
           matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
           exampleUrls:

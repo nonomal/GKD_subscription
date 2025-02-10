@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.apkpure.aegon',
   name: 'APKPure',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
@@ -44,7 +43,7 @@ export default defineAppConfig({
         'com.apkpure.aegon.cms.activity.CommonActivity',
         'com.apkpure.aegon.main.activity.AppMoreActivity',
       ],
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           name: '点击三点图标',

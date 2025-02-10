@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'tv.danmaku.bilibilihd',
   name: '哔哩哔哩HD',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 0,
@@ -11,7 +10,7 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '[id="tv.danmaku.bilibilihd:id/count_down"]',
       snapshotUrls: 'https://i.gkd.li/i/13031261',
     },

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.gkid.crazyrope',
   name: '天天跳绳',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '会员提示',
       desc: '点击不需要',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.gkid.crazyrope.ui.member.MemberDiscountsActivity',
       rules: [
         {
@@ -21,7 +21,7 @@ export default defineAppConfig({
       key: 2,
       name: '浮窗广告',
       desc: '二步确认',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.gkid.crazyrope.ui.drillcommon.DrillActivity',
       rules: [
         '[id="com.gkid.crazyrope:id/iv_close"]',

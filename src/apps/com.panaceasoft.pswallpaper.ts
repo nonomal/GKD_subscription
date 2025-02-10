@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.panaceasoft.pswallpaper',
   name: 'ClrvAI',
   groups: [
     {
       key: 1,
       name: '功能类-公告弹窗',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       resetMatch: 'app',
       actionMaximum: 1,

@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ss.android.ugc.aweme',
   name: '抖音',
-  deprecatedKeys: [0, 2, 3],
   groups: [
     {
       key: 1,
@@ -60,7 +59,7 @@ export default defineAppConfig({
         },
         {
           key: 6,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.ss.android.ugc.aweme.main.MainActivity',
           matches: '@[text="不感兴趣"] - * [text*="也关注了"]',
           snapshotUrls: 'https://i.gkd.li/i/14661956',
@@ -78,7 +77,7 @@ export default defineAppConfig({
     {
       key: 5,
       name: '全屏广告-广告弹窗',
-      quickFind: true,
+      fastQuery: true,
       rules:
         '[id="android:id/content"] >2 RelativeLayout[childCount<=5] > @ImageView[clickable=true][id!=null] - TextView[text="广告"][id!=null]',
       snapshotUrls: 'https://i.gkd.li/i/12769137',
@@ -86,7 +85,7 @@ export default defineAppConfig({
     {
       key: 6,
       name: '评价提示',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       desc: '点击[取消]',
@@ -100,7 +99,7 @@ export default defineAppConfig({
       key: 7,
       name: '功能类-设置无声进入抖音',
 
-      quickFind: true,
+      fastQuery: true,
       desc: '点击[拒绝]',
       activityIds: 'com.ss.android.ugc.aweme.main.MainActivity',
       rules: '@[text="拒绝"] + [text="去设置"]',
@@ -112,7 +111,7 @@ export default defineAppConfig({
       desc: '自动点击“暂不”',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ss.android.ugc.aweme.main.MainActivity',
       rules: [
         {
@@ -132,7 +131,7 @@ export default defineAppConfig({
       key: 11,
       name: '功能类-自动勾选原图',
       desc: '聊天发送图片时自动勾选原图',
-      quickFind: true,
+      fastQuery: true,
       activityIds:
         'com.ss.android.ugc.aweme.im.sdk.media.choose.MediaChooseActivity',
       rules: '[text="原图"][desc="未选中/复选框 原图"]',
@@ -144,7 +143,7 @@ export default defineAppConfig({
     {
       key: 12,
       name: '功能类-休息提醒',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           matches: '[text="可进入使用管理助手更改设置"] -2 Button[text="取消"]',
@@ -178,7 +177,7 @@ export default defineAppConfig({
         {
           key: 1,
           name: '商城快捷方式',
-          quickFind: true,
+          fastQuery: true,
           activityIds: [
             'com.ss.android.ugc.aweme.main.MainActivity',
             'com.ss.android.ugc.aweme.live.LiveDummyActivity',
@@ -193,7 +192,7 @@ export default defineAppConfig({
         {
           key: 2,
           name: '搜索组件',
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.ss.android.ugc.aweme.search.activity.SearchResultActivity',
           matches: '[text="暂不开启"][clickable=true]',
@@ -223,7 +222,7 @@ export default defineAppConfig({
         {
           key: 0,
           name: '搜索小组件',
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.ss.android.ugc.aweme.search.activity.SearchResultActivity',
           matches: '[text="开启搜索组件到桌面"] +2 [text="暂不开启"]',
@@ -233,8 +232,8 @@ export default defineAppConfig({
     },
     {
       key: 17,
-      name: '定位提示',
-      quickFind: true,
+      name: '权限提示-定位权限',
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds:
@@ -266,7 +265,7 @@ export default defineAppConfig({
       desc: '点击关闭',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           position: {
             left: 'width * 0.5051',
             top: 'width * 2.0649',
@@ -285,7 +284,7 @@ export default defineAppConfig({
       desc: '点击【拒绝】',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ss.android.ugc.aweme.main.MainActivity',
       rules: '[text$="通讯录"] +2 FrameLayout >2 [text="拒绝"]',
       snapshotUrls: 'https://i.gkd.li/i/14735284',
@@ -293,7 +292,7 @@ export default defineAppConfig({
     {
       key: 21,
       name: '青少年模式',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
@@ -315,7 +314,7 @@ export default defineAppConfig({
       desc: '点击[知道了]',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: [
             'com.ss.android.ugc.aweme.live.LiveDummyActivity',
             'com.ss.android.ugc.aweme.commerce.sdk.MallContainerActivity',

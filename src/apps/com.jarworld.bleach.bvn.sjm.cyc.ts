@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.jarworld.bleach.bvn.sjm.cyc',
   name: '次元城动漫',
   groups: [
@@ -14,7 +14,7 @@ export default defineAppConfig({
         {
           key: 0,
           activityIds: 'com.jarworld.bleach.bvn.sjm.cyc.MainActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[text*="跳过"][text.length<=10]',
           snapshotUrls: 'https://i.gkd.li/i/13626949',
         },

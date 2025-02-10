@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.pingan.paces.ccms',
   name: '平安口袋银行',
   groups: [
     {
       key: 1,
       name: '全屏广告-首页-权益/抽奖弹窗',
-      quickFind: true,
+      fastQuery: true,
       resetMatch: 'app',
       actionMaximum: 1,
       activityIds: 'com.pingan.launcher.activity.LauncherActivity',

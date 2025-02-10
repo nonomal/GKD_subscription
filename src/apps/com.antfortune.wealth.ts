@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.antfortune.wealth',
   name: '蚂蚁财富',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       actionMaximum: 1,
       matchTime: 10000,
-      quickFind: true,
+      fastQuery: true,
       rules:
         '@View[clickable=true] <2 [id="com.antfortune.wealth:id/welcome_page"]',
       snapshotUrls: 'https://i.gkd.li/i/12776577',

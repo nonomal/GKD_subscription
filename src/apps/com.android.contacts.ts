@@ -1,5 +1,5 @@
-import { defineAppConfig } from '../types';
-export default defineAppConfig({
+import { defineGkdApp } from '@gkd-kit/define';
+export default defineGkdApp({
   id: 'com.android.contacts',
   name: '通讯录与拨号',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.mobile.businesshall.ui.common.RecommendPopupActivity',
           matches: '[vid="img_close_btn"][clickable=true][visibleToUser=true]',

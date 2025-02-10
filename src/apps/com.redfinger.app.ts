@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.redfinger.app',
   name: '红手指云手机',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
       name: '更新提示',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules:
         '[id="com.redfinger.app:id/btn_update"] + [id="com.redfinger.app:id/iv_close"]',
       snapshotUrls: 'https://i.gkd.li/i/13761821',
@@ -21,7 +21,7 @@ export default defineAppConfig({
         {
           key: 0,
           activityIds: 'com.redfinger.app.activity.MainActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.redfinger.app:id/rl_screen_ad_close"]',
           snapshotUrls: 'https://i.gkd.li/i/13761825',
         },

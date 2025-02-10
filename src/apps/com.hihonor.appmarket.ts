@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.hihonor.appmarket',
   name: '荣耀应用市场',
   groups: [
     {
       key: 1,
       name: '广告弹窗',
-      quickFind: true,
+      fastQuery: true,
 
       activityIds: [
         'com.hihonor.android.launcher.unihome.UniHomeLauncher',
@@ -22,7 +22,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '悬浮窗小广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.hihonor.appmarket.module.main.MainActivity',
       rules: '[id="com.hihonor.appmarket:id/iv_floating_close"]',
       snapshotUrls: 'https://i.gkd.li/i/13063928',
@@ -30,7 +30,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '推送通知',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.hihonor.appmarket.module.main.MainActivity',
       rules:
         'TextView[text="接收通知"] < LinearLayout < LinearLayout +n [id="android:id/buttonPanel"] Button[text="否"]',

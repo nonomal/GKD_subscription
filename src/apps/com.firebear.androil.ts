@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.firebear.androil',
   name: '小熊油耗',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       actionCdKey: 0,
       actionMaximumKey: 0,
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

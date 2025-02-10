@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.lucky.luckyclient',
   name: '瑞幸咖啡',
   groups: [
@@ -18,7 +18,7 @@ export default defineAppConfig({
       desc: '关闭超值换购弹窗',
 
       activityIds: 'com.lucky.luckyclient.preview2.OrderPreviewActivity2',
-      quickFind: true,
+      fastQuery: true,
       rules: '[id="com.lucky.luckyclient:id/close_iv"][visibleToUser=true]',
       snapshotUrls: 'https://i.gkd.li/i/12922834',
     },

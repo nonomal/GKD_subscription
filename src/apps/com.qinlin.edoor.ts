@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.qinlin.edoor',
   name: '亲邻开门',
   groups: [
@@ -25,7 +25,7 @@ export default defineAppConfig({
         {
           key: 0,
           name: '穿山甲SDK',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '@[id="com.qinlin.edoor:id/iv_close"] - LinearLayout >n [text*="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/13771774',

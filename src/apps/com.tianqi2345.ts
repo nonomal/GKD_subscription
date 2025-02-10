@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tianqi2345',
   name: '2345天气王',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
         {
           key: 0,
           name: '快手SDK',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.tianqi2345.activity.NewMainActivity',
           matches: '@ImageView[clickable=true] + * > [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/14391630',

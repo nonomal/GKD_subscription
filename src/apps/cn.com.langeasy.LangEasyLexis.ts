@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.com.langeasy.LangEasyLexis',
   name: '不背单词',
   groups: [
     {
       key: 1,
       name: '自动签到',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       rules: [
@@ -22,7 +22,7 @@ export default defineAppConfig({
       key: 2,
 
       name: '右下角弹窗',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       rules: [
         {

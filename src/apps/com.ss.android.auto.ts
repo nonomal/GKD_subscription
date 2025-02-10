@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ss.android.auto',
   name: '懂车帝',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '首页推荐卡片广告',
       desc: '需二次点击关闭原因',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ss.android.auto.activity.SplashActivity',
       rules: [
         {
@@ -37,7 +37,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '升级弹窗',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: [
@@ -51,7 +51,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '右下角悬浮窗',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',
@@ -71,7 +71,7 @@ export default defineAppConfig({
     {
       key: 4,
       name: '文章底部卡片式广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds:
         'com.ss.android.article.base.feature.detail2.view.NewDetailActivity',
       rules:
@@ -82,7 +82,7 @@ export default defineAppConfig({
       key: 5,
       name: '局部广告-评论区-信息流广告',
       desc: '像正常内容的广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.ss.android.article.base.feature.detail2.view.NewDetailActivity',
         'com.ss.android.auto.ugc.video.activity.UgcLongPostActivity',
@@ -100,7 +100,7 @@ export default defineAppConfig({
     {
       key: 6,
       name: '请求推送通知弹窗',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: [
@@ -113,7 +113,7 @@ export default defineAppConfig({
     {
       key: 7,
       name: '选车页卡片广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ss.android.auto.activity.ConcernDetailActivity',
       rules:
         'TextView[text.length=1][id=null][clickable=false] < @FrameLayout[clickable=true][id!=null] -2 [text="广告"]',

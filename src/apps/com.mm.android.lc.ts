@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.mm.android.lc',
   name: '乐橙',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
       matchTime: 10000,
-      quickFind: true,
+      fastQuery: true,
       rules: '[vid="advert_countdown_view"]',
       snapshotUrls: 'https://i.gkd.li/i/14586621',
     },

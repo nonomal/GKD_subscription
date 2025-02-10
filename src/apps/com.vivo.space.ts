@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.vivo.space',
   name: 'vivo 官网',
   groups: [
@@ -19,7 +19,7 @@ export default defineAppConfig({
     {
       key: 4,
       name: '消息通知弹窗',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.jz.xydj',
   name: '星芽免费短剧',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
         {
           key: 0,
           name: '腾讯SDK',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.jz.jzdj.ui.activity.shortvideo.ShortVideoActivity2',
           matches: '[vid="ad_close"]',
           snapshotUrls: 'https://i.gkd.li/i/14391606',

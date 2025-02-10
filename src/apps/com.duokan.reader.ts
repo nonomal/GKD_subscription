@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.duokan.reader',
   name: '多看',
   groups: [
     {
       key: 2,
       name: '首页-广告弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.duokan.reader.DkMainActivity',
       rules: '[id="com.duokan.reader:id/store_feed_layer_close"]',
       snapshotUrls: 'https://i.gkd.li/i/13248773',
@@ -20,7 +20,7 @@ export default defineAppConfig({
           key: 1,
           name: '退出阅读时的推荐弹窗',
           activityIds: 'com.duokan.reader.DkMainActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.duokan.reader:id/reading_stop_read_recommend_stop"]',
           snapshotUrls: 'https://i.gkd.li/i/13413412',
@@ -31,7 +31,7 @@ export default defineAppConfig({
       key: 4,
       name: '小说页广告',
       desc: '小说页面下方出现的条形广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.duokan.reader.DkMainActivity',
       rules:
         '@ImageView < FrameLayout[id="com.duokan.reader:id/reading__app_ad_view__close"]',
@@ -41,7 +41,7 @@ export default defineAppConfig({
       key: 5,
       name: '小说页全屏卡片广告',
       desc: '点击关闭和确定按钮',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

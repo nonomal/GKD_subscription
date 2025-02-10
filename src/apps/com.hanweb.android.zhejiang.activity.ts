@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.hanweb.android.zhejiang.activity',
   name: '浙里办',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '更新提示',
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

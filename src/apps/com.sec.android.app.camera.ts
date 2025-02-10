@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.sec.android.app.camera',
   name: '相机',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '功能类-提高位置精确度弹窗',
       desc: '自动点击【确定】',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           matches: ['[text="是否启用【提高位置精确度】？"]', '[text="确定"]'],

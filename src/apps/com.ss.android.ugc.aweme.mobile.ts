@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ss.android.ugc.aweme.mobile',
   name: '抖音',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '功能类-发现通讯录好友',
       desc: '点击【暂时不要】',
-      quickFind: true,
+      fastQuery: true,
       resetMatch: 'app',
       actionMaximum: 1,
       rules: '[text="发现好友"] -2 [text="暂时不要"]',
@@ -16,14 +16,14 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '定位提示-请求位置权限弹窗',
+      name: '权限提示-定位权限',
       desc: '点击[以后再说]',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.ss.android.ugc.aweme.main.MainActivity',
           matches: '[text^="你还没有开启位置权限"] +2 * > [text="以后再说"]',
           exampleUrls:

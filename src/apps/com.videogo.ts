@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.videogo',
   name: '萤石云视频',
   groups: [
@@ -15,7 +15,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
         },
         {
@@ -34,7 +34,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '主页广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: ['com.videogo.main.MainTabActivity'],
       rules: [
         {

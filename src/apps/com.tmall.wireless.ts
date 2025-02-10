@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tmall.wireless',
   name: '手机天猫',
   groups: [
     {
       key: 1,
       name: '版本更新',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.tmall.wireless.splash.TMSplashActivity',
         'com.tmall.wireless.maintab.module.TMMainTabActivity',

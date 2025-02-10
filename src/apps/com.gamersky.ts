@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.gamersky',
   name: '游民星空',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
           key: 0,
           name: '首页卡片广告',
           activityIds: 'com.gamersky.main.activity.LibMainActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[text="广告"] < * + [id="com.gamersky:id/delete"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13451220',
@@ -44,7 +44,7 @@ export default defineAppConfig({
           name: '评论区卡片广告',
           activityIds:
             'com.gamersky.common.activity.LibDetailContentDetailActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '@[id="com.gamersky:id/close"][clickable=true][visibleToUser=true] - * > [id="com.gamersky:id/badge"]',
           snapshotUrls: 'https://i.gkd.li/i/13759484',
@@ -60,7 +60,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.gamersky.main.activity.LibMainActivity',
           matches: '[text="签到成功！"] < * > [text="确定"]',
           exampleUrls:

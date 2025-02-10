@@ -1,9 +1,29 @@
-import { defineAppConfig } from '../types';
-export default defineAppConfig({
+import { defineGkdApp } from '@gkd-kit/define';
+
+export default defineGkdApp({
   id: 'com.netease.cloudmusic',
   name: '网易云音乐',
-  deprecatedKeys: [3, 9, 11, 12],
   groups: [
+    {
+      key: 0,
+      name: '开屏广告',
+      fastQuery: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 0,
+          excludeActivityIds:
+            'com.netease.cloudmusic.music.biz.setting.activity.SettingActivity',
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15092772',
+            'https://i.gkd.li/i/15092814', // 避免误触
+          ],
+        },
+      ],
+    },
     {
       key: 1,
       name: '分段广告-卡片广告',
@@ -11,7 +31,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           activityIds: [
             'com.netease.cloudmusic.music.biz.search.activity.SearchActivity',
             'com.netease.cloudmusic.activity.MainActivity',
@@ -31,7 +51,7 @@ export default defineAppConfig({
         {
           key: 1,
           name: '推荐页广告',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.netease.cloudmusic.activity.MainActivity',
           matches: '[vid="tag_ad_banner"][clickable=true]',
           exampleUrls:
@@ -53,7 +73,7 @@ export default defineAppConfig({
         {
           // preKeys: [0, 1],该条分段广告有概率被 VIP 弹窗插入导致二段不触发，故去掉 preKeys
           key: 90,
-          quickFind: true,
+          fastQuery: true,
           activityIds: [
             'com.netease.cloudmusic.module.ad.feedback.AdFeedbackBottomSheet',
             'com.netease.cloudmusic.music.biz.search.activity.SearchActivity',
@@ -69,7 +89,7 @@ export default defineAppConfig({
         {
           preKeys: 2,
           key: 91,
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.netease.cloudmusic.music.biz.comment.activity.CommentActivity',
           matches:
@@ -82,7 +102,7 @@ export default defineAppConfig({
       key: 2,
       name: '局部广告-卡片广告',
       desc: '点击关闭',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -93,6 +113,23 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/827ebe8b-f3c6-4068-8d31-11d5b2578680',
           snapshotUrls: 'https://i.gkd.li/i/12745666',
+        },
+        {
+          key: 1,
+          name: '首页卡片广告',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
+          matches: '[vid="adTagView"]',
+          snapshotUrls: 'https://i.gkd.li/i/15047096',
+        },
+        {
+          key: 2,
+          fastQuery: true,
+          activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
+          matches: '[vid="iv_ad_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/15282417',
         },
       ],
     },
@@ -108,7 +145,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.netease.cloudmusic.activity.MainActivity',
           matches: '@ImageView[visibleToUser=true] - * > [text="广告"]',
           snapshotUrls: [
@@ -118,29 +155,48 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          quickFind: true,
-          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
+          fastQuery: true,
+          activityIds: [
+            'com.netease.cloudmusic.activity.MainActivity',
+            'com.netease.cloudmusic.activity.PlayerActivity',
+          ],
           matches:
-            '@ImageView[index=1][clickable=true] <2 ViewGroup[childCount=2] <<n [vid="dsl_dialog_root"]',
+            'ViewGroup[childCount=2] > @ImageView[index=1][clickable=true][visibleToUser=true] <<n [vid="dsl_dialog_root"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13684724',
             'https://i.gkd.li/i/14036940',
+            'https://i.gkd.li/i/15244091',
           ],
         },
         {
           key: 4,
-          name: '播放页赞赏好音乐弹窗',
-          quickFind: true,
+          fastQuery: true,
+          action: 'back',
           activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
-          matches: '@ImageView[clickable=true] +3 * > [text="立即支持"]',
+          matches: '[text="赞赏功能全新升级啦"]',
           snapshotUrls: 'https://i.gkd.li/i/13848913',
+        },
+        {
+          key: 5,
+          fastQuery: true,
+          action: 'back',
+          activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
+          matches: '[text="立即限免体验"]',
+          snapshotUrls: 'https://i.gkd.li/i/15125892',
+        },
+        {
+          key: 6,
+          fastQuery: true,
+          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
+          matches:
+            'View[childCount=4] > @TextView[index=2][visibleToUser=true] <<n [vid="popLayerWebViewContainer"]',
+          snapshotUrls: 'https://i.gkd.li/i/15160018',
         },
       ],
     },
     {
       key: 5,
       name: '全屏广告-VIP弹窗',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -184,11 +240,15 @@ export default defineAppConfig({
         {
           key: 6,
           action: 'back',
-          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
-          matches: '[text="VIP歌曲免费听30分钟"]',
+          activityIds: [
+            'com.netease.cloudmusic.activity.MainActivity',
+            'com.netease.cloudmusic.activity.PlayerActivity',
+          ],
+          matches: '[text*="免费听30分钟"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13804534',
             'https://i.gkd.li/i/12843383',
+            'https://i.gkd.li/i/13804534',
+            'https://i.gkd.li/i/15047126',
           ],
         },
         {
@@ -203,18 +263,19 @@ export default defineAppConfig({
     {
       key: 6,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
           key: 0,
-          matches: '[id="com.netease.cloudmusic:id/md_dialog_cm_close_btn"]',
+          matches: ['[text*="新版本"]', '[text="近期不再提示"]'],
           snapshotUrls: [
             'https://i.gkd.li/i/13233790',
             'https://i.gkd.li/i/13197457',
             'https://i.gkd.li/i/13228878',
+            'https://i.gkd.li/i/15092457', // 避免误触
           ],
         },
       ],
@@ -223,7 +284,7 @@ export default defineAppConfig({
       key: 7,
       name: '局部广告-播放界面广告',
       desc: '右上角 VIP 小悬浮、巨幅卡片式广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
       rules: [
         {
@@ -256,7 +317,7 @@ export default defineAppConfig({
       key: 8,
       name: '局部广告-发现页顶部视频广告',
       desc: '自动点击跳过。',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           activityIds: 'com.netease.cloudmusic.activity.MainActivity',
@@ -290,7 +351,7 @@ export default defineAppConfig({
       key: 13,
       name: '分段广告-评论区广告',
       desc: '点击[关闭]-点击[不感兴趣]',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.netease.cloudmusic.music.biz.comment.activity.CommentActivity',
         'com.netease.cloudmusic.music.biz.comment.activity.ReplyCommentActivity2',
@@ -298,7 +359,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '点击关闭',
+          name: '点击关闭-1',
           matches:
             // 通过广告下方评论visibleToUser=true防止误触
             '[vid="commentVHRootId"][visibleToUser=true] - [vid="commentVHRootId"] [vid="closeAction"][clickable=true]',
@@ -306,7 +367,7 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          name: '点击关闭',
+          name: '点击关闭-2',
           matches:
             '[vid="commentVHRootId"][visibleToUser=true] - [vid="commentAdContainer"] >n [vid="adTagView"]',
           snapshotUrls: [
@@ -341,7 +402,7 @@ export default defineAppConfig({
       name: '功能类-扫码后自动点击[授权登录]',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.netease.cloudmusic.module.login.LoginPermissionActivity',
           matches: '[text="授权登录"][clickable=true]',
@@ -360,7 +421,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.netease.cloudmusic.activity.MainActivity',
           matches: '@ImageView[clickable=true] <n * > [text="查看我的勋章"]',
           exampleUrls:

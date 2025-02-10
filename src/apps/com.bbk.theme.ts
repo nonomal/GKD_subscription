@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.bbk.theme',
   name: 'i主题',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       desc: '点击关闭',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.bbk.theme.Theme',
           matches: '[vid="card_close_img"]',
           exampleUrls:
@@ -25,7 +25,7 @@ export default defineAppConfig({
       desc: '点击关闭',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           matches: '@[vid="cancel"] + * > [text="智慧桌面"]',
           exampleUrls:
             'https://m.gkd.li/57941037/45df70c2-55bc-428a-91cf-40dff23ae2af',

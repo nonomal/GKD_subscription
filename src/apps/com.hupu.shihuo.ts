@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.hupu.shihuo',
   name: '识货',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.shizhi.shihuoapp.module.main.ui.main.MainActivity',
       rules: '[text^="通知分类"] +n ImageView[id="com.hupu.shihuo:id/ivClose"]',
       snapshotUrls: 'https://i.gkd.li/i/13704887',

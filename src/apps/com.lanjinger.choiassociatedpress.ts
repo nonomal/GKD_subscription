@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.lanjinger.choiassociatedpress',
   name: '财联社',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
 
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.lanjinger.choiassociatedpress.main.OperateActivity',
       rules: '@ImageView[id$="iv_back"][clickable=true]',
       snapshotUrls: 'https://i.gkd.li/i/13749206',

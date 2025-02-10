@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.excean.na',
   name: '99手游加速器',
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       resetMatch: 'app',
       actionMaximum: 1,
@@ -22,7 +22,7 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      quickFind: true,
+      fastQuery: true,
       name: '局部广告-卡片广告',
       desc: '点击X',
       rules: [

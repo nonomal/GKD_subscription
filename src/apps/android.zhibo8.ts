@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'android.zhibo8',
   name: '直播吧',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
       name: '信息流广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'android.zhibo8.ui.contollers.main.MainActivity',
       rules: [
         {

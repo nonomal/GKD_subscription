@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.cmbchina.ccd.pluto.cmbActivity',
   name: '掌上生活',
-  deprecatedKeys: [0, 1],
   groups: [
     {
       key: 2,
       name: '全屏广告-首页弹窗广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -23,7 +22,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '局部广告-右侧悬浮广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 2, // 目前只有2个界面会分别弹悬浮窗
       resetMatch: 'app',
@@ -68,7 +67,7 @@ export default defineAppConfig({
       key: 4,
       name: '通知提示-消息页面通知开关',
       desc: '点击x按钮，不开启系统通知',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -79,8 +78,8 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '定位提示-请求开启定位权限弹窗',
-      quickFind: true,
+      name: '权限提示-定位权限',
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[text="定位服务"] +n * > [text="取消"]',

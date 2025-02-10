@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.byd.aeri.caranywhere',
   name: '比亚迪王朝',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
       activityIds: ['com.byd.aeri.splash.module_splash.activity.TabManager'],
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           matches: [
             '[id="com.byd.aeri.caranywhere:id/tv_determine"][text="立即安装"]',
             '[id="com.byd.aeri.caranywhere:id/tv_cancel"]',

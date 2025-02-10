@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.hpbr.bosszhipin',
   name: 'BOSS直聘',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
         'com.hpbr.bosszhipin.module.main.activity.MainActivity',
         'com.hpbr.bosszhipin.module.launcher.WelcomeActivity',
       ],
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'io.dcloud.H576E6CC7',
   name: '鱼泡网',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.yupao.entry.MainActivity',
           matches: '[vid="ad_close"]',
           snapshotUrls: 'https://i.gkd.li/i/14731762',
@@ -23,7 +23,7 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.yupao.entry.MainActivity',
           matches:
             'ImageView < @FrameLayout <3 FrameLayout <2 FrameLayout - FrameLayout >2 [text="摇动或点击了解更多"]',
@@ -37,7 +37,7 @@ export default defineAppConfig({
       key: 2,
       name: '局部广告-右侧浮窗广告',
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.yupao.entry.MainActivity',
       rules: '[vid="close"]',
       snapshotUrls: 'https://i.gkd.li/i/14731762',

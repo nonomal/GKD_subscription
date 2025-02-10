@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.android.browser',
   name: '小米浏览器',
   groups: [
@@ -19,7 +19,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '主页信息流广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.android.browser.BrowserActivity',
         'com.android.browser.flow.view.FeedbackDialog',

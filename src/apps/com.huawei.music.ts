@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.huawei.music',
   name: '华为音乐',
   groups: [
@@ -20,7 +20,7 @@ export default defineAppConfig({
     // {
     //   key: 1,
     //   name: '首页横幅广告',
-    //   quickFind: true,
+    //   fastQuery: true,
     //   activityIds: [
     //     'com.huawei.android.launcher.unihome.UniHomeLauncher',
     //     'com.android.mediacenter.MainActivity',
@@ -38,7 +38,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '广告反馈下拉窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: ['com.huawei.openalliance.ad.activity.FeedbackActivity'],
       rules: [
         {
@@ -58,7 +58,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '播放界面直播浮窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: ['com.android.mediacenter.MainActivity'],
       rules: [
         {
@@ -71,7 +71,7 @@ export default defineAppConfig({
     {
       key: 4,
       name: '播放（音乐、视频）页面广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: ['com.android.mediacenter.MainActivity'],
       rules: [
         {
@@ -88,7 +88,7 @@ export default defineAppConfig({
     {
       key: 5,
       name: '评论区广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.android.mediacenter.comment.ui.CommentListMainActivity',
       ],
@@ -102,7 +102,7 @@ export default defineAppConfig({
     {
       key: 6,
       name: '视频播放页广告反馈',
-      quickFind: true,
+      fastQuery: true,
       activityIds: ['com.android.mediacenter.MainActivity'],
       rules: [
         {
@@ -117,7 +117,7 @@ export default defineAppConfig({
     {
       key: 7,
       name: '播放器上滑广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: ['com.android.mediacenter.MainActivity'],
       rules: [
         {

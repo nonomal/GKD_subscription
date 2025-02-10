@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ecellsz.watch.guard',
   name: '乐康守护',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       matchTime: 10000,
       resetMatch: 'app',
       actionMaximum: 1,
-      quickFind: true,
+      fastQuery: true,
       rules: 'View[clickable=true] <<n [vid="splash_container"]',
       snapshotUrls: 'https://i.gkd.li/i/14039510',
     },

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.didapinche.booking',
   name: '嘀嗒出行',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           matches: '@View[clickable=true] <n * <2 * < [vid="flCSJAdContainer"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13988957',

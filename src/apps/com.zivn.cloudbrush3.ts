@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.zivn.cloudbrush3',
   name: '书法字典大全',
   groups: [
     {
       key: 3,
       name: '信息流广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.zivn.cloudbrush3.app.HomeActivity',
       rules: [
         {

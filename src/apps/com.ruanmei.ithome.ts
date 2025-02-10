@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ruanmei.ithome',
   name: 'IT之家',
   groups: [
@@ -15,7 +15,7 @@ export default defineAppConfig({
       key: 2,
       name: '分段广告-信息流广告',
       desc: '长按广告-点击[屏蔽]-点击[不喜欢此条]',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ruanmei.ithome.ui.MainActivity',
       rules: [
         {

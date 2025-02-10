@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.zhiyin.qingdan.dashixiong',
   name: '大师兄影视',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
           key: 0,
           name: '快手广告-1',
           activityIds: 'com.zhiyin.qingdan.dashixiong.MainActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '@ImageView <n ViewGroup -2 ViewGroup > ViewGroup > [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/12843281',
@@ -61,7 +61,7 @@ export default defineAppConfig({
           key: 5,
           name: '字节广告',
           activityIds: 'com.zhiyin.qingdan.dashixiong.MainActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '@Image < View +n View > View > View > [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/12843323',
         },
@@ -72,7 +72,7 @@ export default defineAppConfig({
       name: '公告弹窗',
       desc: '自动点击【我知道了】',
       activityIds: 'com.zhiyin.qingdan.dashixiong.MainActivity',
-      quickFind: true,
+      fastQuery: true,
       rules: '[desc^="必读通告"] +n [desc="我知道了"]',
       snapshotUrls: 'https://i.gkd.li/i/12843280',
     },

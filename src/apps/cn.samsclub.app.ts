@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.samsclub.app',
   name: '山姆会员商店',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 0,
       name: '开屏广告',
       actionMaximum: 1,
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       resetMatch: 'app',
       rules: [
@@ -21,7 +21,7 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '关闭「系统位置服务未打开」通知条',
+      name: '权限提示-定位权限',
       activityIds: 'cn.samsclub.app.ui.MainActivity',
       rules: [
         {
@@ -32,7 +32,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '关闭「您有一张亲友卡待赠送」通知条',
+      name: '局部广告-底部横幅',
       activityIds: 'cn.samsclub.app.ui.MainActivity',
       rules: [
         {

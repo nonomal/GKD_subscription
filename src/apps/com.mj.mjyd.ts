@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.mj.mjyd',
   name: '追漫大全',
   groups: [
     {
       key: 1,
       name: '广告弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds:
         'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity_T',
       rules: [

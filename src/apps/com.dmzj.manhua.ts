@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.dmzj.manhua',
   name: '动漫之家',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '弹窗广告',
       activityIds: 'com.dmzj.manhua.ui.LaunchInterceptorActivity',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'activity',
       matchTime: 10000,
@@ -20,7 +20,7 @@ export default defineAppConfig({
       name: '主页-浮窗',
       desc: '浮窗-您想运行会员系统吗？',
       activityIds: 'com.dmzj.manhua.ui.home.HomeTabsActivitys',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'activity',
       matchTime: 10000,

@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.cmstop.shaoxing',
   name: '越牛新闻',
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       matchTime: 10000,
       resetMatch: 'app',

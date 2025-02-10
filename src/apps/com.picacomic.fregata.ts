@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.picacomic.fregata',
   name: 'PicACG',
   groups: [
     {
       key: 1,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -25,7 +25,7 @@ export default defineAppConfig({
       key: 2,
       name: '公告',
       desc: '点击主页面的公告和广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',
@@ -45,7 +45,7 @@ export default defineAppConfig({
       key: 3,
       name: '漫画页广告',
       desc: '点击卡片广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',
@@ -64,7 +64,7 @@ export default defineAppConfig({
       key: 4,
       name: '签到',
       desc: '切换到个人页面时自动签到，并确定',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',
@@ -92,7 +92,7 @@ export default defineAppConfig({
       key: 5,
       name: '流量提醒弹窗',
       desc: '弹出流量提醒弹窗时自动点击“确定”',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',

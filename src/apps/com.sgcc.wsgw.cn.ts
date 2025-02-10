@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.sgcc.wsgw.cn',
   name: '网上国网',
   groups: [
@@ -16,7 +16,7 @@ export default defineAppConfig({
         {
           key: 1,
           actionCd: 2000,
-          quickFind: true,
+          fastQuery: true,
           matches: '@[focusable=true] + [text="今日不再出现"]',
           snapshotUrls: [
             'https://i.gkd.li/i/12745042',
@@ -38,7 +38,7 @@ export default defineAppConfig({
           preKeys: 1,
           key: 3,
           actionDelay: 300,
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.sgcc.wsgw.cn:id/news_remind_laytout"] >n [id="com.sgcc.wsgw.cn:id/btn_remind_close"]',
           snapshotUrls: ['https://i.gkd.li/i/12745042'],
@@ -48,7 +48,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '版本更新',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

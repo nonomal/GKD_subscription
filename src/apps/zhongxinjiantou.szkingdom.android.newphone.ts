@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'zhongxinjiantou.szkingdom.android.newphone',
   name: '蜻蜓点金',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '通知权限',
       desc: '点击放弃通知',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.szkingdom.android.phone.ZXJTUserMainActivity',
       rules: [
         {

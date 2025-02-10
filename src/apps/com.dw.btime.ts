@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.dw.btime',
   name: '亲宝宝',
   groups: [
     {
       key: 1,
       name: '应用内弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.dw.btime.MainHomeTabActivity',
       rules: '[id="com.dw.btime:id/iv_overlay_close"][clickable=true]',
       snapshotUrls: 'https://i.gkd.li/i/12889448',
@@ -15,7 +15,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '应用内横幅',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.dw.btime.MainHomeTabActivity',
       rules: '[id="com.dw.btime:id/old_baby_close"][clickable=true]',
       snapshotUrls: 'https://i.gkd.li/i/12889450',
@@ -23,7 +23,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.dw.btime.base_library.dialog.DWBaseDialog',
       rules:
         'TextView[text="立即更新"] -3 [id="com.dw.btime:id/iv_upgrade_close"]',

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.android.documentsui',
   name: '文件',
   groups: [
@@ -13,7 +13,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      quickFind: true,
+      fastQuery: true,
       name: '功能类-使用此文件夹',
       rules: [
         {

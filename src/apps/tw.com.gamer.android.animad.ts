@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'tw.com.gamer.android.animad',
   name: '動畫瘋',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
       name: '动画疯年龄限制',
       desc: '点击同意',
       activityIds: 'tw.com.gamer.android.animad.VideoActivity',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           matches:

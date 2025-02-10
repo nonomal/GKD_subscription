@@ -1,5 +1,5 @@
-import { defineAppConfig } from '../types';
-export default defineAppConfig({
+import { defineGkdApp } from '@gkd-kit/define';
+export default defineGkdApp({
   id: 'com.kugou.android.lite',
   name: '酷狗概念版',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
           key: 0,
           name: '新人限时优惠弹窗',
           activityIds: 'com.kugou.android.app.setting.YoungModeTipsActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[text^="新人限时开通"] +3 [text="放弃优惠"]',
           snapshotUrls: 'https://i.gkd.li/i/14321698',
         },
@@ -43,7 +43,7 @@ export default defineAppConfig({
           key: 1,
           preKeys: 0,
           activityIds: 'com.kugou.android.app.MediaActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[text="是否取消？"] +4 * > [text="确认"]',
           snapshotUrls: 'https://i.gkd.li/i/14321724',
         },
@@ -54,7 +54,7 @@ export default defineAppConfig({
       name: '更新提示',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '@ImageView - * > [text="立即升级"]',
       snapshotUrls: 'https://i.gkd.li/i/14622566',
     },

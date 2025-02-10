@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.microsoft.emmx',
   name: 'Edge',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '[text="允许通知"] + [text="不，谢谢"]',
       snapshotUrls: 'https://i.gkd.li/i/13646187',
     },
@@ -20,7 +20,7 @@ export default defineAppConfig({
       desc: '点击[确定]',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'org.chromium.chrome.browser.ChromeTabbedActivity',
           matches: '[text="关闭所有标签页?"] + * > [text="确定"]',
           exampleUrls:
@@ -34,7 +34,7 @@ export default defineAppConfig({
       name: '功能类-关闭标签页',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'org.chromium.chrome.browser.ChromeTabbedActivity',
           matches: '[text="关闭标签页"]',
           exampleUrls:

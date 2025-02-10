@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ss.android.article.video',
   name: '西瓜视频',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '@[desc="关闭"] - LinearLayout > [text="立即升级"]',
@@ -17,7 +16,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '通知弹窗',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'activity',
       rules:
@@ -27,7 +26,7 @@ export default defineAppConfig({
     {
       key: 6,
       name: '红包弹窗',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

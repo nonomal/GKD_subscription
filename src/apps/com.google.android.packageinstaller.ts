@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.google.android.packageinstaller',
   name: '软件包安装程序',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
       // 尚不明确安装、更新、重叠三种情况混合时的activityid，故去掉activityIds字段
       key: 1,
       name: '功能类-自动安装/更新软件',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -37,7 +37,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '功能类-安装未知应用设置',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.android.packageinstaller.InstallStaging',
       rules: [
         {

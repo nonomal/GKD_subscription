@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.bilibili.studio',
   name: '必剪',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 0,
       name: '通知权限请求',
       desc: '会出现在创作、模板、我的页面，自动点击不开启。',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.bcut.homepage.widget.MainActivity',
       rules: [
         {
@@ -29,7 +29,7 @@ export default defineAppConfig({
       key: 3,
       name: '版本更新',
       desc: '勾选【忽略】-点击【以后再说】',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

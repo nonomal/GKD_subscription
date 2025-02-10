@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.kmxs.reader',
   name: '七猫免费小说',
-  deprecatedKeys: [-2, 0],
   groups: [
     {
       key: 2,
@@ -16,7 +15,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '阅读结束后显示的广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'org.geometerplus.android.fbreader.FBReader',
       rules: [
         {
@@ -54,7 +53,7 @@ export default defineAppConfig({
     {
       key: 8,
       name: '书架顶部广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.kmxs.reader.home.ui.HomeActivity',
       rules: '[id="com.kmxs.reader:id/bookshelf_book_item_direct_close"]',
       snapshotUrls: ['https://i.gkd.li/i/13489942'],
@@ -79,7 +78,7 @@ export default defineAppConfig({
         {
           key: 1,
           name: '点击【x】',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.byted.pangle:id/tt_reward_full_count_down_after_close"]',
           snapshotUrls: 'https://i.gkd.li/i/13459182',

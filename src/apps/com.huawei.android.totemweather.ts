@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.huawei.android.totemweather',
   name: '华为天气',
   groups: [
@@ -12,10 +12,10 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           matches: [
             '[id="com.huawei.android.totemweather:id/rl_splash_container"]',
-            '[text.length<=4][text^="跳过"]', // 无法使用 quickFind
+            '[text.length<=4][text^="跳过"]', // 无法使用 fastQuery
           ],
           action: 'clickCenter', // 根据 https://github.com/gkd-kit/subscription/pull/1180#issuecomment-1767735683 反馈，此处使用 clickCenter 事件。
           snapshotUrls: [
@@ -28,7 +28,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '卡片式广告',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

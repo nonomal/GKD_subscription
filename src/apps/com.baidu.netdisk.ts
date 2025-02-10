@@ -1,15 +1,14 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.baidu.netdisk',
   name: '百度网盘',
-  deprecatedKeys: [0, 3, 4, 5, 6, 7, 10, 11],
   groups: [
     {
       key: 1,
       name: '全屏广告-广告弹窗',
       desc: '点击关闭',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 3,
@@ -48,14 +47,14 @@ export default defineAppConfig({
         {
           key: 0,
           name: '首页特惠广告',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.baidu.netdisk:id/banner_item_close"]',
           snapshotUrls: 'https://i.gkd.li/i/12706544',
         },
         {
           key: 1,
           name: '首页热门广告',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.baidu.netdisk:id/vf_content"] + [id="com.baidu.netdisk:id/close"]',
           snapshotUrls: 'https://i.gkd.li/i/12706544',
@@ -81,14 +80,14 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: 'ImageView[id="com.baidu.netdisk:id/dialog_cancel"]', //单独使用 ID 会导致误触（例如删除确认https://i.gkd.li/i/13069049）
       snapshotUrls: 'https://i.gkd.li/i/12923936',
     },
     {
       key: 9,
       name: '评价提示',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[vid="view_score_style"] > [text="以后再说"]',

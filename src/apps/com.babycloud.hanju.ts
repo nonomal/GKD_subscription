@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.babycloud.hanju',
   name: '韩小圈',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,
@@ -16,7 +15,7 @@ export default defineAppConfig({
             'com.babycloud.hanju.ui.activity.HanjuHomeActivity',
             'com.babycloud.hanju.search.activity.SearchActivity',
           ],
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.babycloud.hanju:id/unified_ad_close"][visibleToUser=true]',
           snapshotUrls: [

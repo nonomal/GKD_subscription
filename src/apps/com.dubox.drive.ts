@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.dubox.drive',
   name: 'TeraBox',
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -25,7 +25,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '广告弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.dubox.drive.ui.MainActivity',
       rules: 'ImageView[id="com.dubox.drive:id/ivClose"]',
       snapshotUrls: 'https://i.gkd.li/i/13200577',
@@ -33,7 +33,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '通知权限',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.dubox.drive.permission.view.PermissionDialogActivity',
       rules:
         '[text="Authorize"] - [id="com.dubox.drive:id/dialog_button_cancel"]',

@@ -1,15 +1,14 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.sina.weibo',
   name: '微博',
-  deprecatedKeys: [12, 15, 16],
   groups: [
     {
       key: 3,
       name: '兴趣领域推荐',
       desc: '出现在长久未登录的账户再次登录时',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.sina.weibo.account.interest.InterestActivity',
       rules:
         '[id="com.sina.weibo:id/rl_account_title_bar"] > [id="com.sina.weibo:id/tv_title_bar_skip"][text="跳过"]',
@@ -19,7 +18,7 @@ export default defineAppConfig({
       key: 4,
       name: '精选博主推荐',
       desc: '出现在长久未登录的账户再次登录时',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.sina.weibo.account.recommend.RecommendActivity',
       rules: [
         '[id="com.sina.weibo:id/tv_option"&&text="取消勾选"]',
@@ -34,7 +33,7 @@ export default defineAppConfig({
       key: 5,
       name: '博文内容区与评论区中间卡片式广告',
       desc: '点击右上角x',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -70,7 +69,7 @@ export default defineAppConfig({
       key: 6,
       name: '评论区博主内容推荐',
       desc: '评论区同一博主其他博文推荐',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -99,7 +98,7 @@ export default defineAppConfig({
     {
       key: 7,
       name: '局部广告-首页顶部话题分享窗口',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.sina.weibo.MainTabActivity',
       rules:
         '[id="com.sina.weibo:id/tvGuide"] + [id="com.sina.weibo:id/v_close"] + [id="com.sina.weibo:id/iv_close"]',
@@ -108,7 +107,7 @@ export default defineAppConfig({
     {
       key: 8,
       name: '全屏广告-弹窗广告',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -135,7 +134,7 @@ export default defineAppConfig({
           key: 3,
           activityIds: 'com.sina.weibo.feed.MPDialogActivity',
           matches:
-            '[text^="今日签到"] <n * + @TextView[clickable=true] <<n [vid="container"]',
+            '[text^="今日签到"] <n * + @TextView[visibleToUser=true] <<n [vid="container"]',
           snapshotUrls: 'https://i.gkd.li/i/14969848',
         },
         {
@@ -154,7 +153,7 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules:
         '@[id="com.sina.weibo:id/bt_cancel"][text="暂不开启"] + [id="com.sina.weibo:id/bt_confirm"]',
       snapshotUrls: 'https://i.gkd.li/i/12705979',
@@ -163,7 +162,7 @@ export default defineAppConfig({
       key: 10,
       name: '权限提示-通知权限',
       desc: '自动点击x按钮',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.sina.weibo.MainTabActivity',
       rules:
         '[text^="打开通知"] < LinearLayout + ImageView[id="com.sina.weibo:id/right_icon"]',
@@ -173,7 +172,7 @@ export default defineAppConfig({
       key: 11,
       name: '局部广告-首页顶部签到卡片',
       desc: '自动点击x按钮',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.sina.weibo.MainTabActivity',
       rules:
         '[id="com.sina.weibo:id/ll_check_in_container"] < FrameLayout - FrameLayout > TextView + [id="com.sina.weibo:id/v_close"]',
@@ -183,7 +182,7 @@ export default defineAppConfig({
       key: 13,
       name: '局部广告-悬浮广告',
       desc: '自动点击x按钮',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -224,8 +223,8 @@ export default defineAppConfig({
     },
     {
       key: 14,
-      name: '定位提示-请求定位权限弹窗',
-      quickFind: true,
+      name: '权限提示-定位权限',
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       actionMaximumKey: 0,
@@ -248,7 +247,7 @@ export default defineAppConfig({
     },
     {
       key: 17,
-      quickFind: true,
+      fastQuery: true,
       name: '分段广告-信息流广告',
       desc: '点击X-点击"不感兴趣 "/" 不想看到此类内容"',
       activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
@@ -302,7 +301,7 @@ export default defineAppConfig({
         {
           preKeys: [2],
           key: 92,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.sina.weibo.MainTabActivity',
           matches: '@[clickable=true] >2 [text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/i/14730274',
@@ -313,7 +312,7 @@ export default defineAppConfig({
       key: 18,
       name: 'APP评分弹窗',
       desc: '点击【x】',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: 'com.sina.weibo.MainTabActivity',
@@ -322,7 +321,7 @@ export default defineAppConfig({
     },
     {
       key: 19,
-      quickFind: true,
+      fastQuery: true,
       name: '功能类-自动点击查看原图',
       rules: [
         {
@@ -341,6 +340,45 @@ export default defineAppConfig({
       activityIds: 'com.sina.weibo.feed.MPDialogActivity',
       rules: '[vid="container"] >n [text="close"]',
       snapshotUrls: 'https://i.gkd.li/i/13837867',
+    },
+    {
+      key: 21,
+      name: '功能类-超话自动签到',
+      fastQuery: true,
+      rules: [
+        {
+          key: 0,
+          name: '点击签到',
+          activityIds: 'com.sina.weibo.supergroup.SGPageActivity',
+          matches: [
+            'ViewGroup[childCount=2] > [text="管理"][visibleToUser=true]',
+            '[text="签到" || text="Sign in"] < [vid="right_button"][visibleToUser=true]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/15092999',
+            'https://i.gkd.li/i/15092970', // 未关注超话防止误触
+            'https://i.gkd.li/i/15136801',
+          ],
+        },
+        {
+          key: 1,
+          name: '取消勾选[接收本超话签到提醒推送]',
+          activityIds: 'com.sina.weibo.supergroup.pagepop.PagePopActivity',
+          matches: '@[checked=true] < * > [text="接收本超话签到提醒推送"]',
+          snapshotUrls: 'https://i.gkd.li/i/15103524',
+        },
+        {
+          key: 2,
+          name: '关闭签到成功弹窗',
+          activityIds: 'com.sina.weibo.supergroup.pagepop.PagePopActivity',
+          matches: ['[text^="连续签到"]', '[vid="iv_close_v2"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/15103524',
+            'https://i.gkd.li/i/15136825',
+            'https://i.gkd.li/i/15136842',
+          ],
+        },
+      ],
     },
   ],
 });

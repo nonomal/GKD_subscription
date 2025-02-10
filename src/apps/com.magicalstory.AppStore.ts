@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.magicalstory.AppStore',
   name: '奇妙应用',
-  deprecatedKeys: [3, 6],
   groups: [
     {
       key: 1,
@@ -12,7 +11,7 @@ export default defineAppConfig({
         {
           key: 0,
           name: '软件详情页',
-          quickFind: true,
+          fastQuery: true,
           actionDelay: 300, // 没有此字段会导致误触
           activityIds: [
             'com.magicalstory.AppStore.appDetails.AppDetailsActivity',
@@ -37,7 +36,7 @@ export default defineAppConfig({
         {
           key: 2,
           name: '首页',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.magicalstory.AppStore.main.MainActivity',
           matches: '[vid="button_close_ad"]',
           snapshotUrls: 'https://i.gkd.li/i/14668408',
@@ -45,7 +44,7 @@ export default defineAppConfig({
         {
           key: 3,
           name: '评论区顶部',
-          quickFind: true,
+          fastQuery: true,
           actionDelay: 300, // 没有此字段会导致误触
           activityIds:
             'com.magicalstory.AppStore.main.fragments.square.section.forumDetailsActivity',
@@ -61,7 +60,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '通知提示-公告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -78,7 +77,7 @@ export default defineAppConfig({
       key: 5,
       name: '功能类-签到页-自动签到',
       desc: '签到页自动点击【签到】按钮',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       activityIds: 'com.magicalstory.AppStore.user.sign.signActivity',
       rules: '[text="签到"][vid="button"]',

@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.baidu.netdisk.samsung',
   name: '百度网盘-三星版本',
-  deprecatedKeys: [0, 3, 4],
   groups: [
     {
       key: -1,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -39,7 +38,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.baidu.netdisk.samsung:id/iv_close"]',
           snapshotUrls: 'https://i.gkd.li/i/12738331',
         },
@@ -53,7 +52,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.baidu.netdisk.samsung:id/buy_product_root"] > [id="com.baidu.netdisk.samsung:id/iv_close"]',
           snapshotUrls: 'https://i.gkd.li/i/12738388',
@@ -77,7 +76,7 @@ export default defineAppConfig({
     {
       key: 5,
       name: '评价提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -93,7 +92,7 @@ export default defineAppConfig({
     {
       key: 6,
       name: '通知提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -112,7 +111,7 @@ export default defineAppConfig({
       desc: '点击关闭',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.baidu.netdisk.filealbum.ui.activity.FileAlbumListActivity',
           matches: '[vid="add_widget_dialog_close"]',

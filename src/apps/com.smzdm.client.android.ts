@@ -1,12 +1,12 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.smzdm.client.android',
   name: '什么值得买',
   groups: [
     {
       key: 1,
-      quickFind: true,
+      fastQuery: true,
       name: 'APP内弹窗广告',
       activityIds: 'com.smzdm.client.android.app.HomeActivity',
       rules: '[id="com.smzdm.client.android:id/dialog_home_close"]',
@@ -16,7 +16,7 @@ export default defineAppConfig({
       key: 2,
       name: '更新提示',
       activityIds: 'com.smzdm.client.android.app.HomeActivity',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       rules:
         '[id="com.smzdm.client.android:id/tv_version"] +2 [id="com.smzdm.client.android:id/iv_close"]',
@@ -25,7 +25,7 @@ export default defineAppConfig({
     {
       key: 10,
       name: '请求读取剪贴板权限弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.smzdm.client.android.app.HomeActivity',
       rules: '@[text="暂不允许"] + [text="允许"]',
       snapshotUrls: 'https://i.gkd.li/i/13198020',
@@ -33,7 +33,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '通知弹窗',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       activityIds: [
         'com.smzdm.client.android.module.community.module.bask.BaskDetailActivity',

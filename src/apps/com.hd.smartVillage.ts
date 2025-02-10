@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.hd.smartVillage',
   name: '恒大智慧社区',
-  deprecatedKeys: [2],
   groups: [
     {
       key: 1,
       name: '关闭开启通知弹窗',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       activityIds: [
         'com.hd.smartVillage.modules.main.MainActivity',

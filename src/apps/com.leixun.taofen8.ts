@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.leixun.taofen8',
   name: '淘粉吧',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           matches:
             '@View[clickable=true] <<n [id="com.leixun.taofen8:id/fl_advert_container"]',
           snapshotUrls: 'https://i.gkd.li/i/13937324',

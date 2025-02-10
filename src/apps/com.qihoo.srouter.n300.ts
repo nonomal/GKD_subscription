@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.qihoo.srouter.n300',
   name: '360家庭防火墙',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
       name: '弹窗广告',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '[vid="app_update_later_button"]',
       snapshotUrls: 'https://i.gkd.li/i/13800011',
     },

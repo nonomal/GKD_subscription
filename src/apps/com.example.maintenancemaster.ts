@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.example.maintenancemaster',
   name: '维护大师',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
       name: '开屏广告',
       actionMaximum: 1,
       matchTime: 10000,
-      quickFind: true,
+      fastQuery: true,
       resetMatch: 'app',
       rules: [
         {

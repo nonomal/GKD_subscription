@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.miui.systemAdSolution',
   name: 'miui系统广告',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       // 全局规则无效，单独规则有效
       key: 0,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       resetMatch: 'app',
       actionMaximum: 1,

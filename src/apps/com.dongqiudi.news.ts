@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.dongqiudi.news',
   name: '懂球帝',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 0,
@@ -22,7 +21,7 @@ export default defineAppConfig({
           ],
         },
         {
-          quickFind: true,
+          fastQuery: true,
           name: '另一种倒计时广告', // 此广告要点击文字相邻的图片,如果直接点击文字会无反应或者触发广告跳转
           matches:
             '[id="com.dongqiudi.news:id/ad_skip_time"] + [id="com.dongqiudi.news:id/scale_iv"]',
@@ -37,7 +36,7 @@ export default defineAppConfig({
       key: 2,
       name: '更新提示',
       activityIds: 'com.dongqiudi.news.DownloadActivity',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -49,7 +48,7 @@ export default defineAppConfig({
       name: '首页信息流广告',
       desc: '点击广告卡片x关闭按钮-关闭反馈理由弹窗',
       activityIds: 'com.dongqiudi.news.MainActivity',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           preKeys: [1, 2],
@@ -77,7 +76,7 @@ export default defineAppConfig({
       name: '首页-广告弹窗',
       desc: '点击底部【x】关闭',
       activityIds: 'com.dongqiudi.news.MainActivity',
-      quickFind: true,
+      fastQuery: true,
       rules: '[id="com.dongqiudi.news:id/iv_close"]',
       snapshotUrls: 'https://i.gkd.li/i/13260467',
     },

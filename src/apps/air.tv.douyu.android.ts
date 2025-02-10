@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'air.tv.douyu.android',
   name: '斗鱼',
-  deprecatedKeys: [0, 1, 2],
   groups: [
     {
       key: 3,
@@ -67,7 +66,7 @@ export default defineAppConfig({
         },
         {
           key: 7,
-          quickFind: true,
+          fastQuery: true,
           matches: '@ImageView[visibleToUser=true] -2 * >3 [text="推荐"]',
           snapshotUrls: 'https://i.gkd.li/i/14668232',
         },

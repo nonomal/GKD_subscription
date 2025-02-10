@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.estrongs.android.pop',
   name: 'ES文件浏览器',
   groups: [
@@ -31,7 +31,7 @@ export default defineAppConfig({
       key: 1,
       name: '局部广告',
       activityIds: 'com.estrongs.android.pop.view.FileExplorerActivity',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

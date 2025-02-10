@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.zidongdianji',
   name: '自动点击器',
   groups: [
@@ -18,7 +18,7 @@ export default defineAppConfig({
         {
           preKeys: 1,
           key: 2,
-          quickFind: true,
+          fastQuery: true,
           matches: '@[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/i/14783475',
         },

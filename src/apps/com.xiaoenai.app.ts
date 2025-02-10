@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xiaoenai.app',
   name: '小恩爱',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           matches: '[text*="跳过"][text.length<=10]',
@@ -49,7 +49,7 @@ export default defineAppConfig({
       rules: [
         {
           name: '字节广告SDK',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '@ImageView[clickable=true][width<90][height<90] -3 ImageView <<n [id="com.xiaoenai.app:id/view_ad_tpl"]',
           snapshotUrls: 'https://i.gkd.li/i/13728026',

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.showstartfans.activity',
   name: '秀动',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
           key: 0,
           activityIds:
             'com.showstartfans.activity.activitys.maintab.newmain.MainNewActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.showstartfans.activity:id/img_close_coupon"]',
           snapshotUrls: 'https://i.gkd.li/i/13670432',
         },

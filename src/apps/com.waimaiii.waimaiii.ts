@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.waimaiii.waimaiii',
   name: '歪麦霸王餐',
   groups: [
@@ -14,7 +14,7 @@ export default defineAppConfig({
         {
           key: 0,
           name: '【跳过+倒计时】型',
-          quickFind: true,
+          fastQuery: true,
           matches: '[text*="跳过"][text.length<=10]',
           snapshotUrls: 'https://i.gkd.li/i/13346166',
         },

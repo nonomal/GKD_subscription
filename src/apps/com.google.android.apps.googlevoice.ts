@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.google.android.apps.googlevoice',
   name: 'Voice',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 10,
 
       name: '跳过实体号码链接',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

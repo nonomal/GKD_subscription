@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.oppo.store',
   name: 'OPPO商城',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '升级提示',
       desc: '点击下次再说',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       activityIds: 'com.oppo.store.MainActivity',
       rules: '@[text="下次再说"] -n [text="发现新版本"]',
@@ -17,7 +17,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '弹窗广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.oppo.store.MainActivity',
       rules: 'ImageView[id="com.oppo.store:id/dialog_delete"][desc="关闭"]',
       snapshotUrls: 'https://i.gkd.li/i/13295201',

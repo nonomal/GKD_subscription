@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.UCMobile',
   name: 'UC浏览器',
   groups: [
@@ -10,22 +10,38 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      actionMaximumKey: 0,
       rules: [
         {
-          matches: '[id="com.byted.pangle:id/tt_splash_skip_btn"]',
+          key: 0,
+          fastQuery: true,
+          matches:
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[text=null] <<n [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/13188653',
         },
         {
-          quickFind: true,
+          key: 1,
           matches:
-            '@View[clickable=true] < RelativeLayout <2 FrameLayout < FrameLayout < FrameLayout <4 FrameLayout < [id="android:id/content"]',
+            '[id="android:id/content"] > FrameLayout[childCount=4] >3 FrameLayout[childCount=4] > RelativeLayout[childCount=1] > View[childCount=0][text=null][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/13197655',
+        },
+        {
+          key: 2,
+          fastQuery: true,
+          position: {
+            left: 'width * 0.9',
+            top: 'width * 0.1676',
+          },
+          activityIds: 'com.uc.browser.InnerUCMobile',
+          matches: '[id="com.UCMobile.adn_jingdong_sdk:id/animation_view"]',
+          exampleUrls: 'https://e.gkd.li/92da64ad-5b08-4343-bec2-bb6a7e0bb92d',
+          snapshotUrls: 'https://i.gkd.li/i/16494884',
         },
       ],
     },
     {
       key: 0,
-      name: '信息流广告',
+      name: '分段广告-信息流广告',
       activityIds: 'com.uc.browser.InnerUCMobile',
       rules: [
         {
@@ -50,9 +66,10 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '请求通知权限弹窗',
-      activityIds: 'com.uc.browser.InnerUCMobile',
-
+      name: '权限提示-通知权限',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '@ImageView - LinearLayout >n [text="开启消息通知"]',
       snapshotUrls: [
         'https://i.gkd.li/i/12880812',
@@ -61,7 +78,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '请求添加桌面快捷方式权限弹窗',
+      name: '功能类-请求添加桌面快捷方式权限弹窗',
       activityIds: 'com.uc.browser.InnerUCMobile',
       rules: '@ImageView + [text^="添加"][text$="到桌面"]',
       snapshotUrls: 'https://i.gkd.li/i/12880983',

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.instagram.android',
   name: 'Instagram',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
 
       name: '分段广告-信息流广告',
       desc: '但是步骤较多, 影响app使用',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.instagram.mainactivity.InstagramMainActivity',
       rules: [
         {
@@ -50,7 +50,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '功能类-自动点击[查看翻译]',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.instagram.mainactivity.InstagramMainActivity',
       rules: [
         {

@@ -1,13 +1,12 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.danlan.xiaolan',
   name: 'Blued极速版',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
-      quickFind: true,
+      fastQuery: true,
       name: '附近的人-广告卡片',
       activityIds: 'com.soft.blued.ui.home.HomeActivity',
       rules: [
@@ -27,7 +26,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      quickFind: true,
+      fastQuery: true,
       name: '来访-广告卡片',
       activityIds: 'com.blued.android.core.ui.TerminalActivity',
       rules: [

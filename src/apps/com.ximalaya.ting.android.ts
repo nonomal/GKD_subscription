@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ximalaya.ting.android',
   name: '喜马拉雅',
   groups: [
     {
       key: 0,
       name: '局部广告-首页右侧浮动广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ximalaya.ting.android.host.activity.MainActivity',
       rules: '[id="com.ximalaya.ting.android:id/main_ad_broadside_close_real"]',
       snapshotUrls: ['https://i.gkd.li/i/12472620'],
@@ -15,7 +15,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '局部广告-播放页面-播放控制区域的广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ximalaya.ting.android.host.activity.MainActivity',
       rules: [
         {
@@ -37,7 +37,7 @@ export default defineAppConfig({
       key: 2,
       name: '分段广告-播放页面-底部推荐列表-夹杂广告',
       desc: '点击关闭-点击屏蔽',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 1,
@@ -68,7 +68,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '全屏广告-播放页面-播放前广告', //无法找到合适分类，暂且归为全屏广告
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.ximalaya.ting.android.host.activity.MainActivity',
         'com.ximalaya.ting.android.framework.view.dialog',
@@ -90,7 +90,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.ximalaya.ting.android:id/xm_ad_close_real"]',
           snapshotUrls: 'https://i.gkd.li/i/12506253',
         },
@@ -104,7 +104,7 @@ export default defineAppConfig({
           key: 2,
           preKeys: [0, 1],
           name: '点击关闭原因【屏蔽】',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '@[name="android.widget.RelativeLayout" || name="android.widget.LinearLayout"] > [text="屏蔽"]',
           snapshotUrls: [
@@ -118,7 +118,7 @@ export default defineAppConfig({
           preKeys: [0, 1],
           name: '点击【不感兴趣】',
           actionCdKey: 2,
-          quickFind: true,
+          fastQuery: true,
           matches: '[text="直接关闭"][text.length<=5]',
           snapshotUrls: 'https://i.gkd.li/i/14019835',
         },
@@ -139,14 +139,14 @@ export default defineAppConfig({
     {
       key: 6,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
       rules: '[id="com.ximalaya.ting.android:id/host_tv_update_later"]',
       snapshotUrls: 'https://i.gkd.li/i/12506287',
     },
     {
       key: 7,
       name: '青少年模式',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ximalaya.ting.android.host.activity.MainActivity',
       snapshotUrls: 'https://i.gkd.li/i/12506209',
       rules: {
@@ -160,7 +160,7 @@ export default defineAppConfig({
       key: 8,
       name: '局部广告-评论区广告',
       activityIds: 'com.ximalaya.ting.android.host.activity.MainActivity',
-      quickFind: true,
+      fastQuery: true,
       rules:
         '[id="com.ximalaya.ting.android:id/main_ad_close_real"][visibleToUser=true]',
       snapshotUrls: 'https://i.gkd.li/i/12869426',
@@ -169,7 +169,7 @@ export default defineAppConfig({
       key: 9,
 
       name: '分段广告-卡片式广告',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -197,7 +197,7 @@ export default defineAppConfig({
     {
       key: 10,
       name: '全屏广告-首页-专辑订阅推荐弹窗',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -209,7 +209,7 @@ export default defineAppConfig({
     {
       key: 11,
       name: '全屏广告-弹窗广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ximalaya.ting.android.host.activity.MainActivity',
       rules:
         '@[id="com.ximalaya.ting.android:id/host_close_firework"] +2 [id="com.ximalaya.ting.android:id/host_firework_ad_tag"]',
@@ -223,7 +223,7 @@ export default defineAppConfig({
         {
           key: 0,
           actionMaximum: 1,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.ximalaya.ting.android.host.activity.MainActivity',
           matches: '[id="com.ximalaya.ting.android:id/cancel_btn"]',
           exampleUrls:

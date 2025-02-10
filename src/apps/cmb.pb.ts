@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cmb.pb',
   name: '招商银行',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
       name: '局部广告-首页活动悬浮广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'cmb.pb.app.mainframe.container.PBMainActivity',
       rules: '[vid="float_window"] > [vid="ivCancle"][clickable=true]',
       snapshotUrls: 'https://i.gkd.li/i/14208669',
@@ -34,8 +33,8 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '定位提示-请求定位权限弹窗',
-      quickFind: true,
+      name: '权限提示-定位权限',
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '@[desc="关闭"] - * > [text*="开启"][text*="定位"]',

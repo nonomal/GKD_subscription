@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.taptap',
   name: 'TapTap',
   groups: [
@@ -16,7 +16,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '局部广告-游戏浏览界面-推荐广告',
+      name: '分段广告-游戏浏览界面-推荐广告',
       desc: '自动点击【对此内容不感兴趣】',
       rules: [
         {
@@ -47,7 +47,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
@@ -64,7 +64,7 @@ export default defineAppConfig({
     {
       key: 4,
       name: '青少年模式-首页顶部横幅提示',
-      quickFind: true,
+      fastQuery: true,
       resetMatch: 'app',
       rules: '[text*="青少年模式"] + [vid="iv_close"]',
       snapshotUrls: 'https://i.gkd.li/i/14209309',

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.sjm.xiaodesecond.mw',
   name: '喵物次元',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '全屏广告-开屏二次弹窗',
       desc: '点击x或跳过',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.sjm.xiaodesecond.mw.MainActivity',
       rules: [
         {

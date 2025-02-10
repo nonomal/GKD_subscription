@@ -1,7 +1,0 @@
-# 小米游戏中心
-
-存在 1 规则组 - [com.xiaomi.gamecenter](/src/apps/com.xiaomi.gamecenter.ts)
-
-## 未分类-首页右侧悬浮广告
-
-- [快照-0](https://i.gkd.li/i/12715800)

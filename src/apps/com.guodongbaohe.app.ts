@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.guodongbaohe.app',
   name: '果冻宝盒',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.guodongbaohe.app.activity.AdvertisementTwoActivity',
       rules: 'LinearLayout[id="com.guodongbaohe.app:id/close_dialog_lv"]',
       snapshotUrls: 'https://i.gkd.li/i/13577877',

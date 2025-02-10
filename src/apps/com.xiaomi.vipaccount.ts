@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xiaomi.vipaccount',
   name: '小米社区',
   groups: [
@@ -30,7 +30,7 @@ export default defineAppConfig({
       key: 4,
       name: '公告板弹窗',
       activityIds: 'com.xiaomi.vipaccount.ui.home.page.HomeFrameActivity',
-      quickFind: true,
+      fastQuery: true,
       rules: '[desc="公告版弹窗"] +2 [id="com.xiaomi.vipaccount:id/close"]',
       snapshotUrls: 'https://i.gkd.li/i/13400617',
     },

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.sankuai.meituan.dispatch.crowdsource',
   name: '美团众包',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           activityIds: [
             'com.meituan.banma.main.activity.MainActivity',
             'com.meituan.banma.main.activity.ImageAdActivity',
@@ -29,7 +29,7 @@ export default defineAppConfig({
       desc: '点击关闭',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.meituan.banma.usercenter.activity.UserGradeUpgradeKNBActivity',
           matches: '[vid="btn_close"]',

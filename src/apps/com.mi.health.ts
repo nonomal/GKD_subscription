@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.mi.health',
   name: '小米运动健康',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       activityIds: 'com.xiaomi.fitness.baseui.common.CommonBaseActivity',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '[id="com.mi.health:id/nextView"][text="下次再说"]',
       snapshotUrls: 'https://i.gkd.li/i/13258813',
     },
@@ -20,7 +20,7 @@ export default defineAppConfig({
       activityIds: 'com.xiaomi.fitness.main.MainActivity',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '[text="开启后台无限制"] + [id="com.mi.health:id/close_icon"]',
       snapshotUrls: 'https://i.gkd.li/i/13495035',
     },
@@ -31,7 +31,7 @@ export default defineAppConfig({
         {
           key: 0,
           activityIds: 'com.xiaomi.fitness.main.MainActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.mi.health:id/cardview"] + [id="com.mi.health:id/dialog_close"]',
           snapshotUrls: 'https://i.gkd.li/i/13537836',
@@ -43,7 +43,7 @@ export default defineAppConfig({
       name: '版本更新',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           activityIds: 'com.xiaomi.fitness.main.MainActivity',

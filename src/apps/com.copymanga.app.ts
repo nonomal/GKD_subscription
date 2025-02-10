@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.copymanga.app',
   name: '拷貝漫畫',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
@@ -135,7 +134,7 @@ export default defineAppConfig({
           key: 1,
           name: '快手广告-2',
           activityIds: 'com.copymanga.app.MainActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.copymanga.app:id/close_m_image_left_text_right_no_compliance"]',
           snapshotUrls: 'https://i.gkd.li/i/13761154',

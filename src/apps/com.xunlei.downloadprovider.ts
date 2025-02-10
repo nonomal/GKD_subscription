@@ -1,20 +1,51 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xunlei.downloadprovider',
   name: '迅雷',
-  deprecatedKeys: [6, 11],
   groups: [
     {
-      key: 1,
-      name: '视频详情页广告',
+      key: 0,
+      name: '开屏广告',
+      fastQuery: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      actionMaximumKey: 0,
       rules: [
         {
           key: 0,
-          name: '点击右上角x按钮',
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15048443',
+            'https://i.gkd.li/i/15048416',
+          ],
+        },
+        {
+          key: 1,
+          position: {
+            left: 'width * 0.9055',
+            top: 'width * 0.1611',
+          },
+          excludeMatches: '[text*="跳过"]',
+          matches: '[vid="native_container"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15048354',
+            'https://i.gkd.li/i/15048376', // 防止在此页面提前触发规则
+          ],
+        },
+      ],
+    },
+    {
+      key: 1,
+      name: '综合广告-视频详情页广告',
+      rules: [
+        {
+          key: 0,
+          name: '点击右上角x按钮-1',
           activityIds:
             'com.xunlei.downloadprovider.download.taskdetails.newui.DownloadDetailsActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.xunlei.downloadprovider:id/hermes_ad_banner_negative"]',
           snapshotUrls: 'https://i.gkd.li/i/12707701',
@@ -28,7 +59,7 @@ export default defineAppConfig({
             'com.xunlei.downloadprovider.download.taskdetails.newui.DownloadDetailsActivity',
             'com.xunlei.downloadprovider.feedback.view',
           ],
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.xunlei.downloadprovider:id/feedback_not_interested_layout"]',
           snapshotUrls: [
@@ -41,16 +72,16 @@ export default defineAppConfig({
           key: 2,
           name: '点击关闭按钮',
           activityIds: 'com.xunlei.downloadprovider.feedback.view',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.xunlei.downloadprovider:id/ad_ima_skip"]',
           snapshotUrls: 'https://i.gkd.li/i/12882988',
         },
         {
           key: 3,
-          name: '点击右上角x按钮',
+          name: '点击右上角x按钮-2',
           activityIds:
             'com.xunlei.downloadprovider.download.taskdetails.newui.DownloadDetailsActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.xunlei.downloadprovider:id/play_detail_ad_title"] + [id="com.xunlei.downloadprovider:id/close_iv"]',
           snapshotUrls: 'https://i.gkd.li/i/13228423',
@@ -61,7 +92,7 @@ export default defineAppConfig({
       key: 2,
       name: '分段广告-视频详情-直播推荐',
       desc: '自动点击【减少推荐】',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -149,7 +180,7 @@ export default defineAppConfig({
           key: 23,
           activityIds:
             'com.xunlei.downloadprovider.download.taskdetails.newui.DownloadDetailsActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.xunlei.downloadprovider:id/hermes_ad_banner_negative"]',
           snapshotUrls: 'https://i.gkd.li/i/13597068',
@@ -198,7 +229,7 @@ export default defineAppConfig({
       key: 4,
       name: '【下载页】广告卡片',
       desc: '需选二次弹窗关闭原因',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -240,7 +271,7 @@ export default defineAppConfig({
     {
       key: 5,
       name: '搜索页面-顶部banner广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds:
         'com.xunlei.downloadprovider.search.ui.search.SearchOperateActivity',
       rules: '[id="com.xunlei.downloadprovider:id/search_banner_ad_close"]',
@@ -248,12 +279,12 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '会员续费广告',
-      quickFind: true,
+      name: '全屏广告-会员续费广告',
+      fastQuery: true,
       rules: [
         {
           key: 0,
-          name: '【我的】',
+          name: '我的',
           activityIds: [
             'com.xunlei.downloadprovider.homepage.member',
             'com.xunlei.downloadprovider.frame.MainTabActivity',
@@ -267,23 +298,15 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          name: '【下载页】1',
+          name: '下载页',
           activityIds: 'com.xunlei.downloadprovider.frame.MainTabActivity',
           matches:
             '[id="com.xunlei.downloadprovider:id/all_picture_image"] + [id="com.xunlei.downloadprovider:id/close_btn"]',
           snapshotUrls: 'https://i.gkd.li/i/12882928',
         },
         {
-          key: 2,
-          name: '【下载页】2',
-          activityIds: 'com.xunlei.downloadprovider.frame.MainTabActivity',
-          matches:
-            '[text="立即开通"] + [id="com.xunlei.downloadprovider:id/close"]',
-          snapshotUrls: 'https://i.gkd.li/i/12882939',
-        },
-        {
           key: 3,
-          name: '【首页】',
+          name: '首页',
           activityIds: 'com.xunlei.downloadprovider.frame.MainTabActivity',
           matches:
             '[text="您的会员已过期"] < LinearLayout +n [id="com.xunlei.downloadprovider:id/touch_bottom_bar_bubble_close_iv"]',
@@ -291,6 +314,20 @@ export default defineAppConfig({
         },
       ],
     },
-    // key = 11 已被使用，后续不可再使用
+    {
+      key: 12,
+      name: '局部广告-卡片广告',
+      desc: '点击关闭',
+      fastQuery: true,
+      activityIds: 'com.xunlei.downloadprovider.frame.MainTabActivity',
+      rules:
+        '[((text$="领取" || text^="立即") && text.length<5) || text^="此云盘为您的私人云盘"] <n * > [vid="close"]',
+      snapshotUrls: [
+        'https://i.gkd.li/i/12882939',
+        'https://i.gkd.li/i/15048352',
+        'https://i.gkd.li/i/15048355',
+        'https://i.gkd.li/i/15048357',
+      ],
+    },
   ],
 });

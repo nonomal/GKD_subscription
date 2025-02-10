@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.sec.android.app.samsungapps',
   name: '应用商店',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
         {
           key: 0,
           action: 'clickCenter',
-          quickFind: true,
+          fastQuery: true,
           actionMaximum: 1,
           resetMatch: 'app',
           matchTime: 10000,
@@ -25,7 +25,7 @@ export default defineAppConfig({
       name: '功能类-年满18岁',
       desc: '点击【是】',
       activityIds: 'com.sec.android.app.samsungapps.SearchResultActivity',
-      quickFind: true,
+      fastQuery: true,
       rules: '[text="您是否年满 18 岁？"] +4 [vid="positive"][clickable=true]',
       snapshotUrls: 'https://i.gkd.li/i/14473690',
     },

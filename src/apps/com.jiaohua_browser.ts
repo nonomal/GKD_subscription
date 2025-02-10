@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.jiaohua_browser',
   name: 'JMComic2',
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       resetMatch: 'app',
       actionMaximum: 1,
@@ -36,7 +36,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '功能类-已满18岁弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.jiaohua_browser.MainActivity',
       rules: '[text*="滿18歲"]',
       snapshotUrls: 'https://i.gkd.li/i/14141809',
@@ -44,7 +44,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '功能类-签到活动',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.jiaohua_browser.MainActivity',
       rules: '@ViewGroup > [text="立即簽到"][visibleToUser=true]',
       snapshotUrls: [

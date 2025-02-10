@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.chinarainbow.tft',
   name: '天府通',
   groups: [
@@ -17,7 +17,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.byted.pangle.m:id/tt_reward_full_count_down_after_close"]',
           snapshotUrls: 'https://i.gkd.li/i/13468554',

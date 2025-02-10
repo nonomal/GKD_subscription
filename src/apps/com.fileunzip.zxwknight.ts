@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.fileunzip.zxwknight',
   name: '解压专家',
   groups: [
@@ -28,7 +28,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '全屏广告-升级专业版弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.fileunzip.zxwknight.activity.MainActivity',
         'com.fileunzip.zxwknight.activity.VideoPlayActivity',
@@ -42,7 +42,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '全屏广告-应用推荐广告',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -73,7 +73,7 @@ export default defineAppConfig({
     {
       key: 4,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

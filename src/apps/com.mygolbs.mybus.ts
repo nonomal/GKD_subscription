@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.mygolbs.mybus',
   name: '掌上公交',
   groups: [
@@ -15,7 +15,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
         },
         {
@@ -125,7 +125,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          quickFind: true,
+          fastQuery: true,
           activityIds:
             'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
           matches:
@@ -136,7 +136,7 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.qq.e.ads.ADActivity',
           matches:
             '@ImageView[clickable=true][visibleToUser=true] - [text="国货大牌 新年必囤"]',

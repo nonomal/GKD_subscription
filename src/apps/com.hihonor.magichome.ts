@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.hihonor.magichome',
   name: '荣耀智慧空间',
   groups: [
@@ -26,7 +26,7 @@ export default defineAppConfig({
       name: '升级提示',
       desc: '点击以后再说',
       activityIds: 'com.hihonor.magichome.business.MainActivity',
-      quickFind: true,
+      fastQuery: true,
       rules:
         'TextView[text="立即更新"] -2 [id="com.hihonor.magichome:id/negative_btn"][text="以后再说"]',
       snapshotUrls: 'https://i.gkd.li/i/12916700',

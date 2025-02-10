@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.eusoft.ting.en',
   name: '每日英语听力',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.eusoft.ting.ui.v2.TabActivityV2',
           matches: '[text="我的优惠券"] +2 * > [text="暂不需要"]',
           exampleUrls:

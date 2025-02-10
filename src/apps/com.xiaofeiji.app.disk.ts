@@ -1,12 +1,12 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xiaofeiji.app.disk',
   name: '小飞机网盘',
   groups: [
     {
       key: 1,
-      quickFind: true,
+      fastQuery: true,
       name: '分段广告',
       desc: '点击X-点击不感兴趣',
       rules: [

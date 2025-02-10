@@ -1,40 +1,60 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.android.bankabc',
   name: '中国农业银行',
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
-      resetMatch: 'app',
       actionMaximum: 1,
+      resetMatch: 'app',
+      actionMaximumKey: 0,
       rules: [
         {
           key: 0,
-          matches: '[vid="iv_ad"] - [vid="close"]',
-          snapshotUrls: 'https://i.gkd.li/i/14179381',
+          matches: '[id="com.android.bankabc:id/close"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/67cfc2f8-a108-4382-976a-0da7d13764e9',
+          snapshotUrls: 'https://i.gkd.li/i/14179162',
+        },
+      ],
+    },
+    {
+      key: 1,
+      name: '更新提示',
+      fastQuery: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 0,
+          matches: '[vid="upgrade_checkbox"][checked=false]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14208545',
+            'https://i.gkd.li/i/16410094',
+          ],
         },
         {
+          preKeys: [0],
           key: 1,
-          quickFind: true,
-          actionCdKey: 0,
-          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          matches: '[vid="negativeTextView"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/14208545',
         },
         {
+          preKeys: [0],
           key: 2,
-          actionCdKey: 0,
-          matches:
-            '[childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳過"||text*="skip"||text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count" && vid*="down" && vid!*="download") || desc*="跳过" || desc*="skip"]',
+          matches: '[vid="iv_negative"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/16410094',
         },
       ],
     },
     {
       key: 2,
-      name: '定位提示',
-      quickFind: true,
+      name: '权限提示-定位权限',
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[text="允许获取位置信息"] +n * > [text="取消"]',
@@ -42,8 +62,8 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '通知提示',
-      quickFind: true,
+      name: '权限提示-通知权限',
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[vid="iv_notification_reminder_dialog_close"]',

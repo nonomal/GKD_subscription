@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.zhaopin.social',
   name: '智联招聘',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,
@@ -25,7 +24,7 @@ export default defineAppConfig({
       name: '消息-开启消息通知',
       desc: '自动点击关闭',
 
-      quickFind: true,
+      fastQuery: true,
       activityIds: ['com.zhaopin.social.homepage.ZSC_MainTabActivity'],
       rules: '[id="com.zhaopin.social:id/message_pushlayout_close"]',
       snapshotUrls: 'https://i.gkd.li/i/13063427',

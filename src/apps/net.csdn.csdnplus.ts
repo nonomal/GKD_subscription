@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'net.csdn.csdnplus',
   name: 'CSDN',
   groups: [
@@ -12,18 +12,18 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           matches: '[text*="跳过"][text.length<=10]',
           snapshotUrls: ['https://i.gkd.li/i/12673680'],
         },
         {
-          quickFind: true,
+          fastQuery: true,
           matches:
             '@View <3 FrameLayout <2 FrameLayout < FrameLayout < [vid="fl_third_ad"]',
           snapshotUrls: 'https://i.gkd.li/i/13826577',
         },
         {
-          // 无法使用 quickFind
+          // 无法使用 fastQuery
           matches: '[id$="tt_splash_skip_btn"]',
           snapshotUrls: 'https://i.gkd.li/i/13224627',
         },
@@ -32,7 +32,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -54,7 +54,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '信息流广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: ['net.csdn.csdnplus.activity.MainActivity'],
       rules: [
         {
@@ -82,14 +82,14 @@ export default defineAppConfig({
       name: '关闭好评弹窗',
       resetMatch: 'app',
       actionMaximum: 1,
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'net.csdn.csdnplus.activity.MainActivity',
       rules: '[id="net.csdn.csdnplus:id/tv_cancel"][text="残忍拒绝"]',
       snapshotUrls: 'https://i.gkd.li/i/13251085',
     },
     {
       key: 10,
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -105,7 +105,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      quickFind: true,
+      fastQuery: true,
       name: '分段广告-底部广告',
       desc: '点击X-点击不感兴趣',
       rules: [

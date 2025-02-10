@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.fan.app',
   name: '十六番旅行',
   groups: [
@@ -15,7 +15,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
         },
         {
@@ -66,7 +66,7 @@ export default defineAppConfig({
       key: 2,
       name: '权限提示-通知提示',
       desc: '自动点击“以后再说”',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       rules: '[id="com.fan.app:id/tv_nj_later"]',

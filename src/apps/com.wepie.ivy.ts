@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.wepie.ivy',
   name: '青藤之恋',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
       name: '评价提示-好评弹窗',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

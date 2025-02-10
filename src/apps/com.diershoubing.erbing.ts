@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.diershoubing.erbing',
   name: '二柄',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -36,7 +36,7 @@ export default defineAppConfig({
     {
       key: 6,
       name: '分段广告',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 1,

@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.qidian.QDReader',
   name: '起点读书',
-  deprecatedKeys: [1, 2],
   groups: [
     {
       key: 3,
@@ -27,7 +26,7 @@ export default defineAppConfig({
       key: 4,
       name: '请求通知权限提示信息',
       desc: '点击顶部提醒左侧x按钮',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.afollestad.materialdialogs.MaterialDialog',
       rules: '@[id="com.qidian.QDReader:id/ivClose"] + [text^="开启推送"]',
       snapshotUrls: 'https://i.gkd.li/i/12640242',
@@ -40,7 +39,7 @@ export default defineAppConfig({
           key: 0,
           name: '书架页面右侧悬浮广告',
           activityIds: 'com.qidian.QDReader.ui.activity.MainGroupActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.qidian.QDReader:id/ivAd"] + [id="com.qidian.QDReader:id/ivAdClose"]',
           snapshotUrls: 'https://i.gkd.li/i/12717032',
@@ -84,7 +83,7 @@ export default defineAppConfig({
     },
     {
       key: 13,
-      quickFind: true,
+      fastQuery: true,
       name: '全屏广告-红包弹窗',
       desc: '点击X',
       rules: [

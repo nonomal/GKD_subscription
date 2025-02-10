@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.unionpay',
   name: '云闪付',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,
       name: '支付完成界面广告卡片',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.unionpay.activity.react.UPActivityReactNative',
       rules: [
         {
@@ -31,7 +30,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           position: {
             left: 'width * 0.8893',
             top: 'width * 0.4607',
@@ -46,38 +45,32 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 10,
-      name: '定位权限悬浮弹窗',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      quickFind: true,
-      activityIds: 'com.unionpay.activity.UPActivityMain',
-      rules: '[id="com.unionpay:id/view_locate_close"]',
-      snapshotUrls: 'https://i.gkd.li/i/13634882',
-    },
-    {
       key: 11,
-      name: '定位提示-访问位置请求弹窗',
+      name: '权限提示-定位权限',
       desc: '自动点击"不允许"',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
+          key: 0,
           matches: '[text*="访问您的位置信息"] < * +n * > [text="不允许"]',
           snapshotUrls: [
             'https://i.gkd.li/i/12695773',
             'https://i.gkd.li/i/14209001',
           ],
         },
+        {
+          key: 1,
+          matches: '[id="com.unionpay:id/view_locate_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/13634882',
+        },
       ],
     },
     {
       key: 12,
-      name: '开启消息通知弹窗',
-      desc: '默认关闭，请手动开启',
-      quickFind: true,
+      name: '权限提示-通知权限',
+      fastQuery: true,
       activityIds: ['com.unionpay.base.UPDialog'],
       rules: [
         {
@@ -114,7 +107,7 @@ export default defineAppConfig({
     },
     {
       key: 15,
-      quickFind: true,
+      fastQuery: true,
       name: '全屏广告-领取优惠弹窗',
       desc: '点击X',
       rules: [

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xiachufang',
   name: '下厨房',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
           key: 1,
           name: '菜谱底部卡片广告-1',
           activityIds: 'com.xiachufang.activity.recipe.RecipeDetailActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.xiachufang:id/ad_close"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/13348710',
         },
@@ -20,7 +20,7 @@ export default defineAppConfig({
           key: 2,
           name: '菜谱底部卡片广告-2',
           activityIds: 'com.xiachufang.activity.recipe.RecipeDetailActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.xiachufang:id/jad_feed_close"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/13363079',
@@ -29,7 +29,7 @@ export default defineAppConfig({
           key: 3,
           name: '菜谱底部卡片广告-1-弹出窗口',
           activityIds: 'com.xiachufang.activity.recipe.RecipeDetailActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.byted.pangle:id/tt_item_tv"][text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/i/13454534',
         },
@@ -37,7 +37,7 @@ export default defineAppConfig({
           key: 4,
           name: '菜谱底部卡片广告-3',
           activityIds: 'com.xiachufang.activity.recipe.RecipeDetailActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.xiachufang:id/fl_container"] >6 [name="android.widget.ImageView" && width=32]',
           snapshotUrls: 'https://i.gkd.li/i/13484117',

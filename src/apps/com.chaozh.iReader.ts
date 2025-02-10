@@ -1,14 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.chaozh.iReader',
   name: 'VIVO 电子书',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
       name: '权限提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       rules: [
         {
@@ -20,7 +19,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '通知提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       activityIds: 'com.zhangyue.iReader.bookshelf.ui.ActivityBookShelf',

@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.jingdong.app.mall',
   name: '京东',
-  deprecatedKeys: [7],
   groups: [
     {
       key: 1,
@@ -11,7 +10,7 @@ export default defineAppConfig({
       desc: '点击关闭',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches: '[id="com.jd.lib.cart.feature:id/iv_egg_close"]',
           snapshotUrls: 'https://i.gkd.li/i/14731003',
@@ -20,49 +19,45 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '局部广告-我的页面悬浮广告',
+      name: '局部广告-悬浮广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
       rules: [
         {
           key: 0,
-          name: '参与调研',
           matches:
-            'FrameLayout + RelativeLayout > RelativeLayout > ImageView + ImageView[desc!="返回"][visibleToUser=true]',
+            'FrameLayout + RelativeLayout > RelativeLayout > ImageView + ImageView[desc=null][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/12642270',
             'https://i.gkd.li/i/12774910', // 使用 [desc!="返回"] 进行限定，防止在进入商品详情页时点击返回按钮
+            'https://i.gkd.li/i/15110548', // 避免误触
           ],
         },
         {
           key: 1,
-          name: '邀好友得红包',
           matches:
             '@ImageView[id!=null] + FrameLayout[childCount=3] > ImageView + LinearLayout + TextView',
           snapshotUrls: 'https://i.gkd.li/i/13242002',
         },
-      ],
-    },
-    {
-      key: 3,
-      name: '局部广告-首页右侧浮层广告',
-      activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-      rules: '[desc="关闭浮层 icon"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/13165659',
-        'https://i.gkd.li/i/12837870',
-        'https://i.gkd.li/i/13072091',
-        'https://i.gkd.li/i/12837870',
+        {
+          key: 2,
+          matches: '[desc="关闭浮层icon"][clickable=true][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13165659',
+            'https://i.gkd.li/i/12837870',
+            'https://i.gkd.li/i/13072091',
+            'https://i.gkd.li/i/12837870',
+            'https://i.gkd.li/i/15077913', // 防止误触
+          ],
+        },
       ],
     },
     {
       key: 4,
-      name: '通知提示-请求打开通知',
+      name: '权限提示-通知权限',
       desc: '点击关闭',
-      quickFind: true,
-      //matchTime: 10000, 该弹窗可能在多个页面出现
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
-      actionMaximumKey: 0,
       rules: [
         {
           key: 0,
@@ -93,7 +88,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          quickFind: true,
+          fastQuery: true,
           activityIds: [
             'com.jd.lib.cashier.complete.view.CashierCompleteActivity',
             'com.jd.lib.jshop.jshop.JshopMainShopActivity',
@@ -115,7 +110,7 @@ export default defineAppConfig({
         },
         {
           key: 3,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.jingdong.app.mall.MainFrameActivity',
           matches: 'RelativeLayout > ImageView[desc="关闭页面"]',
           excludeMatches: 'ImageView[desc="关闭页面"] - [text="优惠券"]',
@@ -128,13 +123,37 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '局部广告-首页底部横幅广告',
+      name: '局部广告-横幅广告',
       activityIds: 'com.jingdong.app.mall.MainFrameActivity',
-      rules: 'ImageView < FrameLayout - FrameLayout > ImageView[desc="关闭"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/13258973',
-        'https://i.gkd.li/i/13258980',
-        'https://i.gkd.li/i/13258981',
+      rules: [
+        {
+          key: 0,
+          matches:
+            'ImageView < FrameLayout - FrameLayout > ImageView[desc="关闭"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13258973',
+            'https://i.gkd.li/i/13258980',
+            'https://i.gkd.li/i/13258981',
+          ],
+        },
+        {
+          key: 1,
+          fastQuery: true,
+          matches: '@ViewGroup[clickable=true] - * > [text="去续费"]',
+          snapshotUrls: 'https://i.gkd.li/i/15047238',
+        },
+        {
+          key: 2,
+          matches:
+            '[desc="吸顶楼层"] > [desc="关闭按钮"][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/15112953',
+        },
+        {
+          key: 3,
+          fastQuery: true,
+          matches: '[id="com.jd.lib.cart.feature:id/plus_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/15229577',
+        },
       ],
     },
     {
@@ -158,12 +177,25 @@ export default defineAppConfig({
       key: 12,
       name: '全屏广告-购物车页面支付成功广告弹窗',
       desc: '自动点击正下方的"x"',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           activityIds: 'com.jd.lib.cart.ShoppingCartNewActivity',
           matches: '@ImageView - ViewGroup >2 TextView[text="查看订单"]',
           snapshotUrls: 'https://i.gkd.li/i/13446362',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '全屏广告-加入购物车后出现的弹窗',
+      desc: '点击[继续逛]',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'com.jd.lib.productdetail.ProductDetailActivity',
+          matches: '[text="继续逛"]',
+          snapshotUrls: 'https://i.gkd.li/i/15047243',
         },
       ],
     },

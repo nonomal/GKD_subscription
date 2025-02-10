@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.qiyi.video',
   name: '爱奇艺',
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -20,7 +20,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '青少年弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'org.qiyi.android.video.MainActivity',
       rules: [
         {
@@ -34,7 +34,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '我的-顶部广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'org.qiyi.android.video.MainActivity',
       snapshotUrls: 'https://i.gkd.li/i/12495050',
       rules: [
@@ -44,7 +44,7 @@ export default defineAppConfig({
     {
       key: 3,
       name: '开启推送通知弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'org.qiyi.android.video.MainActivity',
       snapshotUrls: 'https://i.gkd.li/i/12838152',
       rules: ['[id="com.qiyi.video:id/cancel_btn"][text="暂时不要"]'],
@@ -52,7 +52,7 @@ export default defineAppConfig({
     {
       key: 4,
       name: '版本更新',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

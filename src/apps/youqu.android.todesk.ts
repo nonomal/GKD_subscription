@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'youqu.android.todesk',
   name: 'ToDesk',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
         'youqu.android.todesk.activity.WelcomeActivity',
         'youqu.android.todesk.activity.MainActivity', //新增activityIds
       ],
-      quickFind: true,
+      fastQuery: true,
       rules: [
         '[id="youqu.android.todesk:id/sivDeviceBanner"] + [id="youqu.android.todesk:id/llClose"]',
         '[vid="layoutMainBottomBanner"] > [vid="ivAdClose"]',

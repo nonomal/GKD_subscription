@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.heytap.reader',
   name: '阅读',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
       name: '首页广告',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.zhangyue.commonplugin:id/dialog_welfare_card_close"]',
           exampleUrls:
@@ -24,7 +24,7 @@ export default defineAppConfig({
       rules: [
         {
           activityIds: 'com.zhangyue.iReader.bookshelf.ui.ActivityBookShelf',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.heytap.reader:id/float_delete"]',
           exampleUrls:
             'https://m.gkd.li/6328439/860371ea-1f09-4f82-8ed6-1436eca4a50d',
@@ -38,7 +38,7 @@ export default defineAppConfig({
       rules: [
         {
           activityIds: 'com.zhangyue.iReader.bookshelf.ui.ActivityBookShelf',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.heytap.reader:id/iv_float_read_continue_close"]',
           exampleUrls:
             'https://m.gkd.li/6328439/3ee7210c-970e-4c9a-acb6-9254245c27a0',

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.hupu.games',
   name: '虎扑',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
         'com.hupu.android.bbs.detail.PostDetailActivity',
         'com.hupu.topic.TopicActivity',
       ],
-      quickFind: true,
+      fastQuery: true,
       name: '推荐流广告',
       desc: '点击卡片右上角广告文字,出现广告反馈,点击屏蔽该广告',
       rules: [

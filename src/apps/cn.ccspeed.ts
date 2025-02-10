@@ -1,16 +1,15 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.ccspeed',
   name: 'CC加速器',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
 
       name: '加速页-分享抽奖浮窗',
       activityIds: 'cn.ccspeed.app.MainActivity',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       resetMatch: 'activity',
       actionMaximum: 1,

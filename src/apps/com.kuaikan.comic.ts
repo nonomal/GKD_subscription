@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.kuaikan.comic',
   name: '快看漫画',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,

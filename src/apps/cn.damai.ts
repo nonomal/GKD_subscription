@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.damai',
   name: '大麦',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           action: 'clickCenter',
@@ -38,7 +38,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '权限提示-通知权限',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'cn.damai.homepage.MainActivity',
       rules: '[text*="通知权限"] +2 LinearLayout > [text="不开启"]',
       snapshotUrls: 'https://i.gkd.li/i/13985393',

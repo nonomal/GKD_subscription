@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.reddit.frontpage',
   name: 'Reddit',
   groups: [
     {
       key: 3,
       name: '社区消息-更新提示',
-      quickFind: true,
+      fastQuery: true,
 
       rules: [
         {
@@ -21,7 +21,7 @@ export default defineAppConfig({
       key: 4,
       name: 'NSFW 内容提示',
       desc: '自动点击 continue',
-      quickFind: true,
+      fastQuery: true,
 
       rules: [
         {

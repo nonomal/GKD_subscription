@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.dmzjsq.manhua',
   name: '动漫之家社区',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '广告弹窗',
 
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.sankuai.movie',
   name: '猫眼',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
       name: '更新提示',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '[text^="更新"] +(3) LinearLayout > [text="取消"]',
       snapshotUrls: [
         'https://i.gkd.li/i/12649942',

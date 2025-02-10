@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.coolapk.market',
   name: '酷安',
-  deprecatedKeys: [1, 2],
   groups: [
     {
       key: -1,
@@ -19,7 +18,7 @@ export default defineAppConfig({
       ],
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           key: 0,
           matches:
             '[id$="tt_splash_skip_btn"] <<n [id="com.coolapk.market:id/ad_container"]',
@@ -30,7 +29,7 @@ export default defineAppConfig({
           ],
         },
         {
-          quickFind: true,
+          fastQuery: true,
           key: 1,
           matches: '[text^="跳过"][text.length<=4]',
           excludeMatches: '[id="com.coolapk.market:id/item_view"]',
@@ -44,7 +43,7 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          quickFind: true,
+          fastQuery: true,
           matches:
             '@View[clickable=true] <(2,3) FrameLayout <2 FrameLayout <<n FrameLayout[id="com.coolapk.market:id/ad_container"]',
           snapshotUrls: [
@@ -56,9 +55,9 @@ export default defineAppConfig({
     },
     {
       key: 0,
-      name: '分段广告-广告卡片',
+      name: '分段广告-卡片广告',
       desc: '点击卡片右上角按钮->免广告-点击关闭->选择关闭原因-点击不感兴趣',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.coolapk.market.view.main.MainActivity', // 缺少快照
         'com.coolapk.market.view.base.SimpleAlphaActivity', // 缺少快照
@@ -69,20 +68,25 @@ export default defineAppConfig({
         {
           key: 1,
           name: '点击右上角x按钮',
-          matches:
-            '[id="com.coolapk.market:id/ad_time_view"||id="com.coolapk.market:id/top_text_view"||id="com.coolapk.market:id/ad_text_view"] +n [id="com.coolapk.market:id/close_view"]',
+          excludeMatches: [
+            '[text="回复"] + [text="发布"]',
+            '[text="创建收藏单"][visibleToUser=true]',
+          ],
+          matches: '[id="com.coolapk.market:id/close_view"]',
           snapshotUrls: [
             'https://i.gkd.li/i/12707506',
             'https://i.gkd.li/i/12642094',
             'https://i.gkd.li/i/12642148',
             'https://i.gkd.li/i/12774771',
             'https://i.gkd.li/i/13257987',
+            'https://i.gkd.li/i/14996359', // 避免误触
+            'https://i.gkd.li/i/15159886', // 避免误触
           ],
         },
         {
           preKeys: [1],
           key: 2,
-          name: '去广告/免广告-点击关闭或不感兴趣',
+          name: '点击[不感兴趣]/[关闭]',
           matches: '@[text="不感兴趣" || text="关闭"] <n * > [text*="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/i/14959519',
@@ -99,14 +103,13 @@ export default defineAppConfig({
             'https://i.gkd.li/i/12655713',
             'https://i.gkd.li/i/12660759',
             'https://i.gkd.li/i/12706437',
-            'https://i.gkd.li/i/13786886', // 没有id
           ],
         },
       ],
     },
     {
       key: 3,
-      quickFind: true,
+      fastQuery: true,
       name: '权限提示-通知提示',
       activityIds: 'com.coolapk.market.view.main.MainActivity',
       rules: '[text="去开启"] - [text="以后再说"]',
@@ -116,7 +119,7 @@ export default defineAppConfig({
       key: 4,
       name: '功能类-自动查看原图',
       desc: '查看图片时自动点击原图',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.coolapk.market.view.photo.PhotoViewActivity',
       rules: '[vid="load_source_button"][checked=false]',
       snapshotUrls: 'https://i.gkd.li/i/14913023',

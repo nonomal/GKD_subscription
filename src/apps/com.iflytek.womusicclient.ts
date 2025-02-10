@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.iflytek.womusicclient',
   name: '联通视频彩铃',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'android.womusic.com.songcomponent.MainActivity',
           matches: '[vid="iv_img"] + [vid="btn_close"]',
           exampleUrls:

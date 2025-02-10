@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.paokeji.yiqu',
   name: '喵趣漫画',
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       resetMatch: 'app',
       actionMaximum: 1,
@@ -31,7 +31,7 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '局部广告',
+      name: '全屏广告',
       activityIds: [
         'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity_T',
         'com.aster.comic.app.view.MainActivity',
@@ -40,15 +40,23 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '腾讯SDK',
+          name: '腾讯SDK-1',
           actionDelay: 350, //防误触
           matches:
-            '[id="android:id/content"] >(-n+4) FrameLayout > FrameLayout[childCount=1] > ImageView[index=0 && id!=null]',
+            '[id="android:id/content"] >(3,4) FrameLayout[childCount>4] > FrameLayout[childCount=1] > ImageView',
           snapshotUrls: [
             'https://i.gkd.li/i/13830354',
             'https://i.gkd.li/i/13842716',
             'https://i.gkd.li/i/13842966',
           ],
+        },
+        {
+          key: 10,
+          name: '腾讯SDK-2',
+          actionDelay: 350, //防误触
+          matches:
+            '[id="android:id/content"] >3 FrameLayout[childCount=2] > FrameLayout[childCount=1] > ImageView',
+          snapshotUrls: 'https://i.gkd.li/i/15173845',
         },
         {
           key: 1,
@@ -125,7 +133,7 @@ export default defineAppConfig({
       name: '更新提示',
       desc: '点击"暂不"',
       matchTime: 10000,
-      quickFind: true,
+      fastQuery: true,
       resetMatch: 'app',
       actionMaximum: 1,
       rules: [
@@ -169,7 +177,7 @@ export default defineAppConfig({
       actionMaximum: 3,
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.aster.comic.app.view.reader.ReaderActivity',
           matches: '@[clickable=true] > [text="点我重试"]',
           exampleUrls:

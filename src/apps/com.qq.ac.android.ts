@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.qq.ac.android',
   name: '腾讯动漫',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,
@@ -21,7 +20,7 @@ export default defineAppConfig({
         {
           key: 0,
           name: '漫画章节之间的广告',
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.qq.ac.android.reader.comic.ComicReaderActivity',
           matches: '[vid="iv_del"]',
           exampleUrls:

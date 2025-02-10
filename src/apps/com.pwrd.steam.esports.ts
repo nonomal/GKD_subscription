@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.pwrd.steam.esports',
   name: '完美世界电竞',
   groups: [
@@ -9,7 +9,7 @@ export default defineAppConfig({
       name: '通知提示-开启推送通知弹窗',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '[text="开启推送通知"] + [vid="tv_close"]',
       snapshotUrls: 'https://i.gkd.li/i/14622501',
     },

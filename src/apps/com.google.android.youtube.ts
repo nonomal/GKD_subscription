@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.google.android.youtube',
   name: 'YouTube',
   groups: [
@@ -12,7 +12,7 @@ export default defineAppConfig({
         'com.google.android.apps.youtube.app.watchwhile.MainActivity',
         'com.google.android.youtube',
       ],
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -68,7 +68,7 @@ export default defineAppConfig({
     {
       key: 4,
       name: '权限提示-通知权限',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[text="开启通知"] < * < * +2 * >2 [text="不用了"]',

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.wsds.gamemaster',
   name: '迅游手游加速器',
   groups: [
@@ -33,7 +33,7 @@ export default defineAppConfig({
         },
         {
           preKeys: 0,
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'cn.wsds.gamemaster.ui.gamedetails.ActivityGameDetails',
           matches: '[text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/i/13930399',

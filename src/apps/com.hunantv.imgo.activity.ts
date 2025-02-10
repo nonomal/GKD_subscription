@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.hunantv.imgo.activity',
   name: '芒果TV',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
@@ -44,7 +43,7 @@ export default defineAppConfig({
         {
           key: 2,
           activityIds: 'com.hunantv.imgo.activity.MainActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="com.hunantv.imgo.activity:id/ivPromotion"] + [id="com.hunantv.imgo.activity:id/btnClose"]',
           snapshotUrls: 'https://i.gkd.li/i/13761169',

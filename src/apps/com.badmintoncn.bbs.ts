@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.badmintoncn.bbs',
   name: '中羽在线',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
@@ -13,7 +12,7 @@ export default defineAppConfig({
           key: 0,
           name: '红包弹窗',
           activityIds: 'net.duohuo.magappx.main.IndexTabActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.badmintoncn.bbs:id/iv_close_ad"]',
           snapshotUrls: 'https://i.gkd.li/i/13635224',
         },

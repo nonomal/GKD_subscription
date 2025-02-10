@@ -1,8 +1,8 @@
-import { defineAppConfig } from '../types';
-export default defineAppConfig({
+import { defineGkdApp } from '@gkd-kit/define';
+
+export default defineGkdApp({
   id: 'com.greenpoint.android.mc10086.activity',
   name: '中国移动',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,
@@ -32,7 +32,7 @@ export default defineAppConfig({
           ],
         },
         {
-          quickFind: true,
+          fastQuery: true,
           matches: '[text="授权提醒"] +3 [text="拒绝"]',
           snapshotUrls: 'https://i.gkd.li/i/13775652',
         },
@@ -57,7 +57,7 @@ export default defineAppConfig({
     {
       key: 12,
       name: '局部广告-右侧悬浮小图标',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

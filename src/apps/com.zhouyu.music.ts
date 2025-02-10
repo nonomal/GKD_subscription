@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.zhouyu.music',
   name: '微音乐',
   groups: [
@@ -20,7 +20,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '搜索底部广告',
-      quickFind: true,
+      fastQuery: true,
 
       activityIds: 'com.zhouyu.music.activities.MainActivity',
       rules: '[id="com.zhouyu.music:id/ksad_ad_dislike"]',

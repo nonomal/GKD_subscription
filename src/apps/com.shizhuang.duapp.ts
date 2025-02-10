@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.shizhuang.duapp',
   name: '得物',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 4,
       name: '截屏分享',
       desc: '关闭截屏时app弹出的分享弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds:
         'com.shizhuang.duapp.modules.product_detail.detailv4.ui.ProductDetailActivityV4',
       rules:

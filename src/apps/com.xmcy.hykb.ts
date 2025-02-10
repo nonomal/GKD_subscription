@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xmcy.hykb',
   name: '好游快爆',
   groups: [
     {
       key: 1,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
 
       activityIds: 'com.xmcy.hykb.app.dialog.UpdateDialog',
       rules:
@@ -20,7 +20,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '广告弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.xmcy.hykb.app.ui.main.MainActivity',
       rules: '[id="com.xmcy.hykb:id/dialog_home_notice_image_close"]',
       snapshotUrls: 'https://i.gkd.li/i/13259427',

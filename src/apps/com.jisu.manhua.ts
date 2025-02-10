@@ -1,13 +1,13 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.jisu.manhua',
   name: '漫画人极速版',
   groups: [
     {
       key: 1,
       name: '弹窗广告',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.ilike.cartoon.activities.HomeActivity',
       rules: [
         {

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.dianping.v1',
   name: '大众点评',
   groups: [
@@ -42,7 +42,7 @@ export default defineAppConfig({
         {
           key: 0,
           activityIds: 'com.dianping.v1.NovaMainActivity',
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.dianping.v1:id/operate_cross_icon"]',
           snapshotUrls: 'https://i.gkd.li/i/13538340',
         },
@@ -64,7 +64,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          quickFind: true,
+          fastQuery: true,
           action: 'clickCenter',
           activityIds: 'com.dianping.v1.NovaMainActivity',
           matches: '[text*="重复出现"]',

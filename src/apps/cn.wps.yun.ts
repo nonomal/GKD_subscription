@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.wps.yun',
   name: '金山文档',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
       rules: [
         {
           activityIds: 'cn.wps.yun.ui.IndexActivity',
-          quickFind: true,
+          fastQuery: true,
           matches:
             '[id="cn.wps.yun:id/rootGroup"][childCount=5] >  [id="cn.wps.yun:id/moreIconRight"]',
           exampleUrls:

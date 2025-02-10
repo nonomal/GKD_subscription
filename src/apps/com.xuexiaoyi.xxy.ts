@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.xuexiaoyi.xxy',
   name: '学小易',
   groups: [
@@ -74,7 +74,7 @@ export default defineAppConfig({
       desc: '自动点击以后再说。',
       activityIds: 'com.xuexiaoyi.entrance.main.MainActivity',
 
-      quickFind: true,
+      fastQuery: true,
       rules: '[text="立即体验"] + [text="以后再说"]',
       snapshotUrls: 'https://i.gkd.li/i/13203105',
     },

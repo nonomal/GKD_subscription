@@ -1,24 +1,39 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.luna.music',
   name: '汽水音乐',
   groups: [
     {
       key: 0,
       name: '开屏广告',
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      rules:
-        'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView',
-      snapshotUrls: 'https://i.gkd.li/i/14232395',
+      actionMaximumKey: 0,
+      rules: [
+        {
+          key: 0,
+          matches:
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView <<n [id="android:id/content"]',
+          snapshotUrls: 'https://i.gkd.li/i/14232395',
+        },
+        {
+          key: 1,
+          matches: '[text^="跳过"][text.length<10][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15087528',
+            'https://i.gkd.li/i/15148298', // 避免误触
+          ],
+        },
+      ],
     },
     {
       key: 2,
       name: '全屏广告-VIP弹窗',
       desc: '直接关闭所有底部半屏弹窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.luna.biz.main.main.MainActivity',
         'com.luna.biz.ad.AdActivity',
@@ -69,7 +84,7 @@ export default defineAppConfig({
           preKeys: [0],
           key: 1,
           name: '点击"坚持退出"',
-          quickFind: true,
+          fastQuery: true,
           matches: '[text="坚持退出"]',
           snapshotUrls: 'https://i.gkd.li/i/13613184',
         },
@@ -77,24 +92,39 @@ export default defineAppConfig({
     },
     {
       key: 8,
-      quickFind: true,
       name: '功能类-看广告获取听歌时长',
       desc: '点击领取成功-点击坚持退出',
-      activityIds: 'com.ss.android.excitingvideo.ExcitingVideoActivity',
+      activityIds: [
+        'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+        'com.ss.android.excitingvideo.ExcitingVideoActivity',
+        'com.luna.biz.ad.AdActivity',
+      ],
       rules: [
         {
           key: 0,
+          fastQuery: true,
           matches: '@[text*="领取成功"][clickable=true] - [text="反馈"]',
           snapshotUrls: [
             'https://i.gkd.li/i/14767236',
             'https://i.gkd.li/i/14391770',
+            'https://i.gkd.li/i/15033124',
           ],
         },
         {
-          preKeys: [0],
+          key: 2,
+          matches: '[text="奖励已领取"]',
+          snapshotUrls: 'https://i.gkd.li/i/15140802',
+        },
+        {
+          preKeys: [0, 2],
           key: 1,
+          fastQuery: true,
           matches: '[text="坚持退出"]',
-          snapshotUrls: 'https://i.gkd.li/i/14767235',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14767235',
+            'https://i.gkd.li/i/15033126',
+            'https://i.gkd.li/i/15140816',
+          ],
         },
       ],
     },
@@ -114,7 +144,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           action: 'back',
           matches: '[text="为汽水音乐评分"]',
           exampleUrls:
@@ -129,7 +159,7 @@ export default defineAppConfig({
       desc: '点击关闭',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.luna.biz.main.main.MainActivity',
           matches:
             '[id="com.luna.music:id/fl_pendant_container"] > [id="com.luna.music:id/view_close"]',

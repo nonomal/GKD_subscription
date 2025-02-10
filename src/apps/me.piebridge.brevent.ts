@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'me.piebridge.brevent',
   name: '黑阈',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       desc: '点击取消',
       activityIds: 'me.piebridge.brevent.ui.BreventActivity',
       actionMaximum: 1,
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

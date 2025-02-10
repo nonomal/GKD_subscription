@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.cf.dubaji',
   name: '毒霸姬',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '更新提示',
       activityIds: 'com.cf.dubaji.module.main.MainActivity',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,

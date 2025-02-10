@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'gov.pianzong.androidnga',
   name: 'NGA玩家社区',
   groups: [
@@ -9,13 +9,14 @@ export default defineAppConfig({
       name: '开屏广告',
       matchTime: 10000,
       actionMaximum: 1,
-      quickFind: true,
+      fastQuery: true,
       resetMatch: 'app',
       rules: [
         '[id="gov.pianzong.androidnga:id/iv_tg_ad"]',
         '[id="gov.pianzong.androidnga:id/ksad_splash_circle_skip_view"]',
         '[id="gov.pianzong.androidnga:id/ksad_skip_view_skip"]',
         '[vid="tv_tiaoguo"]',
+        '[text*="跳过"][text.length<=5]',
       ],
       snapshotUrls: [
         'https://i.gkd.li/i/12476484',
@@ -23,7 +24,8 @@ export default defineAppConfig({
         'https://i.gkd.li/i/12864707', // activityIds: 'gov.pianzong.androidnga.activity.LoadingActivity',
         'https://i.gkd.li/i/12911882', // activityIds: 'gov.pianzong.androidnga.activity.WarmstartActivity'
         'https://i.gkd.li/i/13798686', // id="gov.pianzong.androidnga:id/ksad_skip_view_skip"
-        'https://i.gkd.li/i/14155643', //vid=tv_tiaoguo
+        'https://i.gkd.li/i/14155643', // vid=tv_tiaoguo
+        'https://i.gkd.li/i/15172694', // text*=跳过
       ],
     },
     {
@@ -72,7 +74,7 @@ export default defineAppConfig({
       desc: '点击X',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           activityIds: 'com.hihonor.android.launcher.unihome.UniHomeLauncher',
           matches: '[id="gov.pianzong.androidnga:id/iv_homedialog_close"]',
           exampleUrls:

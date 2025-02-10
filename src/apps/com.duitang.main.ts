@@ -1,16 +1,15 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.duitang.main',
   name: '堆糖',
-  deprecatedKeys: [1],
   groups: [
     {
       name: '首页-推荐浏览广告',
       desc: '关闭推荐浏览页面广告',
       key: 2,
       activityIds: ['com.duitang.main.business.main.NAMainActivity'],
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           matches: '[id="com.duitang.main:id/adOptionEntry"]',
@@ -25,7 +24,7 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           matches: '[vid="scoreDuitangCancel"]',
@@ -39,13 +38,13 @@ export default defineAppConfig({
       desc: '点击[x]',
       actionMaximum: 1,
       resetMatch: 'app',
-      quickFind: true,
+      fastQuery: true,
       rules: '@[vid="dialogNegative"] +2 [text="打开通知"]',
       snapshotUrls: 'https://i.gkd.li/i/14273121',
     },
     {
       key: 5,
-      quickFind: true,
+      fastQuery: true,
       name: '全屏广告-图片页广告弹窗',
       desc: '点击X',
       rules: [

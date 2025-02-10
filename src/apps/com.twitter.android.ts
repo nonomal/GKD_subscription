@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.twitter.android',
   name: 'X(Twitter)',
   groups: [
@@ -13,7 +13,7 @@ export default defineAppConfig({
         'com.twitter.app.profiles.ProfileActivity',
       ],
       actionCd: 3000, // https://github.com/gkd-kit/subscription/issues/832
-      quickFind: true,
+      fastQuery: true,
       rules: [
         {
           key: 0,
@@ -50,7 +50,7 @@ export default defineAppConfig({
       key: 2,
       name: '信息流广告-帖子详情页、搜索页',
       desc: '点击右上角关闭,点击屏蔽用户,确认屏蔽.点击[我不喜欢]会返回主页,因此点击[屏蔽]',
-      quickFind: true,
+      fastQuery: true,
       activityIds: [
         'com.twitter.tweetdetail.TweetDetailActivity',
         'com.twitter.android.search.implementation.results.SearchActivity',
@@ -58,7 +58,7 @@ export default defineAppConfig({
       actionCd: 3000,
       rules: [
         {
-          name: '点击右上角关闭',
+          name: '点击右上角关闭-1',
           key: 0,
           matches:
             '@[id="com.twitter.android:id/tweet_curation_action"] +n [id="com.twitter.android:id/tweet_promoted_badge_bottom"][text="推荐"]',
@@ -68,7 +68,7 @@ export default defineAppConfig({
           ],
         },
         {
-          name: '点击右上角关闭',
+          name: '点击右上角关闭-2',
           key: 1,
           matches:
             '@[id="com.twitter.android:id/tweet_curation_action"] <2 * + [id="com.twitter.android:id/tweet_auto_playable_content_parent"] > [id="com.twitter.android:id/tweet_promoted_badge_bottom"][text$="推荐"]',
@@ -115,12 +115,12 @@ export default defineAppConfig({
       key: 3,
       name: '信息流广告-用户资料页',
       desc: '点击右上角关闭,点击我不喜欢',
-      quickFind: true,
+      fastQuery: true,
       activityIds: ['com.twitter.app.profiles.ProfileActivity'],
       actionCd: 3000,
       rules: [
         {
-          name: '点击右上角关闭',
+          name: '点击右上角关闭-1',
           key: 0,
           matches:
             '@[id="com.twitter.android:id/tweet_curation_action"] +n [id="com.twitter.android:id/tweet_promoted_badge_bottom"][text="推荐"]',
@@ -130,7 +130,7 @@ export default defineAppConfig({
           ],
         },
         {
-          name: '点击右上角关闭',
+          name: '点击右上角关闭-2',
           key: 1,
           matches:
             '@[id="com.twitter.android:id/tweet_curation_action"] <2 * + [id="com.twitter.android:id/tweet_auto_playable_content_parent"] > [id="com.twitter.android:id/tweet_promoted_badge_bottom"][text$="推荐"]',
@@ -152,7 +152,7 @@ export default defineAppConfig({
     {
       key: 4,
       name: '评价弹窗',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
 
       rules: [
@@ -165,14 +165,16 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      quickFind: true,
-      name: '通知提示-请求通知权限弹窗',
+      name: '权限提示-通知权限',
       desc: '点击"Not now"',
+      fastQuery: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
-          activityIds: 'com.twitter.app.main.MainActivity',
           matches:
-            '[id="com.twitter.android:id/secondary_button"] [text="Not now"]',
+            '@[clickable=true] > [text="Not now"] <<n [vid="half_cover_recycler_view_holder"]',
           snapshotUrls: 'https://i.gkd.li/i/13930126',
         },
       ],
@@ -180,7 +182,7 @@ export default defineAppConfig({
     {
       key: 6,
       name: '功能类-自动翻译',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.twitter.tweetdetail.TweetDetailActivity',
       rules: '[text^="翻译"][vid="translation_link"]',
       snapshotUrls: [
@@ -191,7 +193,7 @@ export default defineAppConfig({
     {
       key: 7,
       name: '功能类-自动显示更多帖子',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.twitter.app.main.MainActivity',
       rules: '[vid="gap_text"][text="显示更多帖子"]',
       snapshotUrls: 'https://i.gkd.li/i/14189897',

@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.tencent.weread',
   name: '微信读书',
-  deprecatedKeys: [2],
   groups: [
     {
       key: 1,
@@ -12,7 +11,7 @@ export default defineAppConfig({
         {
           key: 0,
           name: '通知提示-开启推送通知提示弹窗',
-          quickFind: true,
+          fastQuery: true,
           actionMaximum: 1,
           matchTime: 30000,
           resetMatch: 'app',

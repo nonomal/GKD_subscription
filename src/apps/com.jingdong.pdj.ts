@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.jingdong.pdj',
   name: '京东到家',
   groups: [
@@ -17,7 +17,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          quickFind: true,
+          fastQuery: true,
           matches: '[id="com.jingdong.pdj:id/ivClose"][desc="关闭"]',
           snapshotUrls: 'https://i.gkd.li/i/13223282',
         },
@@ -26,7 +26,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       activityIds: 'com.jingdong.pdj.plunginupdate.update.UpdateDialogActivity',

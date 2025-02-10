@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.youdao.translator',
   name: '有道翻译官',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 1,
       name: '局部广告-翻译界面-结果下方广告',
       desc: '点击广告卡片右上角x',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.youdao.translator.activity.trans.TransResultActivity',
       rules: [
         {

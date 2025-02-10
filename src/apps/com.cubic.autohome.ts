@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.cubic.autohome',
   name: '汽车之家',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
@@ -14,7 +13,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      quickFind: true,
+      fastQuery: true,
       name: '局部广告-右下角领福利悬浮窗',
       desc: '点击X',
       rules: [

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.pleasure.trace_wechat',
   name: '微拾',
   groups: [
@@ -8,7 +8,7 @@ export default defineAppConfig({
       key: 5,
       name: '我的-卡片式广告',
       desc: '需点击二次弹窗确认',
-      quickFind: true,
+      fastQuery: true,
       activityIds: 'com.camellia.trace.activity.MainActivity',
       rules: [
         {

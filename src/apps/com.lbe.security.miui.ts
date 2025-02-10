@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.lbe.security.miui',
   name: '权限管理服务',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       desc: '自动点击【仅在使用中允许】',
       activityIds:
         'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
-      quickFind: true,
+      fastQuery: true,
       rules: '[text="仅在使用中允许"]',
       snapshotUrls: 'https://i.gkd.li/i/13761264',
     },

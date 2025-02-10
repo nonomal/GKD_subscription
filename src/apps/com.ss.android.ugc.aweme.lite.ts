@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.ss.android.ugc.aweme.lite',
   name: '抖音极速版',
-  deprecatedKeys: [1],
   groups: [
     {
       key: 2,
@@ -23,7 +22,7 @@ export default defineAppConfig({
     {
       key: 8,
       name: '朋友推荐弹窗',
-      quickFind: true,
+      fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       activityIds: ['com.ss.android.ugc.aweme.main.MainActivity'],
@@ -33,7 +32,7 @@ export default defineAppConfig({
     },
     {
       key: 9,
-      quickFind: true,
+      fastQuery: true,
       name: '通知提示-消息提醒弹窗',
       desc: '点击暂不开启',
       rules: [

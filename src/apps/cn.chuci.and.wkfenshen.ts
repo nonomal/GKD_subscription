@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'cn.chuci.and.wkfenshen',
   name: '猴子分身',
   groups: [
@@ -10,7 +10,7 @@ export default defineAppConfig({
       activityIds: 'cn.chuci.and.wkfenshen.ActMain',
       rules: [
         {
-          quickFind: true,
+          fastQuery: true,
           matches: [
             '[id="cn.chuci.and.wkfenshen:id/dialog_local_buy_btn"]',
             '[id="cn.chuci.and.wkfenshen:id/action_close"]',

@@ -1,6 +1,6 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.heytap.market',
   name: 'OPPO软件商店',
   groups: [
@@ -11,7 +11,7 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
       matchTime: 10000,
-      quickFind: true,
+      fastQuery: true,
       rules: '[text*="跳过"][text.length<=5]',
       exampleUrls:
         'https://m.gkd.li/101449500/4c1e3df4-e0e8-49ec-a260-ed406b46168e',
@@ -20,7 +20,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '更新提示',
-      quickFind: true,
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -43,7 +43,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '局部广告-首页-右下角浮窗',
-      quickFind: true,
+      fastQuery: true,
       activityIds:
         'com.heytap.cdo.client.cards.page.main.maintab.MainTabActivity',
       rules: '@[desc="关闭"][clickable=true] <2 [vid="view_id_float_ad"]',
